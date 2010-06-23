@@ -76,6 +76,14 @@ public class ArrheniusKinetics implements Kinetics {
     
     protected static String AUnits;
     
+    /*
+     * Allowing RMG to distinguish between reversible and irreversible kinetics
+     * 	(namely, from Primary Kinetic Library)
+     * 
+     * Default value is true (reversible)
+     */
+    public boolean reversibility = true;
+    
     // Constructors
     
     //## operation ArrheniusKinetics(UncertainDouble,UncertainDouble,UncertainDouble,String,int,String,String) 
@@ -409,6 +417,14 @@ public class ArrheniusKinetics implements Kinetics {
     
     public static String getAUnits() {
     	return AUnits;
+    }
+    
+    public void setReversibility(boolean p_reverse) {
+    	reversibility = p_reverse;
+    }
+    
+    public boolean getReversibility() {
+    	return reversibility;
     }
     
 }

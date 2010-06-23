@@ -87,7 +87,7 @@ public class Reaction {
       //#]
   }
   //## operation Reaction(Structure,RateConstant)
-  private  Reaction(Structure p_structure, Kinetics[] p_kinetics) {
+  public  Reaction(Structure p_structure, Kinetics[] p_kinetics) {
       //#[ operation Reaction(Structure,RateConstant)
       structure = p_structure;
       kinetics = p_kinetics;

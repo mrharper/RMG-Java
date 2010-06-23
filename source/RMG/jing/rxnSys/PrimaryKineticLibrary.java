@@ -165,7 +165,18 @@ public class PrimaryKineticLibrary {
         		try {
         			r = ChemParser.parseArrheniusReaction(speciesSet, line, A_multiplier, E_multiplier);
         			r.setIsFromPrimaryKineticLibrary(true);
-        			(r.getKinetics())[0].setFromPrimaryKineticLibrary(true);
+        			Kinetics[] pklKinetics = r.getKinetics();
+        			for (int numK=0; numK<pklKinetics.length; numK++) {
+        				pklKinetics[numK].setFromPrimaryKineticLibrary(true);
+        			}
+        			/*
+        			 * Enabling RMG to interpret and process irreversible reactions
+        			 */
+        			if (!r.hasReverseReaction()) {
+        				for (int numK=0; numK<pklKinetics.length; numK++) {
+        					pklKinetics[numK].setReversibility(false);
+        				}
+        			}
         			// Changed source from "Seed Mechanism" to "Primary Kinetic Library"
 					r.setKineticsSource("Primary Kinetic Library: "+ p_name,0);
 					r.setKineticsComments(" ",0);
@@ -192,6 +203,50 @@ public class PrimaryKineticLibrary {
 	        		if (reverse != null) {
 						//reverse.getKinetics().setSource("Seed Mechanism: " + name);
 						currentPKLReactions.add(reverse);
+	        		} else {
+	        			/*
+	        			 * For an irreversible reaction, we want the r.getReverseReaction()
+	        			 * 	to return null.  However, we also need to add a dummy reverse
+	        			 * 	reaction to the currenetPKLReactions list, with k=0 kinetics.
+	        			 * 
+	        			 * For example, assume the user specified butane => c2h5 + c2h5
+	        			 * 	and starts with butane in the core.  RMG will make the reaction
+	        			 * 	butane --> c2h5 + c2h5 and will find the irreversible kinetics.
+	        			 * 	However, once c2h5 is added to the core, c2h5 will react against
+	        			 * 	itself to form butane.  Since RMG does not find c2h5 + c2h5 -->
+	        			 * 	butane in the PKL, it will estimate it using the normal routine
+	        			 * 	and add this reaction to the core.
+	        			 * 
+	        			 * What this code is supposed to do is set the reaction as written
+	        			 * 	(butane --> c2h5 + c2h5) as the forward direction with the kinetics
+	        			 * 	specified by the user AND with no reverse reaction.  RMG will 
+	        			 * 	interpret this correctly.
+	        			 * Furthermore, generate a reverse reaction, with k=0 kinetics in the
+	        			 * 	forward direction AND no reverse reaction, and add this to the
+	        			 * 	list of currentPKLReactions.
+	        			 */
+	        			
+	        			// Here's the k=0 kinetics
+	        			UncertainDouble uA = new UncertainDouble(0.0, 0.0, "Adding");
+	        			UncertainDouble un = new UncertainDouble(0.0, 0.0, "Adding");
+	        			UncertainDouble uE = new UncertainDouble(0.0, 0.0, "Adding");
+	        			Kinetics[] kinetics = new Kinetics[1];
+	        			ArrheniusKinetics aKinetics = new ArrheniusKinetics(uA,un,uE,"",5,
+	        					"Irreversible Primary Kinetic Library","Set to k=0 by RMG");
+	        			kinetics[0] = aKinetics;
+	        			
+	        			// Here's the reverse reaction
+	        			Structure forwardRxnStruct = r.getStructure();
+	        			Structure reverseRxnStruct = new Structure(forwardRxnStruct.getProductList(),
+	        					forwardRxnStruct.getReactantList(),1);
+	        			Reaction reverseRxn = new Reaction(reverseRxnStruct,kinetics);
+
+	        			reverseRxn.setIsFromPrimaryKineticLibrary(true);
+	        			reverseRxn.getKinetics()[0].setFromPrimaryKineticLibrary(true);
+	        			reverseRxn.getKinetics()[0].setReversibility(false);
+	        			
+	        			// Add the reverse reaction to the list of currentPKLReactions
+	        			currentPKLReactions.add(reverseRxn);
 	        		}
         		}
         		line = ChemParser.readMeaningfulLine(data);

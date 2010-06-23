@@ -370,6 +370,11 @@ public class TemplateReaction extends Reaction {
 
 				if (fRT.isNeutral())
 					rRT = fRT;
+				/*
+				 * If the kinetics are irreversible, set the reverse reaction template
+				 * 	to be null
+				 */
+				else if (!p_kinetics[0].getReversibility()) rRT = null;
 				else
 					rRT = fRT.getReverseReactionTemplate();
 				

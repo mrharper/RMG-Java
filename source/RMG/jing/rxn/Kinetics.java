@@ -109,6 +109,10 @@ public interface Kinetics {
     String toString();
 	
 	boolean equals(Kinetics p_k);
+	
+	void setReversibility(boolean p_reverse);
+	
+	boolean getReversibility();
     
 }
 /*********************************************************************

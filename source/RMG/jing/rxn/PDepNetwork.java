@@ -621,11 +621,17 @@ public class PDepNetwork {
 		if (species == null)
 			return null;
 
+		boolean DoWeHaveAnIrreversibleRxnFromPKL = false;
 		if (reaction.getReactantNumber() > 1)
-			reaction = reaction.getReverseReaction();
+			if (reaction.hasReverseReaction()) reaction = reaction.getReverseReaction();
+			else DoWeHaveAnIrreversibleRxnFromPKL = true;
 
 		PDepNetwork pdn = null;
-		if (reaction.getProductNumber() == 1) {
+		if (DoWeHaveAnIrreversibleRxnFromPKL) {
+			// Association reaction
+			return null;
+		}
+		else if (reaction.getProductNumber() == 1) {
 			// Isomerization reactions should cause networks to be merged together
 			// This means that each unimolecular isomer should only appear in one network
 
