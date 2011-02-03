@@ -78,6 +78,9 @@ public class FGElement {
       else if (p_name.compareToIgnoreCase("R!H") == 0) {
       	type = "R!H";
       }
+      else if (p_name.compareToIgnoreCase("R_nondelocalized") == 0) {
+          type = "R_nondelocalized";
+      }
       /*
        * WARNING: The elseif statement involving Si must precede the elseif
        * 	statement involving S.  If not, a "Si" would be recognized as a
@@ -166,6 +169,9 @@ public class FGElement {
       }
       else if (p_name.equals("Sd")) {
     	  fge = new FGElement("Sd");
+      }
+      else if (p_name.equals("R_nondelocalized")) {
+          fge = new FGElement("R_nondelocalized");
       }
       else throw new UnknownSymbolException("FGElement: " + p_name);
 
@@ -314,6 +320,9 @@ public class FGElement {
       }
       else if ((p_name.compareToIgnoreCase("Sd")==0)) {
     	  return "Sd";
+      }
+      else if ((p_name.compareToIgnoreCase("R_nondelocalized")==0)) {
+          return "R_nondelocalized";
       }
       else {
       	throw new UnknownSymbolException("FGElement");

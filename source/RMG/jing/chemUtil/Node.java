@@ -417,15 +417,27 @@ public class Node extends GraphComponent {
       }
 
       // compare R, R!H
+      /*
+       * These are here so that "R" groups can be properly recognized as parents
+       * within any of the tree structures.
+       */
       Object fge1 = getFgElement();
       Object fge2 = node.getFgElement();
 
       FGElement any = FGElement.make("R");
       FGElement nonH = FGElement.make("R!H");
       FGElement H = FGElement.make("H");
+      FGElement nondelocalized = FGElement.make("R_nondelocalized");
 
+      // Is the read-in parent "element" equal to R
       if (MathTool.isSub(any,fge2)) return true;
+      // Is the read-in parent "element" equal to R!H ... and the read-in child
+      //    element not equal to "H"
       if (MathTool.isSub(nonH,fge2) && !MathTool.isSub(H,fge1)) return true;
+      // Is the read-in parent "element" equal to R_nondelocalized ... and the
+      //    read-in child element not equal to "H"
+      // UPDATE REQUIRED
+      if (MathTool.isSub(nondelocalized,fge2) && !MathTool.isSub(H,fge1)) return true;
 
       return MathTool.isSub(fge1,fge2);
 
