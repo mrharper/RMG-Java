@@ -30,10 +30,7 @@
 package jing.chem;
 
 
-import java.io.*;
 import java.util.*;
-import jing.chemUtil.*;
-import jing.chemParser.*;
 
 //## package jing::chem 
 
