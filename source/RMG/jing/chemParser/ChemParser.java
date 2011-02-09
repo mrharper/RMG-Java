@@ -1510,8 +1510,6 @@ public class ChemParser {
         			}
         			else throw new NotInDictionaryException(name + " is not found in functional group dictionary!");
         		}
-                        if (name.equals("Cb-(Cds-Od)"))
-                            System.out.println("HERE");
         		/*if (name.equals("Cyclopropane"))
         			System.out.println(name);*/
         		HierarchyTreeNode node = new HierarchyTreeNode(node_element,p_level);
