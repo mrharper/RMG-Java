@@ -191,6 +191,8 @@ public class Node extends GraphComponent {
       FGElement Sd = FGElement.make("Sd");
       FGElement Sa = FGElement.make("Sa");
 
+      HashMap fged = FGElementDictionary.getInstance().getDictionary();
+
       FGElement fgElement = p_fgAtom.getFgElement();
       FreeElectron feElement = p_fgAtom.getFreeElectron();
       if (p_changedOrder == 1) {
@@ -250,13 +252,17 @@ public class Node extends GraphComponent {
       				Iterator iter = ((Collection)otherElement).iterator();
       				while (iter.hasNext()) {
       					ChemNodeElement cne = (ChemNodeElement)iter.next();
-      					if (cne.isCarbon() || cne.isSilicon() || cne.isSulfur()) {
+                                        if (fged.containsKey(cne)) {
+                                            carbon = true;
+                                            oxygen = true;
+                                        }
+                                        else if(cne.isCarbon() || cne.isSilicon() || cne.isSulfur()) {
       						carbon = true;
       					}
       					else if (cne.isOxygen()) {
       						oxygen = true;
       					}
-      					else if (cne.isAny() || cne.isNonH()) {
+      					else if (cne.isNonH()) {
       						carbon = true;
       						oxygen = true;
       					}
@@ -279,13 +285,19 @@ public class Node extends GraphComponent {
       			}
       			else {
       				ChemNodeElement cne = (ChemNodeElement)otherElement;
-      				if (cne.isCarbon() || cne.isSilicon() || cne.isSulfur()) {
+                                if (fged.containsKey(cne)) {
+                                    HashSet result = new HashSet();
+                                    result.add(FGAtom.make(CO,feElement));
+                                    result.add(FGAtom.make(Cd,feElement));
+                                    return result;
+                                }
+                                else if(cne.isCarbon() || cne.isSilicon() || cne.isSulfur()) {
       					return FGAtom.make(Cd,feElement);
       				}
       				else if (cne.isOxygen()) {
       					return FGAtom.make(CO,feElement);
       				}
-      				else if (cne.isAny() || cne.isNonH()) {
+      				else if (cne.isNonH()) {
       					HashSet result = new HashSet();
       					result.add(FGAtom.make(CO,feElement));
       					result.add(FGAtom.make(Cd,feElement));
@@ -330,10 +342,11 @@ public class Node extends GraphComponent {
       				Iterator iter = ((Collection)otherElement).iterator();
       				while (iter.hasNext()) {
       					ChemNodeElement cne = (ChemNodeElement)iter.next();
-      					if (cne.isCarbon() || cne.isSilicon() || cne.isSulfur() || cne.isOxygen()) {
+                                        if (fged.containsKey(cne)) carbon = true;
+                                        else if(cne.isCarbon() || cne.isSilicon() || cne.isSulfur() || cne.isOxygen()) {
       						carbon = true;
       					}
-      					else if (cne.isAny() || cne.isNonH()) {
+      					else if (cne.isNonH()) {
       						carbon = true;
       					}
       	     		}
@@ -346,10 +359,11 @@ public class Node extends GraphComponent {
       			}
       			else {
       				ChemNodeElement cne = (ChemNodeElement)otherElement;
-      				if (cne.isCarbon() || cne.isSilicon() || cne.isSulfur() || cne.isOxygen()) {
+                                if (fged.containsKey(cne)) return FGAtom.make(Sid,feElement);
+                                else if(cne.isCarbon() || cne.isSilicon() || cne.isSulfur() || cne.isOxygen()) {
       					return FGAtom.make(Sid,feElement);
       				}
-      				else if (cne.isAny() || cne.isNonH()) {
+      				else if (cne.isNonH()) {
       					return FGAtom.make(Sid,feElement);
       				}
       				else {
@@ -428,6 +442,9 @@ public class Node extends GraphComponent {
       FGElement nonH = FGElement.make("R!H");
       FGElement H = FGElement.make("H");
       FGElement nondelocalized = FGElement.make("R_nondelocalized");
+      FGElement delocalized = FGElement.make("R_delocalized");
+      FGElement aromatic = FGElement.make("R_aromatic");
+      FGElement nonaromatic = FGElement.make("R_nonaromatic");
 
       // Is the read-in parent "element" equal to R
       if (MathTool.isSub(any,fge2)) return true;
@@ -437,7 +454,10 @@ public class Node extends GraphComponent {
       // Is the read-in parent "element" equal to R_nondelocalized ... and the
       //    read-in child element not equal to "H"
       // UPDATE REQUIRED
-      if (MathTool.isSub(nondelocalized,fge2) && !MathTool.isSub(H,fge1)) return true;
+      if (MathTool.isSub(nondelocalized,fge2)) return true;
+      if (MathTool.isSub(delocalized,fge2) && !MathTool.isSub(H,fge1)) return true;
+      if (MathTool.isSub(aromatic,fge2) && !MathTool.isSub(H,fge1)) return true;
+      if (MathTool.isSub(nonaromatic,fge2)) return true;
 
       return MathTool.isSub(fge1,fge2);
 
@@ -693,6 +713,7 @@ public class Node extends GraphComponent {
   //## operation generateFgElement()
   public Collection generateFgElement() {
       //#[ operation generateFgElement()
+      HashMap fged = FGElementDictionary.getInstance().getDictionary();
       Object o = getElement();
       if (o == null) throw new NullGraphComponentException("node");
       HashSet result = new HashSet();
@@ -775,13 +796,18 @@ public class Node extends GraphComponent {
       				if (unocuppied == 2) result.add(Cdd);
       				if (cne instanceof ChemNodeElement) {
       					ChemNodeElement thiscne = (ChemNodeElement)cne;
-      					if (thiscne.isCarbon()) {
+                                        StringTokenizer st_thiscne = new StringTokenizer(thiscne.getName());
+                                        if (fged.containsKey(st_thiscne.nextToken())) {
+                                            result.add(Cd);
+                                            result.add(CO);
+                                        }
+                                        else if(thiscne.isCarbon()) {
       						result.add(Cd);
       					}
       					else if (thiscne.isOxygen()) {
       						result.add(CO);
       					}
-      					else if (thiscne.isAny() || thiscne.isNonH()) {
+      					else if (thiscne.isNonH()) {
       						result.add(Cd);
       						result.add(CO);
       					}
@@ -796,13 +822,18 @@ public class Node extends GraphComponent {
       					Iterator cne_iter = ((Collection)cne).iterator();
       					while (cne_iter.hasNext()) {
       						ChemNodeElement thiscne = (ChemNodeElement)cne_iter.next();
-      						if (thiscne.isCarbon()) {
+                                                StringTokenizer st_thiscne = new StringTokenizer(thiscne.getName());
+                                                if (fged.containsKey(st_thiscne.nextToken())) {
+                                                    result.add(Cd);
+                                                    result.add(CO);
+                                                }
+                                                else if(thiscne.isCarbon()) {
       							result.add(Cd);
       						}
       						else if (thiscne.isOxygen()) {
       							result.add(CO);
       						}
-      						else if (thiscne.isAny() || thiscne.isNonH()) {
+      						else if (thiscne.isNonH()) {
       							result.add(Cd);
       							result.add(CO);
       						}
@@ -955,11 +986,15 @@ public class Node extends GraphComponent {
       				if (unocuppied == 2) result.add(Sidd);
       				if (cne instanceof ChemNodeElement) {
       					ChemNodeElement thiscne = (ChemNodeElement)cne;
-      					if (thiscne.isCarbon() || thiscne.isOxygen() ||
+                                        StringTokenizer st_thiscne = new StringTokenizer(thiscne.getName());
+                                        if (fged.containsKey(st_thiscne.nextToken()))
+                                            result.add(Sid);
+                                        else if(thiscne.isCarbon() || thiscne.isOxygen()
+                                            ||
       							thiscne.isSilicon() || thiscne.isSulfur()) {
       						result.add(Sid);
       					}
-      					else if (thiscne.isAny() || thiscne.isNonH()) {
+      					else if (thiscne.isNonH()) {
       						result.add(Sid);
       					}
       					else {
@@ -970,11 +1005,15 @@ public class Node extends GraphComponent {
       					Iterator cne_iter = ((Collection)cne).iterator();
       					while (cne_iter.hasNext()) {
       						ChemNodeElement thiscne = (ChemNodeElement)cne_iter.next();
-      						if (thiscne.isCarbon() || thiscne.isOxygen() ||
+                                                StringTokenizer st_thiscne = new StringTokenizer(thiscne.getName());
+                                                if (fged.containsKey(st_thiscne.nextToken()))
+                                                    result.add(Sid);
+                                                else if(thiscne.isCarbon() || thiscne.isOxygen()
+                                                    ||
       								thiscne.isSilicon() || thiscne.isSulfur()) {
       							result.add(Sid);
       						}
-      						else if (thiscne.isAny() || thiscne.isNonH()) {
+      						else if (thiscne.isNonH()) {
       							result.add(Sid);
       						}
       						else {

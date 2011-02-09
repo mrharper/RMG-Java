@@ -1277,8 +1277,13 @@ public class ChemParser {
         			atom = Atom.make(ce,fe);
         		}
         		catch (UnknownSymbolException e) {
-					String Internalname = FGElement.translateName(nextToken);
-        			FGElement fge = FGElement.make(Internalname);
+                            FGElementDictionary fged = FGElementDictionary.getInstance();
+                            FGElement fge = fged.getFGElement(nextToken);
+                            if (fge == null)
+                                System.out.println("\n\nRMG does not recognize the Element : "
+                                        + nextToken);
+//					String Internalname = FGElement.translateName(nextToken);
+//        			FGElement fge = FGElement.make(Internalname);
         			atom = FGAtom.make(fge,fe);
         		}
         		return atom;
@@ -1505,6 +1510,8 @@ public class ChemParser {
         			}
         			else throw new NotInDictionaryException(name + " is not found in functional group dictionary!");
         		}
+                        if (name.equals("Cb-(Cds-Od)"))
+                            System.out.println("HERE");
         		/*if (name.equals("Cyclopropane"))
         			System.out.println(name);*/
         		HierarchyTreeNode node = new HierarchyTreeNode(node_element,p_level);

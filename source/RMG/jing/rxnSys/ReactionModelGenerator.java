@@ -1294,7 +1294,9 @@ public class ReactionModelGenerator {
     public void modelGeneration() {
         //long begin_t = System.currentTimeMillis();
 		try{
-        	ChemGraph.readForbiddenStructure();
+                    FGElement.readFunctionalGroupElements();
+                    FGElement.initializeHardCodedFunctionalGroupElements();
+                    ChemGraph.readForbiddenStructure();
 			setSpeciesSeed(new LinkedHashSet());//10/4/07 gmagoon moved from initializeCoreEdgeReactionModel
 			//  setReactionGenerator(new TemplateReactionGenerator());//10/4/07 gmagoon: moved inside initializeReactionSystem; 11/3-4/07 gmagoon: probably reverted on or before 10/10/07 (although I have not investigated this change in detail); //11/4/07 gmagoon: moved inside initializeReactionSystems
 			//  setLibraryReactionGenerator(new LibraryReactionGenerator());//10/10/07 gmagoon: moved after initializeReactionSystem

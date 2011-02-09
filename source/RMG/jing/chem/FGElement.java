@@ -30,7 +30,11 @@
 package jing.chem;
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
+import jing.chemParser.ChemParser;
 
 //## package jing::chem
 
@@ -46,6 +50,8 @@ public class FGElement {
   protected String name;		//## attribute name
 
   protected String type;		//## attribute type
+
+  protected LinkedList atoms;
 
 
   // Constructors
@@ -72,14 +78,23 @@ public class FGElement {
       else if (p_name.startsWith("O") || p_name.startsWith("o")) {
       	type = "O";
       }
-      else if (p_name.compareToIgnoreCase("R") == 0) {
-      	type = "R";
-      }
+//      else if (p_name.compareToIgnoreCase("R") == 0) {
+//      	type = "R";
+//      }
       else if (p_name.compareToIgnoreCase("R!H") == 0) {
       	type = "R!H";
       }
       else if (p_name.compareToIgnoreCase("R_nondelocalized") == 0) {
           type = "R_nondelocalized";
+      }
+      else if (p_name.compareToIgnoreCase("R_delocalized") == 0) {
+          type = "R_delocalized";
+      }
+      else if (p_name.compareToIgnoreCase("R_aromatic") == 0) {
+          type = "R_aromatic";
+      }
+      else if (p_name.compareToIgnoreCase("R_nonaromatic") == 0) {
+          type = "R_nonaromatic";
       }
       /*
        * WARNING: The elseif statement involving Si must precede the elseif
@@ -101,6 +116,11 @@ public class FGElement {
 
 
       //#]
+  }
+
+  protected FGElement(String p_name, LinkedList p_atoms) {
+      name = p_name;
+      atoms = p_atoms;
   }
 
   //## operation create(String)
@@ -143,9 +163,9 @@ public class FGElement {
       else if (p_name.equals("Od")) {
       	fge = new FGElement("Od");
       }
-      else if (p_name.equals("R")) {
-      	fge = new FGElement("R");
-      }
+//      else if (p_name.equals("R")) {
+//      	fge = new FGElement("R");
+//      }
       else if (p_name.equals("R!H")) {
       	fge = new FGElement("R!H");
       }
@@ -173,6 +193,15 @@ public class FGElement {
       else if (p_name.equals("R_nondelocalized")) {
           fge = new FGElement("R_nondelocalized");
       }
+      else if (p_name.equals("R_delocalized")) {
+          fge = new FGElement("R_delocalized");
+      }
+      else if (p_name.equals("R_aromatic")) {
+          fge = new FGElement("R_aromatic");
+      }
+      else if (p_name.equals("R_nonaromatic")) {
+          fge = new FGElement("R_nonaromatic");
+      }
       else throw new UnknownSymbolException("FGElement: " + p_name);
 
       return fge;
@@ -180,11 +209,11 @@ public class FGElement {
   }
 
   //## operation isAny()
-  public boolean isAny() {
-      //#[ operation isAny()
-      return (getType().equals("R"));
-      //#]
-  }
+//  public boolean isAny() {
+//      //#[ operation isAny()
+//      return (getType().equals("R"));
+//      //#]
+//  }
 
   //## operation isCarbon()
   public boolean isCarbon() {
@@ -294,9 +323,9 @@ public class FGElement {
       else if ((p_name.compareToIgnoreCase("Od")==0)) {
       	return "Od";
       }
-      else if (p_name.compareToIgnoreCase("R")==0) {
-      	return "R";
-      }
+//      else if (p_name.compareToIgnoreCase("R")==0) {
+//      	return "R";
+//      }
       else if (p_name.compareToIgnoreCase("R!H")==0 || p_name.compareToIgnoreCase("R|H")==0) {
       	return "R!H";
       }
@@ -323,6 +352,15 @@ public class FGElement {
       }
       else if ((p_name.compareToIgnoreCase("R_nondelocalized")==0)) {
           return "R_nondelocalized";
+      }
+      else if ((p_name.compareToIgnoreCase("R_delocalzied")==0)) {
+          return "R_delocalized";
+      }
+      else if ((p_name.compareToIgnoreCase("R_aromatic")==0)) {
+          return "R_aromatic";
+      }
+      else if ((p_name.compareToIgnoreCase("R_nonaromatic")==0)) {
+          return "R_nonaromatic";
       }
       else {
       	throw new UnknownSymbolException("FGElement");
@@ -352,6 +390,45 @@ public class FGElement {
 
   public void setType(String p_type) {
       type = p_type;
+  }
+
+  public static void readFunctionalGroupElements() throws IOException {
+      try {
+          String fgElementsFile = System.getProperty("jing.chem.FGElement.fgElementsFile");
+          if (fgElementsFile == null) {
+              System.out.println("Undefined system property: jing.chem.FGElement.fgElementsFile!");
+              System.out.println("No functional group elements file defined!");
+              throw new IOException("Undefined system property: jing.chem.FGElement.fgElementsFile");
+          }
+          FileReader in = new FileReader(fgElementsFile);
+          BufferedReader data = new BufferedReader(in);
+          // step 1: read in structure
+          String line = ChemParser.readMeaningfulLine(data, true);
+          read: while (line != null) {
+              StringTokenizer token = new StringTokenizer(line);
+              String fgeName = token.nextToken();
+              String listOfElements = ChemParser.removeBrace(token.nextToken());
+              token = new StringTokenizer(listOfElements,",");
+              LinkedList listOfAtoms = new LinkedList();
+              while (token.hasMoreTokens()) {
+                  listOfAtoms.add(ChemElement.make(token.nextToken()));
+              }
+              fGElementDictionary.putFGElement(new FGElement(fgeName,listOfAtoms));
+              line = ChemParser.readMeaningfulLine(data, true);
+          }
+          in.close();
+          return;
+      }
+      catch (Exception e) {
+          throw new IOException(e.getMessage());
+      }
+  }
+
+  public static void initializeHardCodedFunctionalGroupElements() {
+      fGElementDictionary.putFGElement(new FGElement("R_aromatic"));
+      fGElementDictionary.putFGElement(new FGElement("R_nonaromatic"));
+      fGElementDictionary.putFGElement(new FGElement("R_delocalized"));
+      fGElementDictionary.putFGElement(new FGElement("R_nondelocalized"));
   }
 
 }

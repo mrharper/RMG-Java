@@ -117,11 +117,11 @@ public class FGAtom implements ChemNodeElement {
     }
     
     //## operation isAny() 
-    public boolean isAny() {
-        //#[ operation isAny() 
-        return (getFgElement().isAny());
-        //#]
-    }
+//    public boolean isAny() {
+//        //#[ operation isAny()
+//        return (getFgElement().isAny());
+//        //#]
+//    }
     
     //## operation isCarbon() 
     public boolean isCarbon() {

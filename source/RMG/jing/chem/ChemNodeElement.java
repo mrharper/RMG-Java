@@ -59,7 +59,7 @@ public interface ChemNodeElement {
     String getName();
     
     //## operation isAny() 
-    boolean isAny();
+//    boolean isAny();
     
     //## operation isCarbon() 
     boolean isCarbon();

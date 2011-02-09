@@ -174,6 +174,7 @@ public class RMG {
 	public static void setDatabasePaths(String database_path) {
 		// String database_path = workingDir + "/databases/" + name
 		System.setProperty("jing.chem.ChemGraph.forbiddenStructureFile",   database_path +"/ForbiddenStructures.txt");
+                System.setProperty("jing.chem.FGElement.fgElementsFile",           database_path +"/FGElements.txt");
 		System.setProperty("jing.chem.ThermoGAGroupLibrary.pathName",      database_path +"/thermo_groups");
 		System.setProperty("jing.chem.ThermoReferenceLibrary.pathName",    database_path +"/thermo_libraries");
 		System.setProperty("jing.chem.FrequencyDatabase.pathName",         database_path +"/frequencies_groups");
