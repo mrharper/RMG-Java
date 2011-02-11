@@ -11,10 +11,10 @@
  1  * R!H 0 
 
  R!Hx1 
- 1  * R!H 1 
+ 1  * R_min2valency 1 
 
  R!Hx2 
- 1  * R!H 2 
+ 1  * R_min3valency 2 
 
  C_R0			// L1 Node: Carbon, no radicals
  1  * C 0
@@ -31,14 +31,14 @@
 
  RsCH3x1
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
  3    H 0 {1,S}
  4    H 0 {1,S}
  5    H 0 {1,S}
 
  RsCH3x2
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
  3    H 0 {1,S}
  4    H 0 {1,S}
  5    H 0 {1,S}
@@ -89,36 +89,36 @@
 
  RsCH2sRx11
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    H 0 {1,S}
  5    H 0 {1,S}
 
  RsCH2sRx01
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    H 0 {1,S}
  5    H 0 {1,S}
 
  RsCH2sRx02
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
  5    H 0 {1,S}
 
  RsCH2sRx12
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 2 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
  5    H 0 {1,S}
 
  RsCH2sRx22
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
  5    H 0 {1,S}
 
@@ -134,13 +134,13 @@
  Aldehydex1
  1  * C 0 {2,D} {3,S},{4,S}
  2    O 0 {1,D}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    H 0 {1,S}
 
  Aldehydex2
  1  * C 0 {2,D} {3,S},{4,S}
  2    O 0 {1,D}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
 
  Ketene  // L2 Node: double-bonded to oxygen, double bonded to something else ###
@@ -154,12 +154,12 @@
  Ketenex1
  1  * C 0 {2,D} {3,D}
  2    O 0 {1,D}
- 3    R!H 1 {1,D}
+ 3    R_min3valency 1 {1,D}
 
  Ketenex2
  1  * C 0 {2,D} {3,D}
  2    O 0 {1,D}
- 3    R!H 2 {1,D}
+ 3    R_min4valency 2 {1,D}
 
  Cumulene   // L2 Node: double bonded to two carbons (cumulene) ### added by gmagoon
  Union {Cumulenex00, Cumulenex01, Cumulenex11, Cumulenex02, Cumulenex12, Cumulenex22}
@@ -212,19 +212,19 @@
  CdCHsRx01
  1  * C 0 {2,D} {3,S} {4,S}
  2    C 0 {1,D}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    H 0 {1,S}
 
  CdCHsRx11
  1  * C 0 {2,D} {3,S} {4,S}
  2    C 1 {1,D}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    H 0 {1,S}
 
  CdCHsRx02
  1  * C 0 {2,D} {3,S} {4,S}
  2    C 0 {1,D}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
 
  CdCHsRx20
@@ -236,19 +236,19 @@
  CdCHsRx12
  1  * C 0 {2,D} {3,S} {4,S}
  2    C 1 {1,D}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
 
  CdCHsRx21
  1  * C 0 {2,D} {3,S} {4,S}
  2    C 2 {1,D}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    H 0 {1,S}
 
  CdCHsRx22
  1  * C 0 {2,D} {3,S} {4,S}
  2    C 2 {1,D}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
 
  CtCsR  // L2 Node: triple-bonded to carbon, single bonded to something else ###
@@ -262,7 +262,7 @@
  CtCsRx01
  1  * C 0 {2,T} {3,S}
  2    C 0 {1,T}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
 
  CtCsRx10
  1  * C 0 {2,T} {3,S}
@@ -272,17 +272,17 @@
  CtCsRx11
  1  * C 0 {2,T} {3,S}
  2    C 1 {1,T}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
 
  CtCsRx02
  1  * C 0 {2,T} {3,S}
  2    C 0 {1,T}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  CtCsRx12
  1  * C 0 {2,T} {3,S}
  2    C 1 {1,T}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  RsCHsR2   // L2 Node: single-bonded to exactly three heavy atoms and hydrogen ###
  Union {RsCHsR2x000,RsCHsR2x111,RsCHsR2x222,RsCHsR2x001,RsCHsR2x002,RsCHsR2x110,RsCHsR2x112,RsCHsR2x220,RsCHsR2x221,RsCHsR2x012}
@@ -296,65 +296,65 @@
 
  RsCHsR2x111
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
  5    H 0 {1,S}
 
  RsCHsR2x222
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min3valency 2 {1,S}
  5    H 0 {1,S}
 
  RsCHsR2x001
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
- 4    R!H 1 {1,S}
+ 4    R_min2valency 1 {1,S}
  5    H 0 {1,S}
 
  RsCHsR2x002
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
- 4    R!H 2 {1,S}
+ 4    R_min3valency 2 {1,S}
  5    H 0 {1,S}
 
  RsCHsR2x110
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    R!H 0 {1,S}
  5    H 0 {1,S}
 
  RsCHsR2x112
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
  5    H 0 {1,S}
 
  RsCHsR2x220
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    R!H 0 {1,S}
  5    H 0 {1,S}
 
  RsCHsR2x221
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
- 4    R!H 1 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min2valency 1 {1,S}
  5    H 0 {1,S}
 
  RsCHsR2x012
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
  5    H 0 {1,S}
 
  RdCsR2   // L2 Node: single-bonded to exactly two heavy atoms and double bonded to another ### added by gmagoon
@@ -370,103 +370,103 @@
  1  * C 0 {2,D} {3,S},{4,S}
  2    R!H 0 {1,D}
  3    R!H 0 {1,S}
- 4    R!H 1 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RdCsR2x011
  1  * C 0 {2,D} {3,S},{4,S}
  2    R!H 0 {1,D}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RdCsR2x002
  1  * C 0 {2,D} {3,S},{4,S}
  2    R!H 0 {1,D}
  3    R!H 0 {1,S}
- 4    R!H 2 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RdCsR2x012
  1  * C 0 {2,D} {3,S},{4,S}
  2    R!H 0 {1,D}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RdCsR2x022
  1  * C 0 {2,D} {3,S},{4,S}
  2    R!H 0 {1,D}
- 3    R!H 2 {1,S}
- 4    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RdCsR2x100
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 1 {1,D}
+ 2    R_min3valency 1 {1,D}
  3    R!H 0 {1,S}
  4    R!H 0 {1,S}
 
  RdCsR2x101
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 1 {1,D}
+ 2    R_min3valency 1 {1,D}
  3    R!H 0 {1,S}
- 4    R!H 1 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RdCsR2x111
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 1 {1,D}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
+ 2    R_min3valency 1 {1,D}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RdCsR2x102
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 1 {1,D}
+ 2    R_min3valency 1 {1,D}
  3    R!H 0 {1,S}
- 4    R!H 2 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RdCsR2x112
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 1 {1,D}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min3valency 1 {1,D}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RdCsR2x122
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 1 {1,D}
- 3    R!H 2 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min3valency 1 {1,D}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RdCsR2x200
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 2 {1,D}
+ 2    R_min4valency 2 {1,D}
  3    R!H 0 {1,S}
  4    R!H 0 {1,S}
 
  RdCsR2x201
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 2 {1,D}
+ 2    R_min4valency 2 {1,D}
  3    R!H 0 {1,S}
- 4    R!H 1 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RdCsR2x211
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 2 {1,D}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
+ 2    R_min4valency 2 {1,D}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RdCsR2x202
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 2 {1,D}
+ 2    R_min4valency 2 {1,D}
  3    R!H 0 {1,S}
- 4    R!H 2 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RdCsR2x212
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 2 {1,D}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min4valency 2 {1,D}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RdCsR2x222
  1  * C 0 {2,D} {3,S},{4,S}
- 2    R!H 2 {1,D}
- 3    R!H 2 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min4valency 2 {1,D}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  Ketone   // L3 Node: single-bonded to two carbons and double bonded to oxygen ### added by gmagoon; *this should be tested with RdCsR2 to make sure that deepest matching node is used
  Union {Ketonex00,Ketonex01,Ketonex11,Ketonex02,Ketonex12,Ketonex22}
@@ -519,101 +519,101 @@
 
  RsCsR3x1111
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
- 5    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
+ 5    R_min2valency 1 {1,S}
 
  RsCsR3x2222
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
- 4    R!H 2 {1,S}
- 5    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min3valency 2 {1,S}
+ 5    R_min3valency 2 {1,S}
 
  RsCsR3x0001
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
  4    R!H 0 {1,S}
- 5    R!H 1 {1,S}
+ 5    R_min2valency 1 {1,S}
 
  RsCsR3x0002
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
  4    R!H 0 {1,S}
- 5    R!H 2 {1,S}
+ 5    R_min3valency 2 {1,S}
 
  RsCsR3x1110
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
  5    R!H 0 {1,S}
 
  RsCsR3x1112
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
- 5    R!H 2 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
+ 5    R_min3valency 2 {1,S}
 
  RsCsR3x2220
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min3valency 2 {1,S}
  5    R!H 0 {1,S}
 
  RsCsR3x2221
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
- 4    R!H 2 {1,S}
- 5    R!H 1 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min3valency 2 {1,S}
+ 5    R_min2valency 1 {1,S}
 
  RsCsR3x0011
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
- 4    R!H 1 {1,S}
- 5    R!H 1 {1,S}
+ 4    R_min2valency 1 {1,S}
+ 5    R_min2valency 1 {1,S}
 
  RsCsR3x0022
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
- 4    R!H 2 {1,S}
- 5    R!H 2 {1,S}
+ 4    R_min3valency 2 {1,S}
+ 5    R_min3valency 2 {1,S}
 
  RsCsR3x1122
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
- 5    R!H 2 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
+ 5    R_min3valency 2 {1,S}
 
  RsCsR3x0012
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
- 4    R!H 1 {1,S}
- 5    R!H 2 {1,S}
+ 4    R_min2valency 1 {1,S}
+ 5    R_min3valency 2 {1,S}
 
  RsCsR3x0112
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
- 5    R!H 2 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
+ 5    R_min3valency 2 {1,S}
 
  RsCsR3x0122
  1  * C 0 {2,S} {3,S},{4,S},{5,S}
  2    R!H 0 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
- 5    R!H 2 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
+ 5    R_min3valency 2 {1,S}
 
  C_R1			// L1 Node: carbon, one radical
  1  * C 1 
@@ -629,13 +629,13 @@
 
  RsCH2rx1 
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
  3    H 0 {1,S}
  4    H 0 {1,S}
 
  RsCH2rx2 
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
  3    H 0 {1,S}
  4    H 0 {1,S}
 
@@ -649,12 +649,12 @@
 
  RdCHrx1
  1  * C 1 {2,D} {3,S}
- 2    R!H 1 {1,D}
+ 2    R_min3valency 1 {1,D}
  3    H 0 {1,S}
 
  RdCHrx2
  1  * C 1 {2,D} {3,S}
- 2    R!H 2 {1,D}
+ 2    R_min4valency 2 {1,D}
  3    H 0 {1,S}
 
  CtCr //L2 Node: triple-bonded to one heavy atom (carbon) ***
@@ -680,31 +680,31 @@
  RsCHrsRx01
  1  * C 1 {2,S} {3,S},{4,S}
  2    R!H 0 {1,S}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    H 0 {1,S}
 
  RsCHrsRx11
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    H 0 {1,S}
 
  RsCHrsRx02
  1  * C 1 {2,S} {3,S},{4,S}
  2    R!H 0 {1,S}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
 
  RsCHrsRx12
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 1 {1,S}
- 3    R!H 2 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
 
  RsCHrsRx22
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    H 0 {1,S}
 
  OdCrsR   // L2 Node: double-bonded to oxygen, single bonded to something else ###
@@ -718,12 +718,12 @@
  OdCrsRx1
  1  * C 1 {2,D} {3,S}
  2    O 0 {1,D}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
 
  OdCrsRx2
  1  * C 1 {2,D} {3,S}
  2    O 0 {1,D}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  CdCrsR  // L2 Node: double-bonded to carbon, single bonded to something else ###
  Union {CdCrsRx00,CdCrsRx01,CdCrsRx10,CdCrsRx11,CdCrsRx02,CdCrsRx20,CdCrsRx12,CdCrsRx21,CdCrsRx22}
@@ -736,7 +736,7 @@
  CdCrsRx01
  1  * C 1 {2,D} {3,S}
  2    C 0 {1,D}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
 
  CdCrsRx10
  1  * C 1 {2,D} {3,S}
@@ -746,12 +746,12 @@
  CdCrsRx11
  1  * C 1 {2,D} {3,S}
  2    C 1 {1,D}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
 
  CdCrsRx02
  1  * C 1 {2,D} {3,S}
  2    C 0 {1,D}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  CdCrsRx20
  1  * C 1 {2,D} {3,S}
@@ -761,17 +761,17 @@
  CdCrsRx12
  1  * C 1 {2,D} {3,S}
  2    C 1 {1,D}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  CdCrsRx21
  1  * C 1 {2,D} {3,S}
  2    C 2 {1,D}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
 
  CdCrsRx22
  1  * C 1 {2,D} {3,S}
  2    C 2 {1,D}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  RsCrsR2   // L2 Node: single-bonded to exactly three heavy atoms ###
  Union{RsCrsR2x000,RsCrsR2x111,RsCrsR2x222,RsCrsR2x001,RsCrsR2x002,RsCrsR2x110,RsCrsR2x112,RsCrsR2x220,RsCrsR2x221,RsCrsR2x012}
@@ -784,57 +784,57 @@
 
  RsCrsR2x111
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RsCrsR2x222
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RsCrsR2x001
  1  * C 1 {2,S} {3,S},{4,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
- 4    R!H 1 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RsCrsR2x002
  1  * C 1 {2,S} {3,S},{4,S}
  2    R!H 0 {1,S}
  3    R!H 0 {1,S}
- 4    R!H 2 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RsCrsR2x110
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
  4    R!H 0 {1,S}
 
  RsCrsR2x112
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  RsCrsR2x220
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
  4    R!H 0 {1,S}
 
  RsCrsR2x221
  1  * C 1 {2,S} {3,S},{4,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
- 4    R!H 1 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
+ 4    R_min2valency 1 {1,S}
 
  RsCrsR2x012
  1  * C 1 {2,S} {3,S},{4,S}
  2    R!H 0 {1,S}
- 3    R!H 1 {1,S}
- 4    R!H 2 {1,S}
+ 3    R_min2valency 1 {1,S}
+ 4    R_min3valency 2 {1,S}
 
  C_R2			// L1 Node: carbon, double radical
  1  * C 2 
@@ -849,12 +849,12 @@
 
  RsCHrrx1
  1  * C 2 {2,S} {3,S}
- 2    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
  3    H 0 {1,S}
 
  RsCHrrx2
  1  * C 2 {2,S} {3,S}
- 2    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
  3    H 0 {1,S}
 
  RdCrr //L2 Node: double-bonded to one heavy atom (vinylic) ***
@@ -866,11 +866,11 @@
 
  RdCrrx1
  1  * C 2 {2,D}
- 2    R!H 1 {1,D}
+ 2    R_min3valency 1 {1,D}
 
  RdCrrx2
  1  * C 2 {2,D}
- 2    R!H 2 {1,D}
+ 2    R_min4valency 2 {1,D}
 
  RsCrrsR   // L2 Node: single-bonded to exactly two heavy atoms ***
  Union {RsCrrsRx00,RsCrrsRx01,RsCrrsRx11,RsCrrsRx02,RsCrrsRx12,RsCrrsRx22}
@@ -883,27 +883,27 @@
  RsCrrsRx01
  1  * C 2 {2,S} {3,S}
  2    R!H 0 {1,S}
- 3    R!H 1 {1,S}
+ 3    R_min2valency 1 {1,S}
 
  RsCrrsRx11
  1  * C 2 {2,S} {3,S}
- 2    R!H 1 {1,S}
- 3    R!H 1 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min2valency 1 {1,S}
 
  RsCrrsRx02
  1  * C 2 {2,S} {3,S}
  2    R!H 0 {1,S}
- 3    R!H 2 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  RsCrrsRx12
  1  * C 2 {2,S} {3,S}
- 2    R!H 1 {1,S}
- 3    R!H 2 {1,S}
+ 2    R_min2valency 1 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  RsCrrsRx22
  1  * C 2 {2,S} {3,S}
- 2    R!H 2 {1,S}
- 3    R!H 2 {1,S}
+ 2    R_min3valency 2 {1,S}
+ 3    R_min3valency 2 {1,S}
 
  O_R0			// L1 Node:oxygen, no radicals
  1  * O 0
