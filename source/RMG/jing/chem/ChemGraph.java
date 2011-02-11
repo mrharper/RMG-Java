@@ -334,123 +334,160 @@ public class ChemGraph implements Matchable {
 
         Atom atom = (Atom)p_node.getElement();
         Iterator neighbor_iter = p_node.getNeighbor();
+        Arc[] listOfArcs = new Arc[neighborNumber];
+        boolean allSingleBonds = true;
+        for (int i=0; i<neighborNumber; i++) {
+            listOfArcs[i] = (Arc)neighbor_iter.next();
+            String bondType = ((Bond)(listOfArcs[i].getElement())).name;
+            if (!bondType.equals("S"))  allSingleBonds = false;
+        }
         FGElement fge = (FGElement)p_node.getFgElement();
 
         if (!atom.isRadical()) {
-        // satuated atom symmetric number calculation
-        	if (fge.equals(FGElement.make("Cs")) || fge.equals(FGElement.make("Sis"))) {
-        	// Cs:
-               	Arc a1 = (Arc)neighbor_iter.next();
-               	Arc a2 = (Arc)neighbor_iter.next();
-               	Arc a3 = (Arc)neighbor_iter.next();
-               	Arc a4 = (Arc)neighbor_iter.next();
-               	if (p_node.isSymmetric(a1,a2)) {
-               		if (p_node.isSymmetric(a1,a3)) {
-          				if (p_node.isSymmetric(a1,a4)) {
-        				// AAAA
-        					sn *= 12;
-               			}
-               			else {
-               			// AAAB
-         					sn *= 3;
-               			}
-               		}
-               		else {
-          				if (p_node.isSymmetric(a1,a4)) {
-        				// AAAB
-               				sn *= 3;
-               			}
-               			else if (p_node.isSymmetric(a3,a4)) {
-               			// AABB
-               				sn *= 2;
-               			}
-               			else {
-        				// AABC
-               			}
-               		}
-               	}
-               	else {
-               		if (p_node.isSymmetric(a1,a3)) {
-               			if (p_node.isSymmetric(a1,a4)) {
-               			// AAAB
-               				sn *= 3;
-               			}
-               			else if (p_node.isSymmetric(a2,a4)) {
-               			// AABB
-               				sn *= 2;
-               			}
-               			else {
-               			// AABC
-               			}
-               		}
-               		else if (p_node.isSymmetric(a2,a3)) {
-               			if (p_node.isSymmetric(a1,a4)) {
-               			// AABB
-               				sn *= 2;
-               			}
-               			else if (p_node.isSymmetric(a2,a4)) {
-               			// AAAB
-               				sn *= 3;
-               			}
-               			else {
-               			// AABC
-               			}
-               		}
-               		else {
-               			// AABC or ABCD
-               		}
-               	}
-        	}
-        	else if (fge.equals(FGElement.make("Os")) || fge.equals(FGElement.make("Ss"))) {
-        	// Os:
-               	Arc a1 = (Arc)neighbor_iter.next();
-               	Arc a2 = (Arc)neighbor_iter.next();
-               	if (p_node.isSymmetric(a1,a2)) {
-               		sn *= 2;
-               	}
-        	}
-        	else if (fge.equals(FGElement.make("Cdd")) || fge.equals(FGElement.make("Sidd"))) {
-        	// Cdd:
-               	Arc a1 = (Arc)neighbor_iter.next();
-               	Arc a2 = (Arc)neighbor_iter.next();
-               	if (p_node.isSymmetric(a1,a2)) {
-               		sn *= 2;
+            // If there are two connections
+            if (neighborNumber == 2) {
+                if (p_node.isSymmetric(listOfArcs[0], listOfArcs[1])) sn *= 2;
+            }
+            // If there are three connections
+            else if (neighborNumber == 3) {
+                boolean[] check = new boolean[3];
+                check[0] = p_node.isSymmetric(listOfArcs[0], listOfArcs[1]);
+                check[1] = p_node.isSymmetric(listOfArcs[0], listOfArcs[2]);
+                check[2] = p_node.isSymmetric(listOfArcs[1], listOfArcs[2]);
+                int howManyTrues = 0;
+                for (int i=0; i<check.length; i++) {
+                    if (check[i]) ++howManyTrues;
                 }
-          	}
+                /*
+                 * Possibilities:
+                 * SSS  - all different             (symm = 1)
+                 *      - one different             (symm = 1)
+                 *      - all same                  (symm = 3)
+                 * SSD  - single bonds same         (symm = 2)
+                 *      - single bonds different    (symm = 1)
+                 * SST  - same as SSD
+                 * SDD  - double bonds same         (symm = 2)
+                 *      - double bonds different    (symm = 1)
+                 * SDT  -                           (symm = 1)
+                 * DDD  - all different             (symm = 1)
+                 *      - one different             (symm = 2)
+                 *      - all same                  (symm = 6)
+                 */
+                if (allSingleBonds) {
+                    if (howManyTrues == 3) sn *= 3;
+                }
+                else {
+                    if (howManyTrues == 3) sn *= 6;
+                    else if (howManyTrues == 1) sn *= 2;
+                }
+            }
+            // If there are four connections
+            else if (neighborNumber == 4) {
+                boolean[] check = new boolean[6];
+                check[0] = p_node.isSymmetric(listOfArcs[0], listOfArcs[1]);
+                check[1] = p_node.isSymmetric(listOfArcs[0], listOfArcs[2]);
+                check[2] = p_node.isSymmetric(listOfArcs[0], listOfArcs[3]);
+                check[3] = p_node.isSymmetric(listOfArcs[1], listOfArcs[2]);
+                check[4] = p_node.isSymmetric(listOfArcs[2], listOfArcs[3]);
+                check[5] = p_node.isSymmetric(listOfArcs[2], listOfArcs[3]);
+                int howManyTrues = 0;
+                for (int i=0; i<check.length; i++) {
+                    if (check[i]) ++howManyTrues;
+                }
+                /*
+                 * Possibilities:
+                 * SSSS - AAAA                                  (symm = 12)
+                 *      - AAAB                                  (symm = 3)
+                 *      - AABB                                  (symm = 2)
+                 *      - AABC                                  (symm = 1)
+                 *      - ABCD                                  (symm = 1)
+                 * SSSD - all single bonds same                 (symm = 3)
+                 *      - one single bond different             (symm = 1)
+                 *      - all single bonds different            (symm = 1)
+                 * SSST - same as SSSD
+                 * SSDD - S bonds same, D bonds same            (symm = 2)
+                 *      - S bonds same, D bonds different       (symm = 1)
+                 *      - S bonds different, D bonds same       (symm = 1)
+                 *      - S bonds different, D bonds different  (symm = 1)
+                 */
+                if (howManyTrues == 6) sn *= 12;
+                else if (howManyTrues == 3) sn *= 3;
+                else if (howManyTrues == 2) sn *= 2;
+                else {
+                    System.err.println("RMG did not recognize the symmetry of "
+                            + "the following node: " + p_node.toString());
+                }
+            }
+            else if (neighborNumber == 5) {
+                
+            }
+            else if (neighborNumber == 6) {
+                boolean[] check = new boolean[15];
+                check[0] = p_node.isSymmetric(listOfArcs[0], listOfArcs[1]);
+                check[1] = p_node.isSymmetric(listOfArcs[0], listOfArcs[2]);
+                check[2] = p_node.isSymmetric(listOfArcs[0], listOfArcs[3]);
+                check[3] = p_node.isSymmetric(listOfArcs[0], listOfArcs[4]);
+                check[4] = p_node.isSymmetric(listOfArcs[0], listOfArcs[5]);
+                check[5] = p_node.isSymmetric(listOfArcs[1], listOfArcs[2]);
+                check[6] = p_node.isSymmetric(listOfArcs[1], listOfArcs[3]);
+                check[7] = p_node.isSymmetric(listOfArcs[1], listOfArcs[4]);
+                check[8] = p_node.isSymmetric(listOfArcs[1], listOfArcs[5]);
+                check[9] = p_node.isSymmetric(listOfArcs[2], listOfArcs[3]);
+                check[10] = p_node.isSymmetric(listOfArcs[2], listOfArcs[4]);
+                check[11] = p_node.isSymmetric(listOfArcs[2], listOfArcs[5]);
+                check[12] = p_node.isSymmetric(listOfArcs[3], listOfArcs[4]);
+                check[13] = p_node.isSymmetric(listOfArcs[3], listOfArcs[5]);
+                check[14] = p_node.isSymmetric(listOfArcs[4], listOfArcs[5]);
+                int howManyTrues = 0;
+                for (int i=0; i<check.length; i++) {
+                    if (check[i]) ++howManyTrues;
+                }
+                /*
+                 * Possibilities:
+                 *  AAAAAA  (symm = 8)
+                 *  AAAAAB  (symm = 4 or 2, depending on where B sits ... MRH will assume 4)
+                 *  AAAABB  (symm = 8, 4, 2, or 1, depending on where B's sit ... MRH will assume 8)
+                 *  AAAABC  (symm = 4 or 1, depending on where B and C sit ... MRH will assume 4)
+                 *  plus many more!!!
+                 */
+            }
         }
+        // We have a radical
         else {
-        // radical symmetric number calculation
-        	if (fge.equals(FGElement.make("Cs")) || fge.equals(FGElement.make("Sis"))) {
-        	// only consider Cs. and Cs..
-        		FreeElectron fe = atom.getFreeElectron();
-            	if (fe.getOrder() == 1) {
-        		// mono-radical Cs.
-                	Arc a1 = (Arc)neighbor_iter.next();
-                	Arc a2 = (Arc)neighbor_iter.next();
-                	Arc a3 = (Arc)neighbor_iter.next();
-                	if (p_node.isSymmetric(a1,a2)) {
-                		if (p_node.isSymmetric(a1,a3))
-                			sn *= 6;
-                		else
-                			sn *= 2;
-                	}
-                	else {
-                		if (p_node.isSymmetric(a1,a3) || p_node.isSymmetric(a2,a3))
-                			sn *= 2;
-                	}
-        		}
-        		else if (fe.getOrder() == 2) {
-        		// bi-radical Cs..
-                	Arc a1 = (Arc)neighbor_iter.next();
-                	Arc a2 = (Arc)neighbor_iter.next();
-                	if (p_node.isSymmetric(a1,a2))
-                		sn *= 2;
-        		}
-        	}
-        }
+            if (neighborNumber == 2) {
+                if (p_node.isSymmetric(listOfArcs[0], listOfArcs[1])) sn *= 2;
+            }
+            else if (neighborNumber == 3) {
+                boolean[] check = new boolean[3];
+                check[0] = p_node.isSymmetric(listOfArcs[0], listOfArcs[1]);
+                check[1] = p_node.isSymmetric(listOfArcs[0], listOfArcs[2]);
+                check[2] = p_node.isSymmetric(listOfArcs[1], listOfArcs[2]);
+                int howManyTrues = 0;
+                for (int i=0; i<check.length; i++) {
+                    if (check[i]) ++howManyTrues;
+                }
+                /*
+                 * Possibilities:
+                 * SSS  - all different             (symm = 1)
+                 *      - one different             (symm = 2)
+                 *      - all same                  (symm = 6)
+                 * SSD  - single bonds same         (symm = 2)
+                 *      - single bonds different    (symm = 1)
+                 * SST  - same as SSD
+                 * SDD  - double bonds same         (symm = 2)
+                 *      - double bonds different    (symm = 1)
+                 */
+                if (howManyTrues == 1) sn *= 2;
+                if (howManyTrues == 3) sn *= 6;
+            }
+            else if (neighborNumber == 4) {
 
+            }
+            else if (neighborNumber == 5) {
+
+            }
+        }
         return sn;
-        //#]
     }
 
     //takes the fragments and corresponding rotor nodes for each side of the rotor
