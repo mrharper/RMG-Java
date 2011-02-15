@@ -41,7 +41,10 @@ C_pri/NonDeC
 2 *3 H 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 Cs 0 {1,S}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 R 0 {5,S}
+7 R 0 {5,S}
+8 R 0 {5,S}
 
 C_pri/NonDeO
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
@@ -55,7 +58,7 @@ C_pri/De
 2 *3 H 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {1,S}
+5 R_delocalized 0 {1,S}
 
 C_sec
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
@@ -68,22 +71,31 @@ C/H2/NonDeC
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
 3    H 0 {1,S}
-4   Cs 0 {1,S}
-5   Cs 0 {1,S}
+4   C 0 {1,S} {6,S} {7,S} {8,S}
+5   C 0 {1,S} {9,S} {10,S} {11,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
+8 R 0 {4,S}
+9 R 0 {5,S}
+10 R 0 {5,S}
+11 R 0 {5,S}
 
 C/H2/NonDeO
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
 3 H 0 {1,S}
 4 O 0 {1,S}
-5 {Cs,O} 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H2/CsO
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
 3 H 0 {1,S}
 4 O 0 {1,S}
-5 Cs 0 {1,S}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 R 0 {5,S}
+7 R 0 {5,S}
+8 R 0 {5,S}
 
 C/H2/O2
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
@@ -96,29 +108,32 @@ C/H2/OneDe
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
 3 H 0 {1,S}
-4 {Cd,Ct,CO,Cb} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+4 R_delocalized 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H2/OneDeC
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
 3 H 0 {1,S}
-4 {Cd,Ct,CO,Cb} 0 {1,S}
-5 Cs 0 {1,S}
+4 R_delocalized 0 {1,S}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 R 0 {5,S}
+7 R 0 {5,S}
+8 R 0 {5,S}
 
 C/H2/OneDeO
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
 3 H 0 {1,S}
-4 {Cd,Ct,CO,Cb} 0 {1,S}
+4 R_delocalized 0 {1,S}
 5 O 0 {1,S}
 
 C/H2/TwoDe
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
 3 H 0 {1,S}
-4 {Cd,Ct,CO,Cb} 0 {1,S}
-5 {Cd,Ct,CO,Cb} 0 {1,S}
+4 R_delocalized 0 {1,S}
+5 R_delocalized 0 {1,S}
 
 C_ter
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
@@ -130,72 +145,90 @@ C_ter
 C/H/NonDeC
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H/Cs3
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 Cs 0 {1,S}
-4 Cs 0 {1,S}
-5 Cs 0 {1,S}
+3 C 0 {1,S} {6,S} {7,S} {8,S}
+4 C 0 {1,S} {9,S} {10,S} {11,S}
+5 C 0 {1,S} {12,S} {13,S} {14,S}
+6 R 0 {3,S}
+7 R 0 {3,S}
+8 R 0 {3,S}
+9 R 0 {4,S}
+10 R 0 {4,S}
+11 R 0 {4,S}
+12 R 0 {5,S}
+13 R 0 {5,S}
+14 R 0 {5,S}
 
 C/H/NDMustO
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
 3 O 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H/OneDe
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H/Cs2
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 Cs 0 {1,S}
-5 Cs 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 C 0 {1,S} {6,S} {7,S} {8,S}
+5 C 0 {1,S} {9,S} {10,S} {11,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
+8 R 0 {4,S}
+9 R 0 {5,S}
+10 R 0 {5,S}
+11 R 0 {5,S}
 
 C/H/ODMustO
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_delocalized 0 {1,S}
 4 O 0 {1,S}
-5 {Cs,O} 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H/TwoDe
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_delocalized 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H/Cs
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 Cs 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_delocalized 0 {1,S}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 R 0 {5,S}
+7 R 0 {5,S}
+8 R 0 {5,S}
 
 C/H/TDMustO
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_delocalized 0 {1,S}
 5 O 0 {1,S}
 
 C/H/ThreeDe
 1 *2 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *3 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_delocalized 0 {1,S}
+5 R_delocalized 0 {1,S}
 
 Cd_H
 1 *2 C 0 {2,D}, {3,S}, {4,S}
@@ -231,31 +264,34 @@ Cd/H/OneDe
 1 *2 C 0 {2,D}, {3,S}, {4,S}
 2 C 0 {1,D}
 3 *3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+4 R_delocalized 0 {1,S}
 
 Cb_H
-1 *2 Cb 0 {2,B}, {3,B}, {4,S}
-2 {Cb,Cbf} 0 {1,B}
-3 {Cb,Cbf} 0 {1,B}
+1 *2 C 0 {2,D} {3,S} {4,S}
+2 R_aromatic 0 {1,D}
+3 R_aromatic 0 {1,S}
 4 *3 H 0 {1,S} 
 
 R_R'
-1 *2 {Cs,Sis} 0 {2,S}, {3,S}, {4,S}, {5,S}
+1 *2 {Cs,Sis} 0 {2,S} {3,S} {4,S} {5,S}
 2 *3 {Cs,Cd,Cb,Sis,Sid} 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
 
 Cs_Cs
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cs 0 {1,S}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,S} {8,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
+6 R 0 {2,S}
+7 R 0 {2,S}
+8 R 0 {2,S}
 
 C_methyl_C_methyl
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cs 0 {1,S}, {6,S}, {7,S}, {8,S}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,S} {8,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
@@ -264,8 +300,8 @@ C_methyl_C_methyl
 8 H 0 {2,S}
 
 C_methyl_C_pri
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cs 0 {1,S}, {6,S}, {7,S}, {8,S}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,S} {8,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
@@ -274,8 +310,8 @@ C_methyl_C_pri
 8 C 0 {2,S}
 
 C_methyl_C_sec
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cs 0 {1,S}, {6,S}, {7,S}, {8,S}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,S} {8,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
@@ -284,8 +320,8 @@ C_methyl_C_sec
 8 C 0 {2,S}
 
 C_methyl_C_ter
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cs 0 {1,S}, {6,S}, {7,S}, {8,S}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,S} {8,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
@@ -294,15 +330,17 @@ C_methyl_C_ter
 8 C 0 {2,S}
 
 Cs_Cd
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cd 0 {1,S}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,D}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
+6 R_nonaromatic 0 {2,S}
+7 R_nonaromatic 0 {2,D}
 
 C_methyl_Cd_pri
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cd 0 {1,S}, {6,S}, {7,D}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,D}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
@@ -310,8 +348,8 @@ C_methyl_Cd_pri
 7 C 0 {2,D}
 
 C_methyl_Cd_sec
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cd 0 {1,S}, {6,S}, {7,D}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,D}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
@@ -319,11 +357,13 @@ C_methyl_Cd_sec
 7 C 0 {2,D}
 
 Cs_Cb
-1 *2 Cs 0 {2,S}, {3,S}, {4,S}, {5,S}
-2 *3 Cb 0 {1,S}
+1 *2 C 0 {2,S} {3,S} {4,S} {5,S}
+2 *3 C 0 {1,S} {6,S} {7,D}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
+6 R_aromatic 0 {2,S}
+7 R_aromatic 0 {2,D}
 
 RO_H
 1 *2 O 0 {2,S}, {3,S}
@@ -333,7 +373,10 @@ RO_H
 CsO_H
 1 *2 O 0 {2,S}, {3,S}
 2 *3 H 0 {1,S}
-3   Cs 0 {1,S}
+3   C 0 {1,S} {4,S} {5,S} {6,S}
+4 R 0 {3,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
 
 
 
