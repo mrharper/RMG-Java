@@ -30,19 +30,25 @@ C_rad/H2/Cs
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 Cs 0 {1,S}
+4 C 0 {1,S} {5,S} {6,S} {7,S}
+5 R 0 {4,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
 
 C_rad/H2/Cd
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 Cd 0 {1,S}
+4 C 0 {1,S} {5,S} {6,D}
+5 R 0 {4,S}
+6 R_min2valency 0 {4,D}
 
 C_rad/H2/Ct
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 Ct 0 {1,S}
+4 C 0 {1,S} {5,T}
+5 R_min3valency 0 {4,T}
 
 C_rad/H2/Cb
 1 * C 1 {2,S}, {3,S}, {4,S}
@@ -54,7 +60,9 @@ C_rad/H2/CO
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 CO 0 {1,S}
+4 C 0 {1,S} {5,S} {6,D}
+5 R 0 {4,S}
+6 O 0 {4,D}
 
 C_rad/H2/O
 1 * C 1 {2,S}, {3,S}, {4,S}
@@ -71,20 +79,29 @@ C_sec_rad
 C_rad/H/NonDeC
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 Cs 0 {1,S}
-4 Cs 0 {1,S}
+3 C 0 {1,S} {5,S} {6,S} {7,S}
+4 C 0 {1,S} {8,S} {9,S} {10,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
+7 R 0 {3,S}
+8 R 0 {4,S}
+9 R 0 {4,S}
+10 R 0 {4,S}
 
 C_rad/H/NonDeO
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 O 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/H/CsO
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 Cs 0 {1,S}
+3 C 0 {1,S} {5,S} {6,S} {7,S}
 4 O 0 {1,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
+7 R 0 {3,S}
 
 C_rad/H/O2
 1 * C 1 {2,S}, {3,S}, {4,S}
@@ -95,26 +112,29 @@ C_rad/H/O2
 C_rad/H/OneDe
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/H/OneDeC
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 Cs 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 C 0 {1,S} {5,S} {6,S} {7,S}
+5 R 0 {4,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
 
 C_rad/H/OneDeO
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_delocalized 0 {1,S}
 4 O 0 {1,S}
 
 C_rad/H/TwoDe
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_delocalized 0 {1,S}
 
 C_ter_rad
 1 * C 1 {2,S}, {3,S}, {4,S}
@@ -124,63 +144,81 @@ C_ter_rad
 
 C_rad/NonDeC
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 {Cs,O} 0 {1,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+2 R_nondelocalized 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/Cs3
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 Cs 0 {1,S}
-3 Cs 0 {1,S}
-4 Cs 0 {1,S}
+2 C 0 {1,S} {5,S} {6,S} {7,S}
+3 C 0 {1,S} {8,S} {9,S} {10,S}
+4 C 0 {1,S} {11,S} {12,S} {13,S}
+5 R 0 {2,S}
+6 R 0 {2,S}
+7 R 0 {2,S}
+8 R 0 {3,S}
+9 R 0 {3,S}
+10 R 0 {3,S}
+11 R 0 {4,S}
+12 R 0 {4,S}
+13 R 0 {4,S}
 
 C_rad/NDMustO
 1 * C 1 {2,S}, {3,S}, {4,S}
 2 O 0 {1,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/OneDe
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+2 R_delocalized 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/Cs2
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 Cs 0 {1,S}
-4 Cs 0 {1,S}
+2 R_delocalized 0 {1,S}
+3 C 0 {1,S} {5,S} {6,S} {7,S}
+4 C 0 {1,S} {8,S} {9,S} {10,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
+7 R 0 {3,S}
+8 R 0 {4,S}
+9 R 0 {4,S}
+10 R 0 {4,S}
 
 C_rad/ODMustO
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_delocalized 0 {1,S}
 3 O 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/TwoDe
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+2 R_delocalized 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/Cs
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 Cs 0 {1,S}
+2 R_delocalized 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 C 0 {1,S} {5,S} {6,S} {7,S}
+5 R 0 {4,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
 
 C_rad/TDMustO
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_delocalized 0 {1,S}
+3 R_delocalized 0 {1,S}
 4 O 0 {1,S}
 
 C_rad/ThreeDe
 1 * C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_delocalized 0 {1,S}
+3 R_delocalized 0 {1,S}
+4 R_delocalized 0 {1,S}
 
 Cd_rad
 1 * C 1 {2,D}, {3,S}
@@ -200,12 +238,12 @@ Cd_sec_rad
 Cd_rad/NonDe
 1 * C 1 {2,D}, {3,S}
 2 C 0 {1,D}
-3 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
 
 Cd_rad/OneDe
 1 * C 1 {2,D}, {3,S}
 2 C 0 {1,D}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_delocalized 0 {1,S}
 
 Ct_rad
 1 * C 1 {2,T}
@@ -234,12 +272,12 @@ CO_sec_rad
 CO_rad/NonDe
 1 * C 1 {2,D}, {3,S}
 2 O 0 {1,D}
-3 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
 
 CO_rad/OneDe
 1 * C 1 {2,D}, {3,S}
 2 O 0 {1,D}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_delocalized 0 {1,S}
 
 O_rad
 1 * O 1 {2,S}
@@ -255,11 +293,11 @@ O_sec_rad
 
 O_rad/NonDe
 1 * O 1 {2,S}
-2 {Cs,O} 0 {1,S}
+2 R_nondelocalized 0 {1,S}
 
 O_rad/OneDe
 1 * O 1 {2,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_delocalized 0 {1,S}
 
 O2_birad
 1 * O 1 {2,S}
