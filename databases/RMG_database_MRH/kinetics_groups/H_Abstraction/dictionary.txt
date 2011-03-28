@@ -41,14 +41,17 @@ C_pri
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {R!H} 0 {1,S}
+5 R!H 0 {1,S}
 
 C/H3/Cs
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 Cs 0 {1,S}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 R 0 {5,S}
+7 R 0 {5,S}
+8 R 0 {5,S}
 
 InChI=1/C4H10O/c1-4(2)3-5/h4-5H,3H2,1-2H3/gamma
 1 *1 C 0 {2,S} {6,S} {7,S} {8,S}
@@ -82,7 +85,9 @@ C/H3/Cd
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 Cd 0 {1,S}
+5 C 0 {1,S} {6,S} {7,D}
+6 R 0 {2,S}
+7 C 0 {2,D}
 
 InChI=1/C4H8/c1-3-4-2/h3-4H,1-2H3/b4-3+
 1 *1 C 0 {2,S} {5,S} {6,S} {7,S}
@@ -128,21 +133,26 @@ C/H3/Ct
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 Ct 0 {1,S}
+5 C 0 {1,S} {6,T}
+6 R_min3valency 0 {5,T}
 
 C/H3/Cb
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 Cb 0 {1,S}
+5 C 0 {1,S} {6,B} {7,B}
+6 R_aromatic 0 {5,B}
+7 R_aromatic 0 {5,B}
 
 C/H3/CO
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 CO 0 {1,S}
+5 C 0 {1,S} {6,S} {7,D}
+6 R 0 {5,S}
+7 O 0 {5,D}
 
 C/H3/O
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
@@ -155,15 +165,21 @@ C_sec
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
-4 {R!H} 0 {1,S}
-5 {R!H} 0 {1,S}
+4 R!H 0 {1,S}
+5 R!H 0 {1,S}
 
 C/H2/NonDeC
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
-4 Cs 0 {1,S}
-5 Cs 0 {1,S}
+4 C 0 {1,S} {6,S} {7,S} {8,S}
+5 C 0 {1,S} {9,S} {10,S} {11,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
+8 R 0 {4,S}
+9 R 0 {5,S}
+10 R 0 {5,S}
+11 R 0 {5,S}
 
 InChI=1/C3H8/c1-3-2/h3H2,1-2H3
 1 C 0 {2,S} {4,S} {5,S} {6,S}
@@ -183,14 +199,17 @@ C/H2/NonDeO
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
 4 O 0 {1,S}
-5 {Cs,O} 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H2/CsO
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
 4 O 0 {1,S}
-5 Cs 0 {1,S}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 R 0 {5,S}
+7 R 0 {5,S}
+8 R 0 {5,S}
 
 InChI=1/C4H10O/c1-4(2)3-5/h4-5H,3H2,1-2H3/alpha
 1 C 0 {2,S} {6,S} {7,S} {8,S}
@@ -220,15 +239,20 @@ C/H2/OneDe
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
-4 {Cd,Ct,CO,Cb} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+4 R_min3valency 0 {1,S} {6,{D,T,B}}
+5 R_nondelocalized 0 {1,S}
+6 R_min2valency 0 {4,{D,T,B}}
 
 C/H2/OneDeC
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
-4 {Cd,Ct,CO,Cb} 0 {1,S}
-5 Cs 0 {1,S}
+4 R_min3valency 0 {1,S} {9,{D,T,B}}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 R 0 {5,S}
+7 R 0 {5,S}
+8 R 0 {5,S}
+9 R_min2valency 0 {4,{D,T,B}}
 
 InChI=1/C4H8/c1-3-4-2/h3H,1,4H2,2H3
 1 C 0 {2,S} {5,S} {6,S} {7,S}
@@ -260,36 +284,48 @@ C/H2/OneDeO
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
-4 {Cd,Ct,CO,Cb} 0 {1,S}
+4 R_min3valency 0 {1,S} {6,{D,T,B}}
 5 O 0 {1,S}
+6 R_min2valency 0 {4,{D,T,B}}
 
 C/H2/TwoDe
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 H 0 {1,S}
-4 {Cd,Ct,CO,Cb} 0 {1,S}
-5 {Cd,Ct,CO,Cb} 0 {1,S}
+4 R_min3valency 0 {1,S} {6,{D,T,B}}
+5 R_min3valency 0 {1,S} {7,{D,T,B}}
+6 R_min2valency 0 {4,{D,T,B}}
+7 R_min2valency 0 {5,{D,T,B}}
 
 C_ter
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {R!H} 0 {1,S}
-4 {R!H} 0 {1,S}
-5 {R!H} 0 {1,S}
+3 R!H 0 {1,S}
+4 R!H 0 {1,S}
+5 R!H 0 {1,S}
 
 C/H/NonDeC
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H/Cs3
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 Cs 0 {1,S}
-4 Cs 0 {1,S}
-5 Cs 0 {1,S}
+3 C 0 {1,S} {6,S} {7,S} {8,S}
+4 C 0 {1,S} {9,S} {10,S} {11,S}
+5 C 0 {1,S} {12,S} {13,S} {14,S}
+6 R 0 {3,S}
+7 R 0 {3,S}
+8 R 0 {3,S}
+9 R 0 {4,S}
+10 R 0 {4,S}
+11 R 0 {4,S}
+12 R 0 {5,S}
+13 R 0 {5,S}
+14 R 0 {5,S}
 
 InChI=1/C4H10O/c1-4(2)3-5/h4-5H,3H2,1-2H3/beta
 1 C 0 {2,S} {6,S} {7,S} {8,S}
@@ -312,22 +348,30 @@ C/H/NDMustO
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
 3 O 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {1,S}
 
 C/H/OneDe
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+3 R_min3valency 0 {1,S} {6,{D,T,B}}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {1,S}
+6 R_min2valency 0 {3,{D,T,B}}
 
 C/H/Cs2
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 Cs 0 {1,S}
-5 Cs 0 {1,S}
+3 R_min3valency 0 {1,S} {12,{D,T,B}}
+4 C 0 {1,S} {6,S} {7,S} {8,S}
+5 C 0 {1,S} {9,S} {10,S} {11,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
+8 R 0 {4,S}
+9 R 0 {5,S}
+10 R 0 {5,S}
+11 R 0 {5,S}
+12 R_min2valency 0 {3,{D,T,B}}
 
 InChI=1/C4H8O/c1-4(2)3-5/h3-4H,1-2H3
 1 C 0 {2,S} {6,S} {7,S} {8,S}
@@ -347,37 +391,48 @@ InChI=1/C4H8O/c1-4(2)3-5/h3-4H,1-2H3
 C/H/ODMustO
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {6,{D,T,B}}
 4 O 0 {1,S}
-5 {Cs,O} 0 {1,S}
+5 R_nondelocalized 0 {1,S}
+6 R_min2valency 0 {3,{D,T,B}}
 
 C/H/TwoDe
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {1,S}
+3 R_min3valency 0 {1,S} {6,{D,T,B}}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_nondelocalized 0 {1,S}
 
 C/H/Cs
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 Cs 0 {1,S}
+3 R_min3valency 0 {1,S} {9,{D,T,B}}
+4 R_min3valency 0 {1,S} {10,{D,T,B}}
+5 C 0 {1,S} {6,S} {7,S} {8,S}
+6 R 0 {5,S}
+7 R 0 {5,S}
+8 R 0 {5,S}
+9 R_min2valency 0 {3,{D,T,B}}
+10 R_min2valency 0 {4,{D,T,B}}
 
 C/H/TDMustO
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {6,{D,T,B}}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
 5 O 0 {1,S}
+6 R_min2valency 0 {3,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
 
 C/H/ThreeDe
 1 *1 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {6,{D,T,B}}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_min3valency 0 {1,S} {8,{D,T,B}}
+6 R_min2valency 0 {3,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {5,{D,T,B}}
 
 Cd_H
 1 *1 C 0 {2,D}, {3,S}, {4,S}
@@ -395,13 +450,16 @@ Cd_sec
 1 *1 C 0 {2,D}, {3,S}, {4,S}
 2 C 0 {1,D}
 3 *2 H 0 {1,S}
-4 {R!H} 0 {1,S}
+4 R!H 0 {1,S}
 
 Cd/H/NonDeC
 1 *1 C 0 {2,D}, {3,S}, {4,S}
 2 C 0 {1,D}
 3 *2 H 0 {1,S}
-4 Cs 0 {1,S}
+4 C 0 {1,S} {5,S} {6,S} {7,S}
+5 R 0 {4,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
 
 Cd/H/NonDeO
 1 *1 C 0 {2,D}, {3,S}, {4,S}
@@ -413,7 +471,8 @@ Cd/H/OneDe
 1 *1 C 0 {2,D}, {3,S}, {4,S}
 2 C 0 {1,D}
 3 *2 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+4 R_min3valency 0 {1,S} {5,{D,T,B}}
+5 R_min2valency 0 {4,{D,T,B}}
 
 Ct_H
 1 *1 C 0 {2,T}, {3,S}
@@ -421,10 +480,12 @@ Ct_H
 3 *2 H 0 {1,S}
 
 Cb_H
-1 *1 Cb 0 {2,B}, {3,B}, {4,S}
-2 {Cb,Cbf} 0 {1,B}
-3 {Cb,Cbf} 0 {1,B}
+1 *1 C 0 {2,B}, {3,B}, {4,S}
+2 C 0 {1,B} {5,B}
+3 C 0 {1,B} {6,B}
 4 *2 H 0 {1,S} 
+5 R_aromatic 0 {2,B}
+6 R_aromatic 0 {3,B}
 
 CO_H
 1 *1 C 0 {2,D}, {3,S}, {4,S}
@@ -442,19 +503,20 @@ CO_sec
 1 *1 C 0 {2,D}, {3,S}, {4,S}
 2 O 0 {1,D}
 3 *2 H 0 {1,S}
-4 {R!H} 0 {1,S} 
+4 R!H 0 {1,S} 
 
 CO/H/NonDe
 1 *1 C 0 {2,D}, {3,S}, {4,S}
 2 O 0 {1,D}
 3 *2 H 0 {1,S}
-4 {Cs,O} 0 {1,S} 
+4 R_nondelocalized 0 {1,S} 
 
 CO/H/OneDe
 1 *1 C 0 {2,D}, {3,S}, {4,S}
 2 O 0 {1,D}
 3 *2 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S} 
+4 R_min3valency 0 {1,S} {5,{D,T,B}}
+5 R_min2valency 0 {4,{D,T,B}}
 
 O_H
 1 *1 O 0 {2,S}, {3,S}
@@ -469,12 +531,15 @@ O_pri
 O_sec
 1 *1 O 0 {2,S}, {3,S}
 2 *2 H 0 {1,S}
-3 {R!H} 0 {1,S}
+3 R!H 0 {1,S}
 
 O/H/NonDeC
 1 *1 O 0 {2,S}, {3,S}
 2 *2 H 0 {1,S}
-3 Cs 0 {1,S}
+3 C 0 {1,S} {4,S} {5,S} {6,S}
+4 R 0 {3,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
 
 O/H/NonDeO
 1 *1 O 0 {2,S}, {3,S}
@@ -490,7 +555,8 @@ H2O2
 O/H/OneDe
 1 *1 O 0 {2,S}, {3,S}
 2 *2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {4,{D,T,B}}
+4 R_min2valency 0 {3,{D,T,B}}
 
 Orad_O_H
 1 *1 O 0 {2,S}, {3,S}
@@ -513,7 +579,7 @@ C2b
 2 C 1 {1,T}
 
 Y_1centerbirad
-1 *3 {Cs,Cd,O} 2T
+1 *3 R_min2valency 2T
 
 //CO_birad
 //1 *3 C 2T {2,D}
@@ -549,13 +615,16 @@ C_pri_rad
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 {R!H} 0 {1,S}
+4 R!H 0 {1,S}
 
 C_rad/H2/Cs
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 Cs 0 {1,S}
+4 C 0 {1,S} {5,S} {6,S} {7,S}
+5 R 0 {4,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
 
 InChI=1/C4H9O/c1-2-3-4-5/h5H,1-4H2
 1 *3 C 1 {2,S} {6,S} {7,S}
@@ -650,7 +719,9 @@ C_rad/H2/Cd
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 Cd 0 {1,S}
+4 C 0 {1,S} {5,S} {6,D}
+5 R 0 {4,S}
+6 C 0 {4,D}
 
 InChI=1/C4H7/c1-4(2)3/h1-2H2,3H3
 1 C 0 {2,D} {5,S} {6,S}
@@ -669,19 +740,24 @@ C_rad/H2/Ct
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 Ct 0 {1,S}
+4 C 0 {1,S} {5,T}
+5 R_min3valency 0 {4,T}
 
 C_rad/H2/Cb
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 Cb 0 {1,S}
+4 C 0 {1,S} {5,B} {6,B}
+5 R_aromatic 0 {4,B}
+6 R_aromatic 0 {4,B}
 
 C_rad/H2/CO
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 H 0 {1,S}
-4 CO 0 {1,S}
+4 C 0 {1,S} {5,S} {6,D}
+5 R 0 {4,S}
+6 O 0 {4,D}
 
 C_rad/H2/O
 1 *3 C 1 {2,S}, {3,S}, {4,S}
@@ -692,14 +768,20 @@ C_rad/H2/O
 C_sec_rad
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {R!H} 0 {1,S}
-4 {R!H} 0 {1,S}
+3 R!H 0 {1,S}
+4 R!H 0 {1,S}
 
 C_rad/H/NonDeC
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 Cs 0 {1,S}
-4 Cs 0 {1,S}
+3 C 0 {1,S} {5,S} {6,S} {7,S}
+4 C 0 {1,S} {8,S} {9,S} {10,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
+7 R 0 {3,S}
+8 R 0 {4,S}
+9 R 0 {4,S}
+10 R 0 {4,S}
 
 InChI=1/C4H9O/c1-2-3-4-5/h2,5H,3-4H2,1H3
 1 C 0 {2,S} {6,S} {7,S} {8,S}
@@ -765,13 +847,16 @@ C_rad/H/NonDeO
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
 3 O 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/H/CsO
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 Cs 0 {1,S}
+3 C 0 {1,S} {5,S} {6,S} {7,S}
 4 O 0 {1,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
+7 R 0 {3,S}
 
 InChI=1/C4H9O/c1-2-3-4-5/h4-5H,2-3H2,1H3
 1 C 0 {2,S} {6,S} {7,S} {8,S}
@@ -814,14 +899,19 @@ C_rad/H/O2
 C_rad/H/OneDe
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+3 R_min3valency 0 {1,S} {5,{D,T,B}}
+4 R_nondelocalized 0 {1,S}
+5 R_min2valency 0 {3,{D,T,B}}
 
 C_rad/H/OneDeC
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 Cs 0 {1,S}
+3 R_min3valency 0 {1,S} {8,{D,T,B}}
+4 C 0 {1,S} {5,S} {6,S} {7,S}
+5 R 0 {4,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
+8 R_min2valency 0 {3,{D,T,B}}
 
 InChI=1/C3H5O/c1-2-3-4/h2-3H,1H3/c
 1 C 0 {2,S} {5,S} {6,S} {7,S}
@@ -837,32 +927,44 @@ InChI=1/C3H5O/c1-2-3-4/h2-3H,1H3/c
 C_rad/H/OneDeO
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {5,{D,T,B}}
 4 O 0 {1,S}
+5 R_min2valency 0 {3,{D,T,B}}
 
 C_rad/H/TwoDe
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {5,{D,T,B}}
+4 R_min3valency 0 {1,S} {6,{D,T,B}}
+5 R_min2valency 0 {3,{D,T,B}}
+6 R_min2valency 0 {4,{D,T,B}}
 
 C_ter_rad
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {R!H} 0 {1,S}
-3 {R!H} 0 {1,S}
-4 {R!H} 0 {1,S}
+2 R!H 0 {1,S}
+3 R!H 0 {1,S}
+4 R!H 0 {1,S}
 
 C_rad/NonDeC
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {Cs,O} 0 {1,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+2 R_nondelocalized 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 C_rad/Cs3
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 Cs 0 {1,S}
-3 Cs 0 {1,S}
-4 Cs 0 {1,S}
+2 C 0 {1,S} {5,S} {6,S} {7,S}
+3 C 0 {1,S} {8,S} {9,S} {10,S}
+4 C 0 {1,S} {11,S} {12,S} {13,S}
+5 R 0 {2,S}
+6 R 0 {2,S}
+7 R 0 {2,S}
+8 R 0 {3,S}
+9 R 0 {3,S}
+10 R 0 {3,S}
+11 R 0 {4,S}
+12 R 0 {4,S}
+13 R 0 {4,S}
 
 InChI=1/C4H9O/c1-4(2)3-5/h5H,3H2,1-2H3
 1 C 0 {2,S} {6,S} {7,S} {8,S}
@@ -883,8 +985,8 @@ InChI=1/C4H9O/c1-4(2)3-5/h5H,3H2,1-2H3
 C_rad/NDMustO
 1 *3 C 1 {2,S}, {3,S}, {4,S}
 2 O 0 {1,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 InChI=1/C4H9O/c1-3-4(2)5/h5H,3H2,1-2H3
 1 C 0 {3,S} {6,S} {7,S} {8,S}
@@ -904,45 +1006,66 @@ InChI=1/C4H9O/c1-3-4(2)5/h5H,3H2,1-2H3
 
 C_rad/OneDe
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+2 R_min3valency 0 {1,S} {5,{D,T,B}}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_min2valency 0 {2,{D,T,B}}
 
 C_rad/Cs2
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 Cs 0 {1,S}
-4 Cs 0 {1,S}
+2 R_min3valency 0 {1,S} {11,{D,T,B}}
+3 C 0 {1,S} {5,S} {6,S} {7,S}
+4 C 0 {1,S} {8,S} {9,S} {10,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
+7 R 0 {3,S}
+8 R 0 {4,S}
+9 R 0 {4,S}
+10 R 0 {4,S}
+11 R_min2valency 0 {2,{D,T,B}}
 
 C_rad/ODMustO
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_min3valency 0 {1,S} {5,{D,T,B}}
 3 O 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_min2valency 0 {2,{D,T,B}}
 
 C_rad/TwoDe
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+2 R_min3valency 0 {1,S} {5,{D,T,B}}
+3 R_min3valency 0 {1,S} {6,{D,T,B}}
+4 R_nondelocalized 0 {1,S}
+5 R_min2valency 0 {2,{D,T,B}}
+6 R_min2valency 0 {3,{D,T,B}}
 
 C_rad/Cs
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 Cs 0 {1,S}
+2 R_min3valency 0 {1,S} {8,{D,T,B}}
+3 R_min3valency 0 {1,S} {9,{D,T,B}}
+4 C 0 {1,S} {5,S} {6,S} {7,S}
+5 R 0 {4,S}
+6 R 0 {4,S}
+7 R 0 {4,S}
+8 R_min2valency 0 {2,{D,T,B}}
+9 R_min2valency 0 {3,{D,T,B}}
 
 C_rad/TDMustO
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_min3valency 0 {1,S} {5,{D,T,B}}
+3 R_min3valency 0 {1,S} {6,{D,T,B}}
 4 O 0 {1,S}
+5 R_min2valency 0 {2,{D,T,B}}
+6 R_min2valency 0 {3,{D,T,B}}
 
 C_rad/ThreeDe
 1 *3 C 1 {2,S}, {3,S}, {4,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_min3valency 0 {1,S} {5,{D,T,B}}
+3 R_min3valency 0 {1,S} {6,{D,T,B}}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_min2valency 0 {2,{D,T,B}}
+6 R_min2valency 0 {3,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
 
 Cd_rad
 1 *3 C 1 {2,D}, {3,S}
@@ -979,12 +1102,15 @@ InChI=1/C2H3/c1-2/h1H,2H2
 Cd_sec_rad
 1 *3 C 1 {2,D}, {3,S}
 2 C 0 {1,D}
-3 {R!H} 0 {1,S}
+3 R!H 0 {1,S}
 
 Cd_rad/NonDeC
 1 *3 C 1 {2,D}, {3,S}
 2 C 0 {1,D}
-3 Cs 0 {1,S}
+3 C 0 {1,S} {4,S} {5,S} {6,S}
+4 R 0 {3,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
 
 InChI=1/C4H7/c1-3-4-2/h3H,1-2H3 
 1 C 0 {2,S} {5,S} {6,S} {7,S}
@@ -1017,16 +1143,19 @@ Cd_rad/NonDeO
 Cd_rad/OneDe
 1 *3 C 1 {2,D}, {3,S}
 2 C 0 {1,D}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {4,{D,T,B}}
+4 R_min2valency 0 {3,{D,T,B}}
 
 Ct_rad
 1 *3 C 1 {2,T}
 2 C 0 {1,T}
 
 Cb_rad
-1 *3 Cb 1 {2,B}, {3,B}
-2 {Cb,Cbf} 0 {1,B}  
-3 {Cb,Cbf} 0 {1,B}
+1 *3 C 1 {2,B}, {3,B}
+2 C 0 {1,B} {4,B}
+3 C 0 {1,B} {5,B}
+4 R_aromatic 0 {2,B}
+5 R_aromatic 0 {3,B}
 
 CO_rad
 1 *3 C 1 {2,D}, {3,S}
@@ -1041,17 +1170,18 @@ CO_pri_rad
 CO_sec_rad
 1 *3 C 1 {2,D}, {3,S}
 2 O 0 {1,D}
-3 {R!H} 0 {1,S}
+3 R!H 0 {1,S}
 
 CO_rad/NonDe
 1 *3 C 1 {2,D}, {3,S}
 2 O 0 {1,D}
-3 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
 
 CO_rad/OneDe
 1 *3 C 1 {2,D}, {3,S}
 2 O 0 {1,D}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {4,{D,T,B}}
+4 R_min2valency 0 {3,{D,T,B}}
 
 O_rad
 1 *3 O 1 {2,S}
@@ -1063,11 +1193,14 @@ O_pri_rad
 
 O_sec_rad
 1 *3 O 1 {2,S}
-2 {R!H} 0 {1,S}
+2 R!H 0 {1,S}
 
 O_rad/NonDeC
 1 *3 O 1 {2,S}
-2 Cs 0 {1,S}
+2 C 0 {1,S} {3,S} {4,S} {5,S}
+3 R 0 {2,S}
+4 R 0 {2,S}
+5 R 0 {2,S}
 
 InChI=1/C4H9O/c1-4(2)3-5/h4H,3H2,1-2H3
 1 C 0 {2,S} {6,S} {7,S} {8,S}
@@ -1091,7 +1224,8 @@ O_rad/NonDeO
 
 O_rad/OneDe
 1 *3 O 1 {2,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_min3valency 0 {1,S} {3,{D,T,B}}
+3 R_min2valency 0 {2,{D,T,B}}
 
 InChI=1/C3H5O/c1-2-3-4/h2-3H,1H3/o
 1 C 0 {2,S} {5,S} {6,S} {7,S}

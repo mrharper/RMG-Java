@@ -25,7 +25,7 @@ carbene
 
 me_carbene
 1 *3 C 2 {2,S} {3,S}
-2 Cs 0 {1,S} {4,S} {5,S} {6,S}
+2 C 0 {1,S} {4,S} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {2,S}
 5 H 0 {2,S}
@@ -33,8 +33,8 @@ me_carbene
 
 dime_carbene
 1 *3 C 2 {2,S} {3,S}
-2 Cs 0 {1,S} {4,S} {5,S} {6,S}
-3 Cs 0 {1,S} {7,S} {8,S} {9,S}
+2 C 0 {1,S} {4,S} {5,S} {6,S}
+3 C 0 {1,S} {7,S} {8,S} {9,S}
 4 H 0 {2,S}
 5 H 0 {2,S}
 6 H 0 {2,S}
@@ -44,269 +44,310 @@ dime_carbene
 
 ph_carbene
 1 *3 C 2 {2,S} {3,S}
-2 Cb 0 {1,S} {4,B} {5,B}
+2 C 0 {1,S} {4,B} {5,B}
 3 H 0 {1,S}
-4 Cb 0 {2,B} {6,B}
-5 Cb 0 {2,B} {7,B}
-6 Cb 0 {4,B} {8,B}
-7 Cb 0 {5,B} {8,B}
-8 Cb 0 {6,B} {7,B}
+4 C 0 {2,B} {6,B} {9,S}
+5 C 0 {2,B} {7,B} {10,S}
+6 C 0 {4,B} {8,B} {11,S}
+7 C 0 {5,B} {8,B} {12,S}
+8 C 0 {6,B} {7,B} {13,S}
+9 R 0 {4,S}
+10 R 0 {5,S}
+11 R 0 {6,S}
+12 R 0 {7,S}
+13 R 0 {8,S}
 
 o_atom
 1 *3 O 2 
 
 multiplebond
-1 *1 {Cd,CO} 0 {2,D}
-2 *2 {Cd,O} 0 {1,D}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 R_min2valency 0 {1,D}
+3 R 0 {1,S}
+4 R 0 {1,S}
 
 mb_carbonyl
-1 *1 CO 0 {2,D}
+1 *1 C 0 {2,D} {3,S} {4,S}
 2 *2 O 0 {1,D}
+3 R 0 {1,S}
+4 R 0 {1,S}
 
 mb_carbonyl_2H
-1 *1 CO 0 {2,D} {3,S} {4,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
 2 *2 O 0 {1,D}
 3 H 0 {1,S}
 4 H 0 {1,S}
 
 mb_carbonyl_HNd
-1 *1 CO 0 {2,D} {3,S} {4,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
 2 *2 O 0 {1,D}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 mb_carbonyl_HDe
-1 *1 CO 0 {2,D} {3,S} {4,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
 2 *2 O 0 {1,D}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+4 R_min3valency 0 {1,S} {5,{D,T,B}}
+5 R_min2valency 0 {4,{D,T,B}}
 
 mb_carbonyl_NdNd
-1 *1 CO 0 {2,D} {3,S} {4,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
 2 *2 O 0 {1,D}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 
 mb_carbonyl_NdDe
-1 *1 CO 0 {2,D} {3,S} {4,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
 2 *2 O 0 {1,D}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {5,{D,T,B}}
+5 R_min2valency 0 {4,{D,T,B}}
 
 mb_carbonyl_DeDe
-1 *1 CO 0 {2,D} {3,S} {4,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
 2 *2 O 0 {1,D}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {5,{D,T,B}}
+4 R_min3valency 0 {1,S} {6,{D,T,B}}
+5 R_min2valency 0 {3,{D,T,B}}
+6 R_min2valency 0 {4,{D,T,B}}
 
 mb_db
-1 *1 Cd 0 {2,D}
-2 *2 Cd 0 {1,D}
+1 *1 C 0 {2,D}
+2 *2 C 0 {1,D}
 
 mb_db_unsub
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {2,S}
 6 H 0 {2,S}
 
 mb_db_monosub
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {2,S}
-6 {R!H} 0 {2,S}
+6 R!H 0 {2,S}
 
 mb_db_monosub_Nd
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {2,S}
-6 {Cs,O} 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 mb_db_monosub_De
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_onecdisub
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {R!H} 0 {2,S}
-6 {R!H} 0 {2,S}
+5 R!H 0 {2,S}
+6 R!H 0 {2,S}
 
 mb_db_onecdisub_Nd
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 mb_db_onecdisub_oneDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_onecdisub_twoDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+5 R_min3valency 0 {2,S} {7,{D,T,B}}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {5,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_twocdisub
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {R!H} 0 {1,S}
+4 R!H 0 {1,S}
 5 H 0 {2,S}
-6 {R!H} 0 {2,S}
+6 R!H 0 {2,S}
 
 mb_db_twocdisub_Nd
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 5 H 0 {2,S}
-6 {Cs,O} 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 mb_db_twocdisub_oneDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_twocdisub_twoDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_trisub
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {R!H} 0 {1,S}
-5 {R!H} 0 {2,S}
-6 {R!H} 0 {2,S}
+4 R!H 0 {1,S}
+5 R!H 0 {2,S}
+6 R!H 0 {2,S}
 
 mb_db_trisub_Nd
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 mb_db_trisub_oneMDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
+7 R_min2valency 0 {4,{D,T,B}}
 
 mb_db_trisub_oneDDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_trisub_onectwoDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+4 R_nondelocalized 0 {1,S}
+5 R_min3valency 0 {2,S} {7,{D,T,B}}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {5,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_trisub_twoctwoDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_trisub_threeDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_min3valency 0 {2,S} {8,{D,T,B}}
+6 R_min3valency 0 {2,S} {9,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {5,{D,T,B}}
+9 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_tetrasub
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
-3 {R!H} 0 {1,S}
-4 {R!H} 0 {1,S}
-5 {R!H} 0 {2,S}
-6 {R!H} 0 {2,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
+3 R!H 0 {1,S}
+4 R!H 0 {1,S}
+5 R!H 0 {2,S}
+6 R!H 0 {2,S}
 
 mb_db_tetrasub_Nd
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 mb_db_tetrasub_oneDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_tetrasub_onectwoDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_min3valency 0 {2,S} {7,{D,T,B}}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {5,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_tetrasub_twoctwoDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_tetrasub_threeDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_min3valency 0 {2,S} {8,{D,T,B}}
+6 R_min3valency 0 {2,S} {9,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {5,{D,T,B}}
+9 R_min2valency 0 {6,{D,T,B}}
 
 mb_db_tetrasub_fourDe
-1 *1 Cd 0 {2,D} {3,S} {4,S}
-2 *2 Cd 0 {1,D} {5,S} {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_min3valency 0 {1,S} {8,{D,T,B}}
+5 R_min3valency 0 {2,S} {9,{D,T,B}}
+6 R_min3valency 0 {2,S} {10,{D,T,B}}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {4,{D,T,B}}
+9 R_min2valency 0 {5,{D,T,B}}
+10 R_min2valency 0 {6,{D,T,B}}

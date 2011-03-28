@@ -22,18 +22,19 @@ R2OOH
 5 H 0 {4,S}
 
 R2OOH_S
-1 *1 {Cd,Cs} 1 {2,S} 
-2 *4 {Cd,Cs} 0 {1,S}, {3,S} 
+1 *1 C 1 {2,S} 
+2 *4 C 0 {1,S}, {3,S} 
 3 *2 O 0 {2,S}, {4,S}
 4 *3 O 0 {3,S}, {5,S}
 5 H 0 {4,S}
 
 R2OOH_D
-1 *1 Cd 1 {2,D} 
-2 *4 {Cd,Cs} 0 {1,D}, {3,S} 
+1 *1 C 1 {2,D} {6,S}
+2 *4 C 0 {1,D}, {3,S} 
 3 *2 O 0 {2,S}, {4,S}
 4 *3 O 0 {3,S}, {5,S}
 5 H 0 {4,S}
+6 R 0 {1,S}
 
 R3OOH
 1 *1 {Cd,Cs,Sid,Sis} 1 {2,{S,D}} 
@@ -44,28 +45,32 @@ R3OOH
 6 H 0 {5,S}
 
 R3OOH_SS
-1 *1 {Cd,Cs} 1 {2,S} 
-2 *4 {Cd,Cs} 0 {1,S}, {3,S} 
-3 {Cd,Cs} 0 {2,S}, {4,S}
+1 *1 C 1 {2,S} 
+2 *4 C 0 {1,S}, {3,S} 
+3 C 0 {2,S}, {4,S}
 4 *2 O 0 {3,S}, {5,S}
 5 *3 O 0 {4,S}, {6,S}
 6 H 0 {5,S}
 
 R3OOH_SD
-1 *1 {Cd,Cs} 1 {2,S} 
-2 *4 Cd 0 {1,S}, {3,D} 
-3 Cd 0 {2,D}, {4,S}
+1 *1 C 1 {2,S} 
+2 *4 C 0 {1,S}, {3,D} {7,S}
+3 C 0 {2,D}, {4,S} {8,S}
 4 *2 O 0 {3,S}, {5,S}
 5 *3 O 0 {4,S}, {6,S}
 6. H 0 {5,S}
+7 R 0 {2,S}
+8 R 0 {3,S}
 
 R3OOH_DS
-1 *1 Cd 1 {2,D} 
-2 *4 Cd 0 {1,D}, {3,S} 
-3 {Cd,Cs} 0 {2,S}, {4,S}
+1 *1 C 1 {2,D} {7,S}
+2 *4 C 0 {1,D}, {3,S} {8,S}
+3 C 0 {2,S}, {4,S}
 4 *2 O 0 {3,S}, {5,S}
 5 *3 O 0 {4,S}, {6,S}
 6 H 0 {5,S}
+7 R 0 {1,S}
+8 R 0 {2,S}
 
 R4OOH
 1 *1 {Cd,Cs,Sid,Sis} 1 {2,{S,D}} 
@@ -77,49 +82,59 @@ R4OOH
 7 H 0 {6,S}
 
 R4OOH_SSS
-1 *1 {Cd,Cs} 1 {2,S} 
-2 *4 {Cd,Cs} 0 {1,S}, {3,S} 
-3 {Cd,Cs} 0 {2,S}, {4,S}
-4 {Cd,Cs} 0 {3,S}, {5,S}
+1 *1 C 1 {2,S} 
+2 *4 C 0 {1,S}, {3,S} 
+3 C 0 {2,S}, {4,S}
+4 C 0 {3,S}, {5,S}
 5 *2 O 0 {4,S}, {6,S}
 6 *3 O 0 {5,S}, {7,S}
 7 H 0 {6,S}
 
 R4OOH_SSD
-1 *1 {Cd,Cs} 1 {2,S} 
-2 *4 {Cd,Cs} 0 {1,S}, {3,S} 
-3 Cd 0 {2,S}, {4,D}
-4 Cd 0 {3,D}, {5,S}
+1 *1 C 1 {2,S} 
+2 *4 C 0 {1,S}, {3,S} 
+3 C 0 {2,S}, {4,D} {8,S}
+4 C 0 {3,D}, {5,S} {9,S}
 5 *2 O 0 {4,S}, {6,S}
 6 *3 O 0 {5,S}, {7,S}
 7 H 0 {6,S}
+8 R 0 {3,S}
+9 R 0 {4,S}
 
 R4OOH_SDS
-1 *1 {Cd,Cs} 1 {2,S} 
-2 *4 Cd 0 {1,S}, {3,D} 
-3 Cd 0 {2,D}, {4,S}
-4 {Cd,Cs} 0 {3,S}, {5,S}
+1 *1 C 1 {2,S} 
+2 *4 C 0 {1,S}, {3,D} {8,S}
+3 C 0 {2,D}, {4,S} {9,S}
+4 C 0 {3,S}, {5,S}
 5 *2 O 0 {4,S}, {6,S}
 6 *3 O 0 {5,S}, {7,S}
 7 H 0 {6,S}
+8 R 0 {2,S}
+9 R 0 {3,S}
 
 R4OOH_DSS
-1 *1 Cd 1 {2,D} 
-2 *4 Cd 0 {1,D}, {3,S} 
-3 {Cd,Cs} 0 {2,S}, {4,S}
-4 {Cd,Cs} 0 {3,S}, {5,S}
+1 *1 C 1 {2,D} {8,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 C 0 {2,S}, {4,S}
+4 C 0 {3,S}, {5,S}
 5 *2 O 0 {4,S}, {6,S}
 6 *3 O 0 {5,S}, {7,S}
 7 H 0 {6,S}
+8 R 0 {1,S}
+9 R 0 {2,S}
 
 R4OOH_DSD
-1 *1 Cd 1 {2,D} 
-2 *4 Cd 0 {1,D}, {3,S} 
-3 Cd 0 {2,S}, {4,D}
-4 Cd 0 {3,D}, {5,S}
+1 *1 C 1 {2,D} {8,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 C 0 {2,S}, {4,D} {10,S}
+4 C 0 {3,D}, {5,S} {11,S}
 5 *2 O 0 {4,S}, {6,S}
 6 *3 O 0 {5,S}, {7,S}
 7 H 0 {6,S}
+8 R 0 {1,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R 0 {4,S}
 
 Y_rad_out
 1 *1 {Cd,Cs,Sid,Sis} 1 
@@ -137,12 +152,15 @@ C_rad_out_2H
 C_rad_out_1H
 1 *1 C 1 {2,S}, {3,S}
 2 H 0 {1,S}
-3 {R!H} 0 {1,S}
+3 R!H 0 {1,S}
 
 C_rad_out_H/NonDeC
 1 *1 C 1 {2,S}, {3,S}
 2 H 0 {1,S}
-3 Cs 0 {1,S}
+3 C 0 {1,S} {4,S} {5,S} {6,S}
+4 R 0 {3,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
 
 C_rad_out_H/NonDeO
 1 *1 C 1 {2,S}, {3,S}
@@ -152,66 +170,84 @@ C_rad_out_H/NonDeO
 C_rad_out_H/OneDe
 1 *1 C 1 {2,S}, {3,S}
 2 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+3 R_min3valency 0 {1,S} {4,{D,B,T}}
+4 R_min2valency 0 {3,{D,B,T}}
 
 C_rad_out_noH
 1 *1 C 1 {2,S}, {3,S}
-2 {R!H} 0 {1,S}
-3 {R!H} 0 {1,S}
+2 R!H 0 {1,S}
+3 R!H 0 {1,S}
 
 C_rad_out_NonDe
 1 *1 C 1 {2,S}, {3,S}
-2 {Cs,O} 0 {1,S}
-3 {Cs,O} 0 {1,S}
+2 R_nondelocalized 0 {1,S}
+3 R_nondelocalized 0 {1,S}
 
 C_rad_out_Cs2
 1 *1 C 1 {2,S}, {3,S}
-2 Cs 0 {1,S}
-3 Cs 0 {1,S}
+2 C 0 {1,S} {4,S} {5,S} {6,S}
+3 C 0 {1,S} {7,S} {8,S} {9,S}
+4 R 0 {2,S}
+5 R 0 {2,S}
+6 R 0 {2,S}
+7 R 0 {3,S}
+8 R 0 {3,S}
+9 R 0 {3,S}
 
 C_rad_out_NDMustO
 1 *1 C 1 {2,S}, {3,S}
 2 O 0 {1,S}
-3 {Cs,O} 0 {1,S}
+3 R_nondelocalized 0 {1,S}
 
 C_rad_out_OneDe
 1 *1 C 1 {2,S}, {3,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cs,O} 0 {1,S}
+2 R_min3valency 0 {1,S} {4,{D,B,T}}
+3 R_nondelocalized 0 {1,S}
+4 R_min2valency 0 {2,{D,B,T}}
 
 C_rad_out_OneDe/Cs
 1 *1 C 1 {2,S}, {3,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 Cs 0 {1,S}
+2 R_min3valency 0 {1,S} {7,{D,B,T}}
+3 C 0 {1,S} {4,S} {5,S} {6,S}
+4 R 0 {3,S}
+5 R 0 {3,S}
+6 R 0 {3,S}
+7 R_min2valency {2,{D,B,T}}
 
 C_rad_out_OneDe/O
 1 *1 C 1 {2,S}, {3,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_min3valency 0 {1,S} {4,{D,B,T}}
 3 O 0 {1,S}
+4 R_min2valency 0 {2,{D,B,T}}
 
 C_rad_out_TwoDe
 1 *1 C 1 {2,S}, {3,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+2 R_min3valency 0 {1,S} {4,{D,B,T}}
+3 R_min3valency 0 {1,S} {5,{D,B,T}}
+4 R_min2valency 0 {2,{D,B,T}}
+5 R_min2valency 0 {3,{D,B,T}}
 
 Cd_rad_out
-1 *1 Cd 1 {2,D}
-2 Cd 0 {1,D}
+1 *1 C 1 {2,D}
+2 C 0 {1,D}
 
 Cdsingle_rad_out
-1 *1 Cd 1 {2,S}
+1 *1 C 1 {2,S} {3,D}
 2 R 0 {1,S}
+3 C 0 {1,D}
 
 CdsingleH_rad_out
-1 *1 Cd 1 {2,S}
+1 *1 C 1 {2,S} {3,D}
 2 H 0 {1,S}
+3 C 0 {1,D}
 
 CdsingleND_rad_out
-1 *1 Cd 1 {2,S}
-2 {Cs,O} 0 {1,S}
+1 *1 C 1 {2,S} {3,D}
+2 R_nondelocalized 0 {1,S}
+3 C 0 {1,D}
 
 CdsingleDe_rad_out
-1 *1 Cd 1 {2,S}
-2 {Cd,Ct,Cb,CO} 0 {1,S}
-
-
+1 *1 C 1 {2,S} {3,D}
+2 R_min3valency 0 {1,S} {4,{D,B,T}}
+3 C 0 {1,D}
+4 R_min2valency 0 {2,{D,B,T}}

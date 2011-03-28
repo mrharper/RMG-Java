@@ -4,647 +4,790 @@ diene_out
 Union {diene_unsub_unsub_out,diene_unsub_monosub_out,diene_unsub_disub_out,diene_monosub_monosub_out,diene_monosub_disub_out,diene_disub_disub_out}
 
 diene_unsub_unsub_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
 6 H 0 {1,S}
 7 H 0 {4,S}
 8 H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_unsub_monosub_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
 6 H 0 {1,S}
 7 H 0 {4,S}
-8 {R!H} 0 {4,S}
+8 R!H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_unsub_monosubNd_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
 6 H 0 {1,S}
 7 H 0 {4,S}
-8 {Cs,O} 0 {4,S}
+8 R_nondelocalized 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_unsub_monosubDe_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
 6 H 0 {1,S}
 7 H 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+8 R_min3valency 0 {4,S} {11,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {8,{D,T,B}}
 
 diene_unsub_disub_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
 6 H 0 {1,S}
-7 {R!H} 0 {4,S}
-8 {R!H} 0 {4,S}
+7 R!H 0 {4,S}
+8 R!H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_unsub_disubNd2_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
 6 H 0 {1,S}
-7 {Cs,O} 0 {4,S}
-8 {Cs,O} 0 {4,S}
+7 R_nondelocalized 0 {4,S}
+8 R_nondelocalized 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_unsub_disubNdDe_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
 6 H 0 {1,S}
-7 {Cs,O} 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+7 R_nondelocalized 0 {4,S}
+8 R_min3valency 0 {4,S} {11,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {8,{D,T,B}}
 
 diene_unsub_disubDe2_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
 6 H 0 {1,S}
-7 {Cd,Ct,Cb,CO} 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+7 R_min3valency 0 {4,S} {11,{D,T,B}}
+8 R_min3valency 0 {4,S} {12,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {7,{D,T,B}}
+12 R_min2valency 0 {8,{D,T,B}}
 
 diene_monosub_monosub_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {R!H} 0 {1,S}
-7 {R!H} 0 {4,S}
+6 R!H 0 {1,S}
+7 R!H 0 {4,S}
 8 H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_monosubNd_monosubNd_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cs,O} 0 {1,S}
-7 {Cs,O} 0 {4,S}
+6 R_nondelocalized 0 {1,S}
+7 R_nondelocalized 0 {4,S}
 8 H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_monosubNd_monosubDe_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cs,O} 0 {1,S}
-7 {Cd,Ct,Cb,CO} 0 {4,S}
+6 R_nondelocalized 0 {1,S}
+7 R_min3valency 0 {4,S} {11,{D,T,B}}
 8 H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {7,{D,T,B}}
 
 diene_monosubDe_monosubDe_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cd,Ct,Cb,CO} 0 {1,S}
-7 {Cd,Ct,Cb,CO} 0 {4,S}
+6 R_min3valency 0 {1,S} {11,{D,T,B}}
+7 R_min3valency 0 {4,S} {12,{D,T,B}}
 8 H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {6,{D,T,B}}
+12 R_min2valency 0 {7,{D,T,B}}
 
 diene_monosub_disub_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {R!H} 0 {1,S}
-7 {R!H} 0 {4,S}
-8 {R!H} 0 {4,S}
+6 R!H 0 {1,S}
+7 R!H 0 {4,S}
+8 R!H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_monosubNd_disubNd2_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cs,O} 0 {1,S}
-7 {Cs,O} 0 {4,S}
-8 {Cs,O} 0 {4,S}
+6 R_nondelocalized 0 {1,S}
+7 R_nondelocalized 0 {4,S}
+8 R_nondelocalized 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_monosubNd_disubNdDe_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cs,O} 0 {1,S}
-7 {Cs,O} 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+6 R_nondelocalized 0 {1,S}
+7 R_nondelocalized 0 {4,S}
+8 R_min3valency 0 {4,S} {11,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {8,{D,T,B}}
 
 diene_monosubNd_disubDe2_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cs,O} 0 {1,S}
-7 {Cd,Ct,Cb,CO} 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+6 R_nondelocalized 0 {1,S}
+7 R_min3valency 0 {4,S} {11,{D,T,B}}
+8 R_min3valency 0 {4,S} {12,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {7,{D,T,B}}
+12 R_min2valency 0 {8,{D,T,B}}
 
 diene_monosubDe_disubNd2_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cd,Ct,Cb,CO} 0 {1,S}
-7 {Cs,O} 0 {4,S}
-8 {Cs,O} 0 {4,S}
+6 R_min3valency 0 {1,S} {11,{D,T,B}}
+7 R_nondelocalized 0 {4,S}
+8 R_nondelocalized 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {6,{D,T,B}}
 
 diene_monosubDe_disubNdDe_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cd,Ct,Cb,CO} 0 {1,S}
-7 {Cs,O} 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+6 R_min3valency 0 {1,S} {11,{D,T,B}}
+7 R_nondelocalized 0 {4,S}
+8 R_min3valency 0 {4,S} {12,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {6,{D,T,B}}
+12 R_min2valency 0 {8,{D,T,B}}
 
 diene_monosubDe_disubDe2_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
 5 H 0 {1,S}
-6 {Cd,Ct,Cb,CO} 0 {1,S}
-7 {Cd,Ct,Cb,CO} 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+6 R_min3valency 0 {1,S} {11,{D,T,B}}
+7 R_min3valency 0 {4,S} {12,{D,T,B}}
+8 R_min3valency 0 {4,S} {13,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {6,{D,T,B}}
+12 R_min2valency 0 {7,{D,T,B}}
+13 R_min2valency 0 {8,{D,T,B}}
 
 diene_disub_disub_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
-5 {R!H} 0 {1,S}
-6 {R!H} 0 {1,S}
-7 {R!H} 0 {4,S}
-8 {R!H} 0 {4,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
+5 R!H 0 {1,S}
+6 R!H 0 {1,S}
+7 R!H 0 {4,S}
+8 R!H 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_disubNd2_disubNd2_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
-5 {Cs,O} 0 {1,S}
-6 {Cs,O} 0 {1,S}
-7 {Cs,O} 0 {4,S}
-8 {Cs,O} 0 {4,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
+5 R_nondelocalized 0 {1,S}
+6 R_nondelocalized 0 {1,S}
+7 R_nondelocalized 0 {4,S}
+8 R_nondelocalized 0 {4,S}
+9 R 0 {2,S}
+10 R 0 {3,S}
 
 diene_disubNd2_disubDe_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
-5 {Cs,O} 0 {1,S}
-6 {Cs,O} 0 {1,S}
-7 {R!H} 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
+5 R_nondelocalized 0 {1,S}
+6 R_nondelocalized 0 {1,S}
+7 R!H 0 {4,S}
+8 R_min3valency 0 {4,S} {11,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {8,{D,T,B}}
 
 diene_disubDe_disubDe_out
-1 *3 Cd 0 {2,D}, {5,S}, {6,S}
-2 *4 Cd 0 {1,D}, {3,S}
-3 *5 Cd 0 {2,S}, {4,D}
-4 *6 Cd 0 {3,D}, {7,S}, {8,S}
-5 {R!H} 0 {1,S}
-6 {Cd,Ct,Cb,CO} 0 {1,S}
-7 {R!H} 0 {4,S}
-8 {Cd,Ct,Cb,CO} 0 {4,S}
+1 *3 C 0 {2,D}, {5,S}, {6,S}
+2 *4 C 0 {1,D}, {3,S} {9,S}
+3 *5 C 0 {2,S}, {4,D} {10,S}
+4 *6 C 0 {3,D}, {7,S}, {8,S}
+5 R!H 0 {1,S}
+6 R_min3valency 0 {1,S} {11,{D,T,B}}
+7 R!H 0 {4,S}
+8 R_min3valency 0 {4,S} {12,{D,T,B}}
+9 R 0 {2,S}
+10 R 0 {3,S}
+11 R_min2valency 0 {6,{D,T,B}}
+12 R_min2valency 0 {8,{D,T,B}}
 
 diene_in
-1 *4 Cd 0 {2,S}
-2 *5 Cd 0 {1,S}
+1 *4 C 0 {2,S} {3,S} {4,D}
+2 *5 C 0 {1,S} {5,S} {6,D}
+3 R 0 {1,S}
+4 C 0 {1,D}
+5 R 0 {2,S}
+6 C 0 {2,D}
 
 diene_in_2H
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
 3 H 0 {1,S}
 4 H 0 {2,S}
+5 C 0 {1,D}
+6 C 0 {2,D}
 
 diene_in_HNd
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
 3 H 0 {1,S}
-4 {Cs,O} 0 {2,S}
+4 R_nondelocalized 0 {2,S}
+5 C 0 {1,D}
+6 C 0 {2,D}
 
 diene_in_NdH
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
-3 {Cs,O} 0 {1,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
+3 R_nondelocalized 0 {1,S}
 4 H 0 {2,S}
+5 C 0 {1,D}
+6 C 0 {2,D}
 
 diene_in_HDe
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {2,S}
+4 R_min3valency 0 {2,S} {7,{D,T,B}}
+5 C 0 {1,D}
+6 C 0 {2,D}
+7 R_min2valency 0 {4,{D,T,B}}
 
 diene_in_DeH
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 H 0 {2,S}
+5 C 0 {1,D}
+6 C 0 {2,S}
+7 R_min2valency 0 {3,{D,T,B}}
 
 diene_in_Nd2
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {2,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {2,S}
+5 C 0 {1,D}
+6 C 0 {2,D}
 
 diene_in_NdDe
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {2,S} {7,{D,T,B}}
+5 C 0 {1,D}
+6 C 0 {2,D}
+7 R_min2valency 0 {4,{D,T,B}}
 
 diene_in_DeNd
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cs,O} 0 {2,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_nondelocalized 0 {2,S}
+5 C 0 {1,D}
+6 C 0 {2,D}
+7 R_min2valency 0 {3,{D,T,B}}
 
 diene_in_De2
-1 *4 Cd 0 {2,S} {3,S}
-2 *5 Cd 0 {1,S} {4,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *4 C 0 {2,S} {3,S} {5,D}
+2 *5 C 0 {1,S} {4,S} {6,D}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_min3valency 0 {2,S} {8,{D,T,B}}
+5 C 0 {1,D}
+6 C 0 {2,D}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {4,{D,T,B}}
 
 ene
-1 *1 Cd 0 {2,D}
-2 *2 Cd 0 {1,D}
+1 *1 C 0 {2,D} {3,S} {4,S}
+2 *2 C 0 {1,D} {5,S} {6,S}
+3 R 0 {1,S}
+4 R 0 {1,S}
+5 R 0 {2,S}
+6 R 0 {2,S}
 
 ene_unsub_unsub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {2,S}
 6 H 0 {2,S}
 
 ene_unsub_monosub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {2,S}
-6 {R!H} 0 {2,S}
+6 R!H 0 {2,S}
 
 ene_2H_HNd
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {2,S}
-6 {Cs,O} 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 ene_2H_HDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 ene_monosub_unsub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
-4 {R!H} 0 {1,S}
+4 R!H 0 {1,S}
 5 H 0 {2,S}
 6 H 0 {2,S}
 
 ene_HNd_2H
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 5 H 0 {2,S}
 6 H 0 {2,S}
 
 ene_HDe_2H
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
 5 H 0 {2,S}
 6 H 0 {2,S}
+7 R_min2valency 0 {4,{D,T,B}}
 
 ene_monosub_monosub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
-4 {R!H} 0 {1,S}
+4 R!H 0 {1,S}
 5 H 0 {2,S}
-6 {R!H} 0 {2,S}
+6 R!H 0 {2,S}
 
 ene_HNd_HNd
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 5 H 0 {2,S}
-6 {Cs,O} 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 ene_HNd_HDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
-4 {Cs,O} 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 ene_HDe_HNd
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
 5 H 0 {2,S}
-6 {Cs,O} 0 {2,S}
+6 R_nondelocalized 0 {2,S}
+7 R_min2valency 0 {4,{D,T,B}}
 
 ene_HDe_HDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 ene_unsub_disub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {R!H} 0 {2,S}
-6 {R!H} 0 {2,S}
+5 R!H 0 {2,S}
+6 R!H 0 {2,S}
 
 ene_2H_Nd2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 ene_2H_NdDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 ene_2H_De2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
 3 H 0 {1,S}
 4 H 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+5 R_min3valency 0 {2,S} {7,{D,T,B}}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {5,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 ene_disub_unsub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {R!H} 0 {1,S}
-4 {R!H} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R!H 0 {1,S}
+4 R!H 0 {1,S}
 5 H 0 {2,S}
 6 H 0 {2,S}
 
 ene_Nd2_2H
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 5 H 0 {2,S}
 6 H 0 {2,S}
 
 ene_NdDe_2H
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
 5 H 0 {2,S}
 6 H 0 {2,S}
+7 R_min2valency 0 {4,{D,T,B}}
 
 ene_De2_2H
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_min3valency 0 {1,S} {8,{D,T,B}}
 5 H 0 {2,S}
 6 H 0 {2,S}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {4,{D,T,B}}
 
 ene_monosub_disub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {R!H} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R!H 0 {1,S}
 4 H 0 {1,S}
-5 {R!H} 0 {2,S}
-6 {R!H} 0 {2,S}
+5 R!H 0 {2,S}
+6 R!H 0 {2,S}
 
 ene_HNd_Nd2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
 4 H 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 ene_HNd_NdDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
 4 H 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 ene_HNd_De2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
 4 H 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+5 R_min3valency 0 {2,S} {7,{D,T,B}}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {5,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 ene_HDe_Nd2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 H 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
+7 R_min2valency 0 {3,{D,T,B}}
 
 ene_HDe_NdDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 H 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 ene_HDe_De2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 H 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+5 R_min3valency 0 {2,S} {8,{D,T,B}}
+6 R_min3valency 0 {2,S} {9,{D,T,B}}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {5,{D,T,B}}
+9 R_min2valency 0 {6,{D,T,B}}
 
 ene_disub_monosub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {R!H} 0 {1,S}
-4 {R!H} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R!H 0 {1,S}
+4 R!H 0 {1,S}
 5 H 0 {2,S}
-6 {R!H} 0 {2,S}
+6 R!H 0 {2,S}
 
 ene_Nd2_HNd
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 5 H 0 {2,S}
-6 {Cs,O} 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 ene_Nd2_HDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 ene_NdDe_HNd
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
 5 H 0 {2,S}
-6 {Cs,O} 0 {2,S}
+6 R_nondelocalized 0 {2,S}
+7 R_min2valency 0 {4,{D,T,B}}
 
 ene_NdDe_HDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 ene_De2_HNd
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_min3valency 0 {1,S} {8,{D,T,B}}
 5 H 0 {2,S}
-6 {Cs,O} 0 {2,S}
+6 R_nondelocalized 0 {2,S}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {4,{D,T,B}}
 
 ene_De2_HDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_min3valency 0 {1,S} {8,{D,T,B}}
 5 H 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+6 R_min3valency 0 {2,S} {9,{D,T,B}}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {4,{D,T,B}}
+9 R_min2valency 0 {6,{D,T,B}}
 
 ene_disub_disub
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {R!H} 0 {1,S}
-4 {R!H} 0 {1,S}
-5 {R!H} 0 {2,S}
-6 {R!H} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R!H 0 {1,S}
+4 R!H 0 {1,S}
+5 R!H 0 {2,S}
+6 R!H 0 {2,S}
 
 ene_Nd2_Nd2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
 
 ene_Nd2_NdDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {7,{D,T,B}}
+7 R_min2valency 0 {6,{D,T,B}}
 
 ene_Nd2_De2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cs,O} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_nondelocalized 0 {1,S}
+5 R_min3valency 0 {2,S} {7,{D,T,B}}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {5,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 ene_NdDe_Nd2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
+7 R_min2valency 0 {4,{D,T,B}}
 
 ene_NdDe_NdDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {8,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {6,{D,T,B}}
 
 ene_NdDe_De2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cs,O} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_nondelocalized 0 {1,S}
+4 R_min3valency 0 {1,S} {7,{D,T,B}}
+5 R_min3valency 0 {2,S} {8,{D,T,B}}
+6 R_min3valency 0 {2,S} {9,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
+8 R_min2valency 0 {5,{D,T,B}}
+9 R_min2valency 0 {6,{D,T,B}}
 
 ene_De2_Nd2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cs,O} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_min3valency 0 {1,S} {8,{D,T,B}}
+5 R_nondelocalized 0 {2,S}
+6 R_nondelocalized 0 {2,S}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {4,{D,T,B}}
 
 ene_De2_NdDe
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cs,O} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_min3valency 0 {1,S} {8,{D,T,B}}
+5 R_nondelocalized 0 {2,S}
+6 R_min3valency 0 {2,S} {9,{D,T,B}}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {4,{D,T,B}}
+9 R_min2valency 0 {6,{D,T,B}}
 
 ene_De2_De2
-1 *1 Cd 0 {2,D}, {3,S}, {4,S}
-2 *2 Cd 0 {1,D}, {5,S}, {6,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
-5 {Cd,Ct,Cb,CO} 0 {2,S}
-6 {Cd,Ct,Cb,CO} 0 {2,S}
-
-
+1 *1 C 0 {2,D}, {3,S}, {4,S}
+2 *2 C 0 {1,D}, {5,S}, {6,S}
+3 R_min3valency 0 {1,S} {7,{D,T,B}}
+4 R_min3valency 0 {1,S} {8,{D,T,B}}
+5 R_min3valency 0 {2,S} {9,{D,T,B}}
+6 R_min3valency 0 {2,S} {10,{D,T,B}}
+7 R_min2valency 0 {3,{D,T,B}}
+8 R_min2valency 0 {4,{D,T,B}}
+9 R_min2valency 0 {5,{D,T,B}}
+10 R_min2valency 0 {6,{D,T,B}}
