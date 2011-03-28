@@ -24,17 +24,19 @@
 
  Cbf-CbCbCbf
  1  * C 0 {2,B} {3,B} {4,B}  
- 2    C 0 {1,B} {5,B}
- 3    C 0 {1,B} {6,B}
+ 2    C 0 {1,B} {5,B} {9,S}
+ 3    C 0 {1,B} {6,B} {10,S}
  4    C 0 {1,B} {7,B} {8,B}
  5 R_aromatic 0 {2,B}
  6 R_aromatic 0 {3,B}
  7 R_aromatic 0 {4,B}
  8 R_aromatic 0 {4,B}
+ 9 R 0 {2,S}
+ 10 R 0 {3,S}
 
  Cbf-CbCbfCbf
  1  * C 0 {2,B} {3,B} {4,B}  
- 2    C 0 {1,B} {5,B}
+ 2    C 0 {1,B} {5,B} {10,S}
  3    C 0 {1,B} {6,B} {7,B}
  4    C 0 {1,B} {8,B} {9,B}
  5 R_aromatic 0 {2,B}
@@ -42,6 +44,7 @@
  7 R_aromatic 0 {3,B}
  8 R_aromatic 0 {4,B}
  9 R_aromatic 0 {4,B}
+ 10 R 0 {2,S}
 
  Cbf-CbfCbfCbf
  1  * C 0 {2,B} {3,B} {4,B}  
@@ -961,9 +964,14 @@
  
  Cds-OdCbCs                                             
  1  * C 0 {2,D} {3,S} {4,S}
- 2    Od 0 {1,D}
- 3    Cb 0 {1,S}
- 4    Cs 0 {1,S}
+ 2    O 0 {1,D}
+ 3    C 0 {1,S} {5,B} {6,B}
+ 4    C 0 {1,S} {7,S} {8,S} {9,S}
+ 5 R_aromatic 0 {3,B}
+ 6 R_aromatic 0 {3,B}
+ 7 R 0 {4,S}
+ 8 R 0 {4,S}
+ 9 R 0 {4,S}
  
  Cds-OdCbCds                                            
  1  * C 0 {2,D} {3,S} {4,S}
@@ -1496,7 +1504,7 @@
  4    H 0 {1,S}
  5    C 0 {2,D}
  6 R_aromatic 0 {3,B}
- 7 R_aromatic 0 {3,B{
+ 7 R_aromatic 0 {3,B}
  
  Cds-CdCO                                               
  1  * C 0 {2,D} {3,S} {4,S}
@@ -4711,7 +4719,7 @@
  4    C 0 {1,S} {9,S} {10,S} {11,S}
  5    H 0 {1,S}
  6 R_aromatic 0 {2,B}
- 7 R_aroamtic 0 {2,B}
+ 7 R_aromatic 0 {2,B}
  8 R_min3valency 0 {3,T}
  9 R 0 {4,S}
  10 R 0 {4,S}
@@ -4724,7 +4732,7 @@
  4    C 0 {1,S} {10,S} {11,S} {12,S}
  5    H 0 {1,S}
  6 R_aromatic 0 {2,B}
- 7 R_aroamtic 0 {2,B}
+ 7 R_aromatic 0 {2,B}
  8 R_aromatic 0 {3,B}
  9 R_aromatic 0 {3,B}
  10 R 0 {4,S}
@@ -5869,7 +5877,7 @@
  5    H 0 {1,S}
  6    C 0 {4,D} {12,S} {13,S}
  7 R_aromatic 0 {2,B}
- 8 R_aroamtic 0 {2,B}
+ 8 R_aromatic 0 {2,B}
  9 R_aromatic 0 {3,B}
  10 R_aromatic 0 {3,B}
  11 R 0 {4,S}
@@ -5884,7 +5892,7 @@
  5    H 0 {1,S}
  6    C 0 {4,D} {12,D}
  7 R_aromatic 0 {2,B}
- 8 R_aroamtic 0 {2,B}
+ 8 R_aromatic 0 {2,B}
  9 R_aromatic 0 {3,B}
  10 R_aromatic 0 {3,B}
  11 R 0 {4,S}
@@ -5961,7 +5969,7 @@
  7 R_aromatic 0 {2,B}
  8 R_aromatic 0 {3,B}
  9 R_aromatic 0 {3,B}
- 10 R_aroamtic 0 {4,B}
+ 10 R_aromatic 0 {4,B}
  11 R_aromatic 0 {4,B}
  
  Cs-CCCC                                                
@@ -6272,7 +6280,6 @@
  7    C 0 {6,D}
  8 R 0 {2,S}
  9 O 0 {2,D}
- 10 R 0 {3,S}
  10 R 0 {3,S}
  11 R 0 {4,S}
  12 R 0 {4,S}
@@ -6736,7 +6743,7 @@
  6 R_aromatic 0 {2,B}
  7 R_aromatic 0 {2,B}
  8 R_aromatic 0 {3,B}
- 9 R_aromtaic 0 {3,B}
+ 9 R_aromatic 0 {3,B}
  10 R 0 {4,S}
  11 R 0 {4,S}
  12 R 0 {4,S}
@@ -12465,7 +12472,7 @@
  5    O 0 {1,S} {14,S}
  6    C 0 {2,D} {15,S} {16,S}
  7    C 0 {3,D} {9,D}
- 8    Cd 0 {4,D} {10,D}
+ 8    C 0 {4,D} {10,D}
  9    O 0 {7,D}
  10    O 0 {8,D}
  11 R 0 {2,S}
@@ -12606,7 +12613,7 @@
  7 R 0 {3,S}
  8 R_min2valency 0 {3,D}
  9 R 0 {4,S}
- 10 R_mi2nvalency 0 {4,D}
+ 10 R_min2valency 0 {4,D}
  11 R 0 {5,S}
  
  Cs-(Cds-Od)(Cds-Od)CtOs                                
@@ -13951,7 +13958,7 @@
  3    C 0 {1,S} {8,B} {9,B}
  4    O 0 {1,S} {10,S}
  5    O 0 {1,S} {11,S}
- 6    Cd 0 {2,D} {12,S} {13,S}
+ 6    C 0 {2,D} {12,S} {13,S}
  7 R 0 {2,S}
  8 R_aromatic 0 {3,B}
  9 R_aromatic 0 {3,B}
