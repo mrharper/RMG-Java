@@ -19,216 +19,280 @@ Ring
 1 * R 0
 
 ThreeMember
-1 * R!H 0 {2,{S,D}} {3,{S,D}}
-2   R!H 0 {1,{S,D}} {3,{S,D}}
-3   R!H 0 {2,{S,D}} {1,{S,D}}
+1 * R_min2valency 0 {2,{S,D}} {3,{S,D}}
+2   R_min2valency 0 {1,{S,D}} {3,{S,D}}
+3   R_min2valency 0 {2,{S,D}} {1,{S,D}}
 
 FourMember
-1 * R!H 0 {2,{S,D}} {4,{S,D}}
-2   R!H 0 {1,{S,D}} {3,{S,D}}
-3   R!H 0 {2,{S,D}} {4,{S,D}}
-4   R!H 0 {3,{S,D}} {1,{S,D}}
+1 * R_min2valency 0 {2,{S,D}} {4,{S,D}}
+2   R_min2valency 0 {1,{S,D}} {3,{S,D}}
+3   R_min2valency 0 {2,{S,D}} {4,{S,D}}
+4   R_min2valency 0 {3,{S,D}} {1,{S,D}}
 
 FiveMember
-1 * R!H 0 {2,{S,D}} {5,{S,D}}
-2   R!H 0 {1,{S,D}} {3,{S,D}}
-3   R!H 0 {2,{S,D}} {4,{S,D}}
-4   R!H 0 {3,{S,D}} {5,{S,D}}
-5   R!H 0 {4,{S,D}} {1,{S,D}}
+1 * R_min2valency 0 {2,{S,D}} {5,{S,D}}
+2   R_min2valency 0 {1,{S,D}} {3,{S,D}}
+3   R_min2valency 0 {2,{S,D}} {4,{S,D}}
+4   R_min2valency 0 {3,{S,D}} {5,{S,D}}
+5   R_min2valency 0 {4,{S,D}} {1,{S,D}}
 
 SixMember
-1 * R!H 0 {2,{S,D}} {6,{S,D}}
-2   R!H 0 {1,{S,D}} {3,{S,D}}
-3   R!H 0 {2,{S,D}} {4,{S,D}}
-4   R!H 0 {3,{S,D}} {5,{S,D}}
-5   R!H 0 {4,{S,D}} {6,{S,D}}
-6   R!H 0 {5,{S,D}} {1,{S,D}}
+1 * R_min2valency 0 {2,{S,D}} {6,{S,D}}
+2   R_min2valency 0 {1,{S,D}} {3,{S,D}}
+3   R_min2valency 0 {2,{S,D}} {4,{S,D}}
+4   R_min2valency 0 {3,{S,D}} {5,{S,D}}
+5   R_min2valency 0 {4,{S,D}} {6,{S,D}}
+6   R_min2valency 0 {5,{S,D}} {1,{S,D}}
 
 sixnosidedouble
-1 * {Cs,Os} 0 {2,S} {6,S}
-2   {Cs,Os} 0 {1,S} {3,S}
-3   {Cs,Os} 0 {2,S} {4,S}
-4   {Cs,Os} 0 {3,S} {5,S}
-5   {Cs,Os} 0 {4,S} {6,S}
-6   {Cs,Os} 0 {5,S} {1,S}
+1 * R_nondelocalized 0 {2,S} {6,S}
+2   R_nondelocalized 0 {1,S} {3,S}
+3   R_nondelocalized 0 {2,S} {4,S}
+4   R_nondelocalized 0 {3,S} {5,S}
+5   R_nondelocalized 0 {4,S} {6,S}
+6   R_nondelocalized 0 {5,S} {1,S}
 
 Oxane
-1  * Cs 0 {2,S} {6,S}
-2    Os 0 {1,S} {3,S}
-3    Cs 0 {2,S} {4,S}
-4    Cs 0 {3,S} {5,S}
-5    Cs 0 {4,S} {6,S}
-6    Cs 0 {5,S} {1,S}
+1  * C 0 {2,S} {6,S} {7,S} {8,S}
+2    O 0 {1,S} {3,S}
+3    C 0 {2,S} {4,S} {9,S} {10,S}
+4    C 0 {3,S} {5,S} {11,S} {12,S}
+5    C 0 {4,S} {6,S} {13,S} {14,S}
+6    C 0 {5,S} {1,S} {15,S} {16,S}
+7 R 0 {1,S}
+8 R 0 {1,S}
+9 R 0 {3,S}
+10 R 0 {3,S}
+11 R 0 {4,S}
+12 R 0 {4,S}
+13 R 0 {5,S}
+14 R 0 {5,S}
+15 R 0 {6,S}
+16 R 0 {6,S}
 
 
 six-sidedoubles
 1   {C,O} 0 {2,S} {6,S}
-2 * {Cd,CO} 0 {1,S} {3,S}
+2 * C 0 {1,S} {3,S} {7,D}
 3   {C,O} 0 {2,S} {4,S}
 4   {C,O} 0 {3,S} {5,S}
 5   {C,O} 0 {4,S} {6,S}
 6   {C,O} 0 {5,S} {1,S}
+7 R_min2valency 0 {2,D}
 
 
 six-onesidedouble
-1   {Cs,Os} 0 {2,S} {6,S}
-2 * {Cd,CO} 0 {1,S} {3,S}
-3   {Cs,Os} 0 {2,S} {4,S}
-4   {Cs,Os} 0 {3,S} {5,S}
-5   {Cs,Os} 0 {4,S} {6,S}
-6   {Cs,Os} 0 {5,S} {1,S}
+1   R_nondelocalized 0 {2,S} {6,S}
+2 * C 0 {1,S} {3,S} {7,D}
+3   R_nondelocalized 0 {2,S} {4,S}
+4   R_nondelocalized 0 {3,S} {5,S}
+5   R_nondelocalized 0 {4,S} {6,S}
+6   R_nondelocalized 0 {5,S} {1,S}
+7 R_min2valency 0 {2,D}
 
 
 sixmembd-allsingles-twosidedoubles-ortho
-1   {Cs,Os} 0 {2,S} {6,S}
-2 *  {Cd,CO} 0 {1,S} {3,S}
-3   {Cd,CO} 0 {2,S} {4,S}
-4   {Cs,Os} 0 {3,S} {5,S}
-5   {Cs,Os} 0 {4,S} {6,S}
-6   {Cs,Os} 0 {5,S} {1,S}
+1   R_nondelocalized 0 {2,S} {6,S}
+2 *  C 0 {1,S} {3,S} {7,D}
+3   C 0 {2,S} {4,S} {8,D}
+4   R_nondelocalized 0 {3,S} {5,S}
+5   R_nondelocalized 0 {4,S} {6,S}
+6   R_nondelocalized 0 {5,S} {1,S}
+7 R_min2valency 0 {2,D}
+8 R_min2valency 0 {3,D}
 
 sixmembd-allsingles-twosidedoubles-meta
-1  {Cs,Os} 0 {2,S} {6,S}
-2 *  {Cd,CO} 0 {1,S} {3,S}
-3   {Cs,Os} 0 {2,S} {4,S}
-4   {Cd,CO} 0 {3,S} {5,S}
-5   {Cs,Os} 0 {4,S} {6,S}
-6   {Cs,Os} 0 {5,S} {1,S}
+1  R_nondelocalized 0 {2,S} {6,S}
+2 *  C 0 {1,S} {3,S} {7,D}
+3   R_nondelocalized 0 {2,S} {4,S}
+4   C 0 {3,S} {5,S} {8,D}
+5   R_nondelocalized 0 {4,S} {6,S}
+6   R_nondelocalized 0 {5,S} {1,S}
+7 R_min2valency 0 {2,D}
+8 R_min2valency 0 {4,D}
 
 sixmembd-allsingles-twosidedoubles-para
-1  {Cs,Os} 0 {2,S} {6,S}
-2 *  {Cd,CO} 0 {1,S} {3,S}
-3   {Cs,Os} 0 {2,S} {4,S}
-4   {Cs,Os} 0 {3,S} {5,S}
-5   {Cd,CO} 0 {4,S} {6,S}
-6   {Cs,Os} 0 {5,S} {1,S}
+1  R_nondelocalized 0 {2,S} {6,S}
+2 *  C 0 {1,S} {3,S} {7,D}
+3   R_nondelocalized 0 {2,S} {4,S}
+4   R_nondelocalized 0 {3,S} {5,S}
+5   C 0 {4,S} {6,S} {8,D}
+6   R_nondelocalized 0 {5,S} {1,S}
+7 R_min2valency 0 {2,D}
+8 R_min2valency 0 {5,D}
 
 six-inringonedouble
-1   {Cs,Os} 0 {2,S} {6,S}
-2 *  Cd 0 {1,S} {3,D}
-3   Cd 0 {2,D} {4,S}
-4   {Cs,Os} 0 {3,S} {5,S}
-5   {Cs,Os} 0 {4,S} {6,S}
-6   {Cs,Os} 0 {5,S} {1,S}
+1   R_nondelocalized 0 {2,S} {6,S}
+2 *  C 0 {1,S} {3,D} {7,S}
+3   C 0 {2,D} {4,S} {8,S}
+4   R_nondelocalized 0 {3,S} {5,S}
+5   R_nondelocalized 0 {4,S} {6,S}
+6   R_nondelocalized 0 {5,S} {1,S}
+7 R 0 {2,S}
+8 R 0 {2,S}
 
 
 
 
 24dihydro13dioxin
-1  Cd 0 {6,S} {2,D}
-2 * Cd 0 {3,S} {1,D}
-3  Cs 0 {4,S} {2,S}
-4  Os 0 {3,S} {5,S}
-5  Cs 0 {4,S} {6,S}
-6  Os 0 {5,S} {1,S}
+1  C 0 {6,S} {2,D} {7,S}
+2 * C 0 {3,S} {1,D} {8,S}
+3  C 0 {4,S} {2,S} {9,S} {10,S}
+4  O 0 {3,S} {5,S}
+5  C 0 {4,S} {6,S} {11,S} {12,S}
+6  O 0 {5,S} {1,S}
+7 R 0 {1,S}
+8 R 0 {2,S}
+9 R 0 {3,S}
+10 R 0 {3,S}
+11 R 0 {5,S}
+12 R 0 {5,S}
 
 23dihydro14dioxin
-1  Cd 0 {6,S} {2,D}
-2 * Cd 0 {3,S} {1,D}
-3  Os 0 {4,S} {2,S}
-4  Cs 0 {3,S} {5,S}
-5  Cs 0 {4,S} {6,S}
-6  Os 0 {5,S} {1,S}
+1  C 0 {6,S} {2,D} {7,S}
+2 * C 0 {3,S} {1,D} {8,S}
+3  O 0 {4,S} {2,S}
+4  C 0 {3,S} {5,S} {9,S} {10,S}
+5  C 0 {4,S} {6,S} {11,S} {12,S}
+6  O 0 {5,S} {1,S}
+7 R 0 {1,S}
+8 R 0 {2,S}
+9 R 0 {4,S}
+10 R 0 {4,S}
+11 R 0 {5,S}
+12 R 0 {5,S}
 
 
 six-inringtwodouble-13
-1  {Cs,Os} 0 {2,S} {6,S}
-2 *  Cd 0 {1,S} {3,D}
-3   Cd 0 {2,D} {4,S}
-4   Cd 0 {3,S} {5,D}
-5   Cd 0 {4,D} {6,S}
-6   {Cs,Os} 0 {5,S} {1,S}
+1  R_nondelocalized 0 {2,S} {6,S}
+2 *  C 0 {1,S} {3,D} {7,S}
+3   C 0 {2,D} {4,S} {8,S}
+4   C 0 {3,S} {5,D} {9,S}
+5   C 0 {4,D} {6,S} {10,S}
+6   R_nondelocalized 0 {5,S} {1,S}
+7 R 0 {2,S}
+8 R 0 {3,S}
+9 R 0 {4,S}
+10 R 0 {5,S}
 
 six-inringtwodouble-14
-1  {Cs,Os} 0 {2,S} {6,S}
-2 *  Cd 0 {1,S} {3,D}
-3   Cd 0 {2,D} {4,S}
-4   {Cs,Os} 0 {3,S} {5,S}
-5   Cd 0 {4,S} {6,D}
-6   Cd 0 {5,D} {1,S}
+1  R_nondelocalized 0 {2,S} {6,S}
+2 *  C 0 {1,S} {3,D} {7,S}
+3   C 0 {2,D} {4,S} {8,S}
+4   R_nondelocalized 0 {3,S} {5,S}
+5   C 0 {4,S} {6,D} {9,S}
+6   C 0 {5,D} {1,S} {10,S}
+7 R 0 {2,S}
+8 R 0 {3,S}
+9 R 0 {5,S}
+10 R 0 {6,S}
 
 six-inringtwodouble-12
-1  {Cs,Os} 0 {2,S} {6,S}
-2 *  Cd 0 {1,S} {3,D}
+1  R_nondelocalized 0 {2,S} {6,S}
+2 *  C 0 {1,S} {3,D} {7,S}
 3   C 0 {2,D} {4,D}
-4   Cd 0 {3,D} {5,S}
-5   {Cs,Os} 0 {4,S} {6,S}
-6   {Cs,Os} 0 {5,S} {1,S}
+4   C 0 {3,D} {5,S} {8,S}
+5   R_nondelocalized 0 {4,S} {6,S}
+6   R_nondelocalized 0 {5,S} {1,S}
+7 R 0 {2,S}
+8 R 0 {4,S}
 
 
 six-oneside-twoindoubles-25
-1 {Cs,Os} 0 {2,S} {6,S}
-2 Cd 0 {1,S} {3,D}
-3 Cd 0 {2,D} {4,S}
-4 * {Cd,CO} 0 {3,S} {5,S}
-5 Cd 0 {4,S} {6,D}
-6 Cd 0 {5,D} {1,S} 
+1 R_nondelocalized 0 {2,S} {6,S}
+2 C 0 {1,S} {3,D} {7,S}
+3 C 0 {2,D} {4,S} {8,S}
+4 * C 0 {3,S} {5,S} {9,D}
+5 C 0 {4,S} {6,D} {10,S}
+6 C 0 {5,D} {1,S} {11,S}
+7 R 0 {2,S}
+8 R 0 {3,S}
+9 R_min2valency 0 {4,D}
+10 R 0 {5,S}
+11 R 0 {6,S}
 
 six-oneside-twoindoubles-24
-1 {Cs,Os} 0 {2,S} {6,S}
-2 Cd 0 {1,S} {3,D}
-3 Cd 0 {2,D} {4,S}
-4 Cd 0 {3,S} {5,D}
-5 Cd 0 {4,D} {6,S}
-6 * {Cd,CO} 0 {5,S} {1,S} 
+1 R_nondelocalized 0 {2,S} {6,S}
+2 C 0 {1,S} {3,D} {7,S}
+3 C 0 {2,D} {4,S} {8,S}
+4 C 0 {3,S} {5,D} {9,S}
+5 C 0 {4,D} {6,S} {10,S}
+6 * C 0 {5,S} {1,S} {11,D}
+7 R 0 {2,S}
+8 R 0 {3,S}
+9 R 0 {4,S}
+10 R 0 {5,S}
+11 R_min2valency 0 {6,D}
 
 six-twoin13-twoout
-1 {CO,Cd} 0 {2,S} {6,S}
-2 Cd 0 {1,S} {3,D}
-3 Cd 0 {2,D} {4,S}
-4 Cd 0 {3,S} {5,D}
-5 Cd 0 {4,D} {6,S}
-6 * {Cd,CO} 0 {5,S} {1,S} 
+1 C 0 {2,S} {6,S} {7,D}
+2 C 0 {1,S} {3,D} {8,S}
+3 C 0 {2,D} {4,S} {9,S}
+4 C 0 {3,S} {5,D} {10,S}
+5 C 0 {4,D} {6,S} {11,S}
+6 * C 0 {5,S} {1,S} {12,D}
+7 R_min2valency 0 {1,D}
+8 R 0 {2,S}
+9 R 0 {3,S}
+10 R 0 {4,S}
+11 R 0 {5,S}
+12 R_min2valency 0 {6,D}
 
 six-twoin14-twoout
-1 {Cd,Od,CO} 0 {2,S} {6,S}
-2 Cd 0 {1,S} {3,D}
-3 Cd 0 {2,D} {4,S}
-4 * {Cd,CO} 0 {3,S} {5,S}
-5 Cd 0 {4,S} {6,D}
-6 Cd 0 {5,D} {1,S} 
+1 C 0 {2,S} {6,S} {7,D}
+2 C 0 {1,S} {3,D} {8,S}
+3 C 0 {2,D} {4,S} {9,S}
+4 * C 0 {3,S} {5,S} {10,D}
+5 C 0 {4,S} {6,D} {11,S}
+6 C 0 {5,D} {1,S} {12,S}
+7 R_min2valency 0 {1,D}
+8 R 0 {2,S}
+9 R 0 {3,S}
+10 R_min2valency 0 {4,D}
+11 R 0 {5,S}
+12 R 0 {6,S}
 
 SevenMember
-1 * R!H 0 {2,{S,D}} {7,{S,D}}
-2   R!H 0 {1,{S,D}} {3,{S,D}}
-3   R!H 0 {2,{S,D}} {4,{S,D}}
-4   R!H 0 {3,{S,D}} {5,{S,D}}
-5   R!H 0 {4,{S,D}} {6,{S,D}}
-6   R!H 0 {5,{S,D}} {7,{S,D}}
-7   R!H 0 {6,{S,D}} {1,{S,D}}
+1 * R_min2valency 0 {2,{S,D}} {7,{S,D}}
+2   R_min2valency 0 {1,{S,D}} {3,{S,D}}
+3   R_min2valency 0 {2,{S,D}} {4,{S,D}}
+4   R_min2valency 0 {3,{S,D}} {5,{S,D}}
+5   R_min2valency 0 {4,{S,D}} {6,{S,D}}
+6   R_min2valency 0 {5,{S,D}} {7,{S,D}}
+7   R_min2valency 0 {6,{S,D}} {1,{S,D}}
 
 EightMember
-1 * R!H 0 {2,{S,D}} {8,{S,D}}
-2   R!H 0 {1,{S,D}} {3,{S,D}}
-3   R!H 0 {2,{S,D}} {4,{S,D}}
-4   R!H 0 {3,{S,D}} {5,{S,D}}
-5   R!H 0 {4,{S,D}} {6,{S,D}}
-6   R!H 0 {5,{S,D}} {7,{S,D}}
-7   R!H 0 {6,{S,D}} {8,{S,D}}
-8   R!H 0 {7,{S,D}} {1,{S,D}}
+1 * R_min2valency 0 {2,{S,D}} {8,{S,D}}
+2   R_min2valency 0 {1,{S,D}} {3,{S,D}}
+3   R_min2valency 0 {2,{S,D}} {4,{S,D}}
+4   R_min2valency 0 {3,{S,D}} {5,{S,D}}
+5   R_min2valency 0 {4,{S,D}} {6,{S,D}}
+6   R_min2valency 0 {5,{S,D}} {7,{S,D}}
+7   R_min2valency 0 {6,{S,D}} {8,{S,D}}
+8   R_min2valency 0 {7,{S,D}} {1,{S,D}}
 
 NineMember
-1 * R!H 0 {2,{S,D}} {9,{S,D}}
-2   R!H 0 {1,{S,D}} {3,{S,D}}
-3   R!H 0 {2,{S,D}} {4,{S,D}}
-4   R!H 0 {3,{S,D}} {5,{S,D}}
-5   R!H 0 {4,{S,D}} {6,{S,D}}
-6   R!H 0 {5,{S,D}} {7,{S,D}}
-7   R!H 0 {6,{S,D}} {8,{S,D}}
-8   R!H 0 {7,{S,D}} {9,{S,D}}
-9   R!H 0 {8,{S,D}} {1,{S,D}}
+1 * R_min2valency 0 {2,{S,D}} {9,{S,D}}
+2   R_min2valency 0 {1,{S,D}} {3,{S,D}}
+3   R_min2valency 0 {2,{S,D}} {4,{S,D}}
+4   R_min2valency 0 {3,{S,D}} {5,{S,D}}
+5   R_min2valency 0 {4,{S,D}} {6,{S,D}}
+6   R_min2valency 0 {5,{S,D}} {7,{S,D}}
+7   R_min2valency 0 {6,{S,D}} {8,{S,D}}
+8   R_min2valency 0 {7,{S,D}} {9,{S,D}}
+9   R_min2valency 0 {8,{S,D}} {1,{S,D}}
 
 TenMember
-1 * R!H 0 {2,{S,D}} {10,{S,D}}
-2   R!H 0 {1,{S,D}} {3,{S,D}}
-3   R!H 0 {2,{S,D}} {4,{S,D}}
-4   R!H 0 {3,{S,D}} {5,{S,D}}
-5   R!H 0 {4,{S,D}} {6,{S,D}}
-6   R!H 0 {5,{S,D}} {7,{S,D}}
-7   R!H 0 {6,{S,D}} {8,{S,D}}
-8   R!H 0 {7,{S,D}} {9,{S,D}}
-9   R!H 0 {8,{S,D}} {10,{S,D}}
-10  R!H 0 {9,{S,D}} {1,{S,D}}
+1 * R_min2valency 0 {2,{S,D}} {10,{S,D}}
+2   R_min2valency 0 {1,{S,D}} {3,{S,D}}
+3   R_min2valency 0 {2,{S,D}} {4,{S,D}}
+4   R_min2valency 0 {3,{S,D}} {5,{S,D}}
+5   R_min2valency 0 {4,{S,D}} {6,{S,D}}
+6   R_min2valency 0 {5,{S,D}} {7,{S,D}}
+7   R_min2valency 0 {6,{S,D}} {8,{S,D}}
+8   R_min2valency 0 {7,{S,D}} {9,{S,D}}
+9   R_min2valency 0 {8,{S,D}} {10,{S,D}}
+10  R_min2valency 0 {9,{S,D}} {1,{S,D}}
 
 //////////// Hydrocarbon rings
 
