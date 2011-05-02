@@ -51,16 +51,12 @@ import jing.rxnSys.ReactionModelGenerator;
 //## class ChemGraph
 public class ChemGraph implements Matchable {
 
-    protected static int MAX_OXYGEN_NUM = 10; //20 Modified by AJ		//## attribute MAX_OXYGEN_NUM
-	protected static  int MAX_CARBON_NUM = 30;//100 Modified by AJ       //SS
 	protected static int MAX_CYCLE_NUM = 10;		//SS (no fused rings); gmagoon: to turn fused rings off, set this to 1 (will exclude multiple non-fused rings, as well, I think)
 
 	/**
     Maximal radical number allowed in a ChemGraph.
     */
     protected static int MAX_RADICAL_NUM = 10;		//## attribute MAX_RADICAL_NUM
-    protected static int MAX_SILICON_NUM = 10;
-    protected static int MAX_SULFUR_NUM = 10;
     
     protected static int MAX_HEAVYATOM_NUM = 100;
     protected static String repOkString = null;
@@ -112,6 +108,10 @@ public class ChemGraph implements Matchable {
     protected boolean isAromatic = false;
     protected String InChI;
     protected String InChIKey;
+    static String[] elementsInChemGraph;
+    static int[] maxAtomsPerElement;
+    int[] numAtomsPerElement;
+    int radicalNumber = 0;
     // Constructors
 
     private  ChemGraph() {
@@ -121,9 +121,10 @@ public class ChemGraph implements Matchable {
         graph = p_graph;
        // isAromatic = isAromatic();
 
-        if (isForbiddenStructure(p_graph,getRadicalNumber(),getOxygenNumber(),getCarbonNumber()) || getRadicalNumber() > MAX_RADICAL_NUM || getOxygenNumber() > MAX_OXYGEN_NUM || getCycleNumber() > MAX_CYCLE_NUM) {
+        determineNumberOfAtomsPerElement();
+        if (isForbiddenStructure(p_graph,getRadicalNumber(),getParticularElementNumber("O"),getParticularElementNumber("C")) || getRadicalNumber() > MAX_RADICAL_NUM || getCycleNumber() > MAX_CYCLE_NUM) {
 		//if (getRadicalNumber() > MAX_RADICAL_NUM || getOxygenNumber() > MAX_OXYGEN_NUM || getCycleNumber() > MAX_CYCLE_NUM) {		        
-			String message = p_graph.toString() + " is forbidden by "+whichForbiddenStructures(p_graph, getRadicalNumber(), getOxygenNumber(), getCycleNumber()) +"and not allowed.";
+			String message = p_graph.toString() + " is forbidden by "+whichForbiddenStructures(p_graph, getRadicalNumber(), getCycleNumber()) +"and not allowed.";
 			graph = null;
         	throw new ForbiddenStructureException(message);
         }
@@ -1204,6 +1205,32 @@ return sn;
         //#]
     }
 
+    public void determineNumberOfAtomsPerElement() {
+        ChemElementDictionary cedict = ChemElementDictionary.getInstance();
+        int numElementsInDictionary = cedict.size();
+        numAtomsPerElement = new int[numElementsInDictionary];
+        for (int numAtoms=0; numAtoms<numElementsInDictionary; ++numAtoms) {
+            numAtomsPerElement[numAtoms] = 0;
+        }
+
+        radicalNumber = 0;
+
+        Iterator iter = getNodeList();
+        while (iter.hasNext()) {
+            Node node = (Node)iter.next();
+            Atom atom = (Atom)node.getElement();
+            radicalNumber += atom.getRadicalNumber();
+
+            ChemElement p_chemelement = cedict.getChemElement(atom.getChemElement().getSymbol());
+            for (int i=0; i<numElementsInDictionary; i++) {
+                if (p_chemelement.getSymbol().equals(elementsInChemGraph[i])) {
+                    ++numAtomsPerElement[i];
+                    break;
+                }
+            }
+        }
+    }
+
     /**
     Requires:
     Effects: generate the chemical formula of this chem graph and return it.  if the graph is not initialized, return null.
@@ -1731,10 +1758,16 @@ return sn;
         	Node node = (Node)iter.next();
         	Atom atom = (Atom)node.getElement();
 
+    public int getParticularElementNumber(String element) {
+        int int2return = -1;
+        for (int i=0; i<elementsInChemGraph.length; i++) {
+            if (elementsInChemGraph[i].equals(element))
+                return numAtomsPerElement[i];
         	if (atom.isOxygen()) {
         		oNum++;
         	}
         }
+        return int2return;
         return oNum;
         //#]
     }
@@ -2136,7 +2169,7 @@ return sn;
 	
 	// Which forbidden structure forbade this chemgraph?
 	// returns the names of forbidden structures.
-    public static String whichForbiddenStructures(Graph p_graph, int radNumber, int oxygenNumber, int cycleNumber) {
+    public static String whichForbiddenStructures(Graph p_graph, int radNumber, int cycleNumber) {
 		String forbidden_by = "";
 		for (Iterator iter = forbiddenStructure.iterator(); iter.hasNext(); ) {
         	FunctionalGroup fg = (FunctionalGroup)iter.next();
@@ -2148,8 +2181,6 @@ return sn;
         if (forbidden_by=="") {
         	if (radNumber > MAX_RADICAL_NUM)
         		return "the maximum number of radicals per species (check the condition.txt file), ";
-        	else if (oxygenNumber > MAX_OXYGEN_NUM)
-        		return "the maximum number of oxygens per species (check the condition.txt file), ";
         	else if (cycleNumber > MAX_CYCLE_NUM)
         		return "the maximum number of cycles per species (check the condition.txt file), ";
         	else
@@ -2472,22 +2503,15 @@ return sn;
         	return false;
         }
 
-        // check if the oxygen atom number is too large
-        if (getOxygenNumber() > MAX_OXYGEN_NUM) {
-        	setRepOkString("The following chemgraph exceeds the maximum oxygens allowed (" + MAX_OXYGEN_NUM + ") in a species:\n" + this.toString());
+        // Check if any of the atom numbers are too large
+        for (int i=0; i<numAtomsPerElement.length; i++) {
+            if (numAtomsPerElement[i] > maxAtomsPerElement[i]) {
+                setRepOkString("The following chemgraph exceeds the maximum " +
+                        elementsInChemGraph[i] + " allowed (" +
+                        maxAtomsPerElement[i] + ") in a species:\n" +
+                        this.toString());
         	return false;
-        }
-		if (getCarbonNumber() > MAX_CARBON_NUM) {
-        	setRepOkString("The following chemgraph exceeds the maximum carbons allowed (" + MAX_CARBON_NUM + ") in a species:\n" + this.toString());
-        	return false;
-        }
-		if (getSulfurNumber() > MAX_SULFUR_NUM) {
-        	setRepOkString("The following chemgraph exceeds the maximum sulfurs allowed (" + MAX_SULFUR_NUM + ") in a species:\n" + this.toString());
-        	return false;
-        }
-		if (getSiliconNumber() > MAX_SILICON_NUM) {
-        	setRepOkString("The following chemgraph exceeds the maximum silicons allowed (" + MAX_SILICON_NUM + ") in a species:\n" + this.toString());
-        	return false;
+            }
         }
 		
 		if (getHeavyAtomNumber() > MAX_HEAVYATOM_NUM) {
@@ -2690,8 +2714,6 @@ return sn;
         //#]
     }
 
-    public int getMAX_OXYGEN_NUM() {
-        return MAX_OXYGEN_NUM;
     }
 
     public static int getMAX_RADICAL_NUM() {
@@ -2748,25 +2770,9 @@ return sn;
     public void setAbramGAPP(GeneralAbramGAPP p_GeneralAbramGAPP) {
         abramGAPP = p_GeneralAbramGAPP;
     }
-    
-    public static void setMaxCarbonNumber(int maxCNumber) {
-    	MAX_CARBON_NUM = maxCNumber;
-    }
-    
-    public static void setMaxOxygenNumber(int maxONumber) {
-    	MAX_OXYGEN_NUM = maxONumber;
-    }
-    
+       
     public static void setMaxRadicalNumber(int maxRadNumber) {
     	MAX_RADICAL_NUM = maxRadNumber;
-    }
-    
-    public static void setMaxSulfurNumber(int maxSNumber) {
-    	MAX_SULFUR_NUM = maxSNumber;
-    }
-    
-    public static void setMaxSiliconNumber(int maxSiNumber) {
-    	MAX_SILICON_NUM = maxSiNumber;
     }
     
     public static void setMaxHeavyAtomNumber(int maxHANumber) {
@@ -2786,6 +2792,54 @@ return sn;
     
     public static String getRepOkString() {
     	return repOkString;
+    }
+
+    public static void initializeMolecularFormulaArrays(ChemElementDictionary cedict) {
+        int numElementsInDictionary = cedict.size();
+        elementsInChemGraph = new String[numElementsInDictionary];
+        int counter = 0;
+        for (Iterator iter = cedict.dictionary.keySet().iterator(); iter.hasNext();) {
+            elementsInChemGraph[counter] = (String)iter.next();
+            counter++;
+        }
+
+        // Sort the elementsInChemGraph alphabetically
+        int i, j;
+        String tempString;
+
+        for (i=0; i<numElementsInDictionary-1; i++) {
+            for (j=i+1; j<numElementsInDictionary; j++) {
+                if (elementsInChemGraph[i].compareToIgnoreCase(elementsInChemGraph[j]) > 0 ) {
+                    // ascending sort
+                    tempString = elementsInChemGraph[i];
+                    elementsInChemGraph[i] = elementsInChemGraph[j];    // swapping
+                    elementsInChemGraph[j] = tempString;
+                }
+            }
+        }
+    }
+
+    public static void initializeMaxElementsArray(int numElementsInDictionary) {
+        maxAtomsPerElement = new int[numElementsInDictionary];
+        for (int i=0; i<numElementsInDictionary; i++) {
+            maxAtomsPerElement[i] = 100;
+        }
+    }
+
+    public static String[] getElementsInChemGraph() {
+        return elementsInChemGraph;
+    }
+
+    public int[] getNumberOfElementsInChemGraph() {
+        return numAtomsPerElement;
+    }
+
+    public static void setMaxElementNumber(String elementOfInterest, int max) {
+        String[] allElements = getElementsInChemGraph();
+        for (int i=0; i<allElements.length; i++) {
+            if (elementOfInterest.equals(allElements[i]))
+                maxAtomsPerElement[i] = max;
+        }
     }
 }
 /*********************************************************************

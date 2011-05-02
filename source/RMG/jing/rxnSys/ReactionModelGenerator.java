@@ -5031,20 +5031,14 @@ public class ReactionModelGenerator {
     }
     
     public String readMaxAtomTypes(String line, BufferedReader reader) {
-        if (line.startsWith("MaxCarbonNumber")) {
+        if (line.startsWith("MaxElementNumberPerSpecies")) {
         	StringTokenizer st = new StringTokenizer(line);
-        	String dummyString = st.nextToken();	// This should hold "MaxCarbonNumberPerSpecies:"
-        	int maxCNum = Integer.parseInt(st.nextToken());
-        	ChemGraph.setMaxCarbonNumber(maxCNum);
-        	Logger.info("Note: Overriding default MAX_CARBON_NUM with user-defined value: " + maxCNum);
-        	line = ChemParser.readMeaningfulLine(reader, true);
-        }
-        if (line.startsWith("MaxOxygenNumber")) {
-        	StringTokenizer st = new StringTokenizer(line);
-        	String dummyString = st.nextToken();	// This should hold "MaxOxygenNumberPerSpecies:"
-        	int maxONum = Integer.parseInt(st.nextToken());
-        	ChemGraph.setMaxOxygenNumber(maxONum);
-        	Logger.info("Note: Overriding default MAX_OXYGEN_NUM with user-defined value: " + maxONum);
+        	String dummyString = st.nextToken();	// This should hold "MaxElementNumberPerSpecies:"
+                String elementOfInterest = st.nextToken();
+        	int maxNum = Integer.parseInt(st.nextToken());
+        	ChemGraph.setMaxElementNumber(elementOfInterest,maxNum);
+        	Logger.info("Note: Setting maximum number of " + elementOfInterest +
+                        " to user-defined value: " + maxNum);
         	line = ChemParser.readMeaningfulLine(reader, true);
         }
         if (line.startsWith("MaxRadicalNumber")) {
@@ -5053,22 +5047,6 @@ public class ReactionModelGenerator {
         	int maxRadNum = Integer.parseInt(st.nextToken());
         	ChemGraph.setMaxRadicalNumber(maxRadNum);
         	Logger.info("Note: Overriding default MAX_RADICAL_NUM with user-defined value: " + maxRadNum);
-        	line = ChemParser.readMeaningfulLine(reader, true);
-        }
-        if (line.startsWith("MaxSulfurNumber")) {
-        	StringTokenizer st = new StringTokenizer(line);
-        	String dummyString = st.nextToken();	// This should hold "MaxSulfurNumberPerSpecies:"
-        	int maxSNum = Integer.parseInt(st.nextToken());
-        	ChemGraph.setMaxSulfurNumber(maxSNum);
-        	Logger.info("Note: Overriding default MAX_SULFUR_NUM with user-defined value: " + maxSNum);
-        	line = ChemParser.readMeaningfulLine(reader, true);
-        }
-        if (line.startsWith("MaxSiliconNumber")) {
-        	StringTokenizer st = new StringTokenizer(line);
-        	String dummyString = st.nextToken();	// This should hold "MaxSiliconNumberPerSpecies:"
-        	int maxSiNum = Integer.parseInt(st.nextToken());
-        	ChemGraph.setMaxSiliconNumber(maxSiNum);
-        	Logger.info("Note: Overriding default MAX_SILICON_NUM with user-defined value: " + maxSiNum);
         	line = ChemParser.readMeaningfulLine(reader, true);
         }
         if (line.startsWith("MaxHeavyAtom")) {
