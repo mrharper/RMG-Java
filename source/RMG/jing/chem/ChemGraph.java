@@ -1757,19 +1757,21 @@ return sn;
         while (iter.hasNext()) {
         	Node node = (Node)iter.next();
         	Atom atom = (Atom)node.getElement();
+                if (atom.isOxygen()) {
+        		oNum++;
+        	}
+        }
+                return oNum;
+        //#]
+    }
 
     public int getParticularElementNumber(String element) {
         int int2return = -1;
         for (int i=0; i<elementsInChemGraph.length; i++) {
             if (elementsInChemGraph[i].equals(element))
                 return numAtomsPerElement[i];
-        	if (atom.isOxygen()) {
-        		oNum++;
-        	}
         }
         return int2return;
-        return oNum;
-        //#]
     }
 
 
@@ -2712,8 +2714,6 @@ return sn;
 
 
         //#]
-    }
-
     }
 
     public static int getMAX_RADICAL_NUM() {
