@@ -1236,101 +1236,31 @@ return sn;
     Effects: generate the chemical formula of this chem graph and return it.  if the graph is not initialized, return null.
     Modifies:
     */
-    //## operation generateChemicalFormula()
     public String generateChemicalFormula() {
-        //#[ operation generateChemicalFormula()
         if (getGraph() == null) return null;
 
-        /*int cap = ChemElementDictionary.size();
-        Vector type = new Vector(cap);
-        int[] number = new int[cap];
-        */
-        int C_number = 0;
-        int H_number = 0;
-        int O_number = 0;
-        int radical = 0;
-        // Added by MRH on 18-Jun-2009
-        //	Hardcoding Si and S into RMG-java
-        int Si_number = 0;
-        int S_number = 0;
-
-        Iterator iter = getNodeList();
-        while (iter.hasNext()) {
-        	Node node = (Node)iter.next();
-        	Atom atom = (Atom)node.getElement();
-        	radical += atom.getRadicalNumber();
-
-        	if (atom.isCarbon()) {
-        		C_number++;
-        	}
-        	else if (atom.isHydrogen()) {
-        		H_number++;
-        	}
-        	else if (atom.isOxygen()) {
-        		O_number++;
-        	}
-            // Added by MRH on 18-Jun-2009
-            //	Hardcoding Si and S into RMG-java
-        	else if (atom.isSilicon()) {
-        		Si_number++;
-        	}
-        	else if (atom.isSulfur()) {
-        		S_number++;
-        	}
-        	else {
-        		throw new InvalidChemNodeElementException();
-        	}
-        }
-
         String s = "";
-        if (C_number>0) {
-        	s = s + "C";
-        	if (C_number >1) {
-        		s = s + String.valueOf(C_number);
-        	}
+        for (int k=0; k<elementsInChemGraph.length; k++) {
+            if (numAtomsPerElement[k]>0) {
+                s += elementsInChemGraph[k];
+                if (numAtomsPerElement[k]>1) {
+                    s += numAtomsPerElement[k];
+                }
+            }
         }
-        if (H_number>0) {
-        	s = s + "H";
-        	if (H_number >1) {
-        		s = s + String.valueOf(H_number);
-        	}
-        }
-        if (O_number>0) {
-        	s = s + "O";
-        	if (O_number >1) {
-        		s = s + String.valueOf(O_number);
-        	}
-        }
-        // Added by MRH on 18-Jun-2009
-        //	Hardcoding Si and S into RMG-java
-        if (Si_number>0) {
-        	s += "Si";
-        	if (Si_number>1) {
-        		s += String.valueOf(Si_number);
-        	}
-        }
-        if (S_number>0) {
-        	s += "S";
-        	if (S_number>1) {
-        		s += String.valueOf(S_number);
-        	}
-        }
-
+        
         chemicalFormula = s;
-        if (radical == 1) {
+        if (radicalNumber == 1) {
         	chemicalFormula = chemicalFormula + "J";
         }
-        else if (radical == 2) {
+        else if (radicalNumber == 2) {
         	chemicalFormula = chemicalFormula + "JJ";
         }
-        else if (radical == 3) {
+        else if (radicalNumber == 3) {
         	chemicalFormula = chemicalFormula + "JJJ";
         }
 
         return chemicalFormula;
-
-
-        //#]
     }
     
     //6/9/09 gmagoon: modified to also generate InChIKey; see comments in corresponding Species function
