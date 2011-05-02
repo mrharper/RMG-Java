@@ -70,8 +70,10 @@ Alcohol
 
 Phenol
 1 * O 0 {2,S} {3,S}
-2 Cb 0 {1,S}
+2 C 0 {1,S} {4,B} {5,B}
 3 H 0 {1,S}
+4 R_min2valency 0 {2,B}
+5 R_min2valency 0 {2,B}
 
 Ether
 1 * O 0 {2,S} {3,S}
