@@ -1756,7 +1756,7 @@ return sn;
 
     /**
 	 Added by: Amrit Jalan
-	 Effects: calculate the raduis of the chemGraph using Abraham V values. (UNITS of radius = m)
+	 Effects: calculate the radius of the chemGraph using Abraham V values. (UNITS of radius = m)
 	 */
     public double getRadius() {
 		
