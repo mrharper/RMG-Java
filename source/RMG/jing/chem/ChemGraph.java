@@ -231,7 +231,6 @@ public class ChemGraph implements Matchable {
         		Node newNode = g.addNode(H);
         		g.addArcBetween(node, S, newNode);
         	}
-        	node.updateFgElement();
         }
 
         return;
@@ -270,7 +269,6 @@ public class ChemGraph implements Matchable {
                                        Node n = g.addNode(H);
                                        g.addArcBetween(node,S,n);
                                }
-                               node.updateFgElement();
                        }
                }
        }
