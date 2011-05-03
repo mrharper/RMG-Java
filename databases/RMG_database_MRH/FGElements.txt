@@ -1,0 +1,6 @@
+R				{C,Cl,H,N,O,Si,S}
+R!H				{C,Cl,N,O,Si,S}
+R!C				{Cl,H,N,O,Si,S}
+R_min2valency 	{C,O,N,Si,S}
+R_min3valency 	{C,N,Si}
+R_min4valency	{C,Si}

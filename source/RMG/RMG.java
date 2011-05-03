@@ -91,6 +91,8 @@ public class RMG {
             if (line.startsWith("Database")) 
                 extractAndSetDatabasePath(line);
 
+            commencePrimaryIgnition();
+
             // Generate the model!
             ReactionModelGenerator rmg = new ReactionModelGenerator();
             rmg.modelGeneration();
@@ -174,6 +176,7 @@ public class RMG {
 	public static void setDatabasePaths(String database_path) {
 		// String database_path = workingDir + "/databases/" + name
 		System.setProperty("jing.chem.ChemGraph.forbiddenStructureFile",   database_path +"/ForbiddenStructures.txt");
+                System.setProperty("jing.chem.ChemElement.elementsFile",           database_path +"/Elements.txt");
                 System.setProperty("jing.chem.FGElement.fgElementsFile",           database_path +"/FGElements.txt");
 		System.setProperty("jing.chem.ThermoGAGroupLibrary.pathName",      database_path +"/thermo_groups");
 		System.setProperty("jing.chem.ThermoReferenceLibrary.pathName",    database_path +"/thermo_libraries");
@@ -227,6 +230,15 @@ public class RMG {
         Logger.verbose("");
         Logger.verbose("----------------------------------------------------------------------");
         Logger.verbose("");
+    }
+
+    public static void commencePrimaryIgnition() throws IOException {
+        ChemElement.readListOfElements();
+        FGElement.readFunctionalGroupElements();
+        FGElement.initializeHardCodedFunctionalGroupElements();
+        ChemGraph.readForbiddenStructure();
+        ChemGraph.initializeMolecularFormulaArrays(ChemElementDictionary.getInstance());
+        ChemGraph.initializeMaxElementsArray(ChemElementDictionary.getInstance().size());
     }
 
 }

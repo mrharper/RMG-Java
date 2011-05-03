@@ -1,0 +1,16 @@
+// Elements.txt
+// MRH (mrharper@mit.edu) on FEB-8-2011
+
+//	First column:	Element symbol
+// 	Second column:	Maximum number of neighbors
+//	Third column: 	Maximum number of H neighbors
+//	Fourth column:	Valency (Maximum number of connections)
+//	Fifth column:	Molecular mass [=] amu
+//	Sixth column:	Element name
+C	4	4	4	12.011	Carbon
+Cl	4	1	7	35.453	Chlorine
+H	1	1	1	 1.0079	Hydrogen
+N	4	3	5	14.0067 Nitrogen
+O	2	2	6	15.9994	Oxygen
+Si	4	4	4	28.0855	Silicon
+S	4	2	6	32.06	Sulfur
