@@ -2632,7 +2632,12 @@ return sn;
     	MAX_CYCLE_NUM = maxCycleNumber;
     }
     public int getHeavyAtomNumber() {
-    	return getCarbonNumber() + getOxygenNumber() + getSulfurNumber() + getSiliconNumber();
+        int numberHydrogens = getParticularElementNumber("H");
+        int numberHeavyAtom = 0;
+        for (int i=0; i<numAtomsPerElement.length; i++) {
+            numberHeavyAtom += numAtomsPerElement[i];
+        }
+    	return numberHeavyAtom - numberHydrogens;
     }
     
     public void setRepOkString(String s) {
