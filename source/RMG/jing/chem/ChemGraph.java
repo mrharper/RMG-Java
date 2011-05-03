@@ -108,13 +108,17 @@ public class ChemGraph implements Matchable {
     protected boolean isAromatic = false;
     protected String InChI;
     protected String InChIKey;
+
+    protected String thermoComments = "";
+    protected String freqComments = "";
+
     static String[] elementsInChemGraph;
     static int[] maxAtomsPerElement;
     int[] numAtomsPerElement;
     int radicalNumber = 0;
     // Constructors
 
-    private  ChemGraph() {
+    public  ChemGraph() {
     }
 	
     private  ChemGraph(Graph p_graph) throws ForbiddenStructureException {
@@ -2646,6 +2650,22 @@ return sn;
     
     public static String getRepOkString() {
     	return repOkString;
+    }
+
+    public void appendThermoComments(String newComment) {
+        thermoComments += newComment + "\t";
+    }
+
+    public String getThermoComments() {
+        return thermoComments;
+    }
+
+    public void appendFreqComments(String newComment) {
+        freqComments += newComment + "\t";
+    }
+
+    public String getFreqComments() {
+        return freqComments;
     }
 
     public static void initializeMolecularFormulaArrays(ChemElementDictionary cedict) {
