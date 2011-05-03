@@ -66,29 +66,28 @@ public class GATPFit {
 
         // write the element
         ChemGraph cg = species.getChemGraph();
-        int Hn = cg.getHydrogenNumber();
-        int Cn = cg.getCarbonNumber();
-        int On = cg.getOxygenNumber();
-        int Sin = cg.getSiliconNumber();
-        int Sn = cg.getSulfurNumber();
+        String[] allPossibleElementsInChemGraph = cg.getElementsInChemGraph();
+        int[] numAtomsOfEachElementInChemGraph = cg.getNumberOfElementsInChemGraph();
         
         int numUniqueElements = 0;
-        if (Hn > 0) ++numUniqueElements;
-        if (Cn > 0) ++numUniqueElements;
-        if (On > 0) ++numUniqueElements;
-        if (Sin > 0) ++numUniqueElements;
-        if (Sn > 0) ++numUniqueElements;
+        int locationOfFirstZero = -1;
+        for (int i=0; i<numAtomsOfEachElementInChemGraph.length; i++) {
+            if (numAtomsOfEachElementInChemGraph[i] > 0) {
+                ++numUniqueElements;
+                result.append("ELEM " + allPossibleElementsInChemGraph[i] + " " +
+                        MathTool.formatInteger(numAtomsOfEachElementInChemGraph[i],3,"L") + ls);
+            }
+            else if (locationOfFirstZero < 0) locationOfFirstZero = i;
+        }
+
+        if (numUniqueElements < 2)
+            result.append("ELEM " + allPossibleElementsInChemGraph[locationOfFirstZero] + " " +
+                    MathTool.formatInteger(numAtomsOfEachElementInChemGraph[locationOfFirstZero],3,"L") + ls);
         
         // GATPFit.exe requires at least two elements but no more than five
 //        if (numUniqueElements > 4) {
 //        	System.err.println("Species contains more than four unique elements.");
 //        }
-        
-		result.append( "ELEM C " + MathTool.formatInteger(Cn,3,"L") + ls );
-		result.append( "ELEM H " + MathTool.formatInteger(Hn,3,"L") + ls );
-        if (On>0) result.append( "ELEM O " + MathTool.formatInteger(On,3,"L") + ls );
-        if (Sin>0) result.append( "ELEM Si " + MathTool.formatInteger(Sin,3,"L") + ls );
-        if (Sn>0) result.append( "ELEM S " + MathTool.formatInteger(Sn,3,"L") + ls );
         
         /*if (Cn>0) result.append( "ELEM C " + MathTool.formatInteger(Cn,3,"L") + ls );
         if (Hn>0) result.append( "ELEM H " + MathTool.formatInteger(Hn,3,"L") + ls );
