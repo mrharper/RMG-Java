@@ -456,7 +456,13 @@ public  Chemkin() {
   //## operation writeChemkinElement()
   public static  String writeChemkinElement() {
       //#[ operation writeChemkinElement()
-      return "ELEMENTS H C O N Ne Ar He Si S END\n";
+      String chemkinEs = "ELEMENTS ";
+      String[] allElementsInSimulation = ChemGraph.getElementsInChemGraph();
+      for (int i=0; i<allElementsInSimulation.length; i++) {
+          chemkinEs += allElementsInSimulation[i] + " ";
+      }
+      chemkinEs += "Ne Ar He END\n";
+      return chemkinEs;
       //#]
   }
 
