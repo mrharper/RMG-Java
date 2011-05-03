@@ -150,6 +150,17 @@ public class Atom implements ChemNodeElement {
       //#]
   }
 
+  public double getNumberOfHydrogensToAdd() {
+      double num = -1;
+      if (chemElement != null) {
+          num = chemElement.getMaxHNeighbors();
+          if (freeElectron != null) num -= freeElectron.getOrder();
+          else throw new InvalidFreeElectronException();
+      }
+      else throw new InvalidChemNodeElementException();
+      return num;
+  }
+
   //## operation getValency()
   public double getValency() throws InvalidChemNodeElementException {
       //#[ operation getValency()

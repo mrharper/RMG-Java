@@ -121,6 +121,7 @@ public class ChemGraph implements Matchable {
         graph = p_graph;
        // isAromatic = isAromatic();
 
+        addMissingHydrogen();
         determineNumberOfAtomsPerElement();
         if (isForbiddenStructure(p_graph,getRadicalNumber(),getParticularElementNumber("O"),getParticularElementNumber("C")) || getRadicalNumber() > MAX_RADICAL_NUM || getCycleNumber() > MAX_CYCLE_NUM) {
 		//if (getRadicalNumber() > MAX_RADICAL_NUM || getOxygenNumber() > MAX_OXYGEN_NUM || getCycleNumber() > MAX_CYCLE_NUM) {		        
@@ -205,7 +206,7 @@ public class ChemGraph implements Matchable {
         while (iter.hasNext()) {
         	Node node = (Node)iter.next();
         	Atom atom = (Atom)node.getElement();
-        	int val = (int)atom.getValency();
+        	int val = (int)atom.getNumberOfHydrogensToAdd();
 
         	double bondOrder = 0;
         	Iterator neighbor_iter = node.getNeighbor();
