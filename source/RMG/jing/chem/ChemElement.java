@@ -71,7 +71,7 @@ public class ChemElement {
   }
   /**
   Requires:
-  Effects: privite constructor called by create() to create new object
+  Effects: private constructor called by create() to create new object
   Modifies:
   */
   //## operation ChemElement(String,int,double,double)
