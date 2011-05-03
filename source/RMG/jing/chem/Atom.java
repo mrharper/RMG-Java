@@ -61,7 +61,7 @@ public class Atom implements ChemNodeElement {
       chemElement = p_chemElement;
       freeElectron = p_electron;
 
-      name = p_chemElement.getName();
+      name = p_chemElement.getSymbol();
 
       if (p_electron != null) {
       	int order = p_electron.getOrder();
@@ -122,7 +122,7 @@ public class Atom implements ChemNodeElement {
   //## operation geChemElementName()
   public String geChemElementName() {
       //#[ operation geChemElementName()
-      return chemElement.getName();
+      return chemElement.getSymbol();
       //#]
   }
 
@@ -146,7 +146,7 @@ public class Atom implements ChemNodeElement {
   //## operation getType()
   public String getType() {
       //#[ operation getType()
-      return chemElement.getName();
+      return chemElement.getSymbol();
       //#]
   }
 
