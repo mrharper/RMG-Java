@@ -149,10 +149,10 @@ public class Therfit {
 
         ChemGraph cg = species.getChemGraph();
         result += "C\n";
-        result += MathTool.formatInteger(cg.getCarbonNumber(),3,"R") + '\n';
+        result += MathTool.formatInteger(cg.getParticularElementNumber("C"),3,"R") + '\n';
         result += "H\n";
-        result += MathTool.formatInteger(cg.getHydrogenNumber(),3,"R") + '\n';
-        int oNum = cg.getOxygenNumber();
+        result += MathTool.formatInteger(cg.getParticularElementNumber("H"),3,"R") + '\n';
+        int oNum = cg.getParticularElementNumber("O");
         if (oNum == 0) {
         	result += "0\n0\n";
         }
