@@ -1165,7 +1165,6 @@ public class ChemParser {
         	}
 			
         	if (g.isEmpty()) g = null;
-        	else g.identifyFgElement();
         	return g;
         }
         catch (Exception e) {
@@ -1395,7 +1394,6 @@ public class ChemParser {
 
 
         	if (g.isEmpty()) g = null;
-        	else g.identifyFgElement();
         	return g;
         }
         catch (InvalidGraphFormatException e) {

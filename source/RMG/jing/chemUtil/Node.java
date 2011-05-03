@@ -1122,7 +1122,6 @@ public class Node extends GraphComponent {
   //## operation getFgElement()
   public Object getFgElement() {
       //#[ operation getFgElement()
-      identifyFgElement();
       return fgElement;
       //#]
   }
