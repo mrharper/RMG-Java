@@ -130,7 +130,7 @@ public class FrequencyGroups{//gmagoon 111708: removed "implements GeneralGAPP"
                     Integer i = (Integer) iter.next();
                     fw.write(0 + "\n");
                 }
-                fw.write(p_chemGraph.getHydrogenNumber()+"\n");
+                fw.write(p_chemGraph.getParticularElementNumber("H")+"\n");
             }
            
                 
