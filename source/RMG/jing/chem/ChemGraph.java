@@ -336,13 +336,21 @@ public class ChemGraph implements Matchable {
         Atom atom = (Atom)p_node.getElement();
         Iterator neighbor_iter = p_node.getNeighbor();
         Arc[] listOfArcs = new Arc[neighborNumber];
-        boolean allSingleBonds = true;
+        boolean allBondsTheSameOrder = true;
+        String firstBondOrderRead = "";
         for (int i=0; i<neighborNumber; i++) {
             listOfArcs[i] = (Arc)neighbor_iter.next();
             String bondType = ((Bond)(listOfArcs[i].getElement())).name;
-            if (!bondType.equals("S"))  allSingleBonds = false;
+            if (i==0) firstBondOrderRead = bondType;
+            else {
+                if (!bondType.equals(firstBondOrderRead)) {
+                    allBondsTheSameOrder = false;
+                    break;
+                }
+            }
         }
-        FGElement fge = (FGElement)p_node.getFgElement();
+
+        if (!allBondsTheSameOrder) return 1;
 
         if (!atom.isRadical()) {
             // If there are two connections
@@ -374,7 +382,7 @@ public class ChemGraph implements Matchable {
                  *      - one different             (symm = 2)
                  *      - all same                  (symm = 6)
                  */
-                if (allSingleBonds) {
+                if (firstBondOrderRead.equals("S")) {
                     if (howManyTrues == 3) sn *= 3;
                 }
                 else {
@@ -389,7 +397,7 @@ public class ChemGraph implements Matchable {
                 check[1] = p_node.isSymmetric(listOfArcs[0], listOfArcs[2]);
                 check[2] = p_node.isSymmetric(listOfArcs[0], listOfArcs[3]);
                 check[3] = p_node.isSymmetric(listOfArcs[1], listOfArcs[2]);
-                check[4] = p_node.isSymmetric(listOfArcs[2], listOfArcs[3]);
+                check[4] = p_node.isSymmetric(listOfArcs[1], listOfArcs[3]);
                 check[5] = p_node.isSymmetric(listOfArcs[2], listOfArcs[3]);
                 int howManyTrues = 0;
                 for (int i=0; i<check.length; i++) {
@@ -414,6 +422,7 @@ public class ChemGraph implements Matchable {
                 if (howManyTrues == 6) sn *= 12;
                 else if (howManyTrues == 3) sn *= 3;
                 else if (howManyTrues == 2) sn *= 2;
+                else if (howManyTrues == 1 || howManyTrues == 0) sn *= 1;
                 else {
                     System.err.println("RMG did not recognize the symmetry of "
                             + "the following node: " + p_node.toString());
