@@ -1761,14 +1761,14 @@ return sn;
     public double getRadius() {
 		
         double ri;
-        if (getCarbonNumber() == 0 && getOxygenNumber() == 0){    // Which means we ar dealing with HJ or H2
+        if (getHeavyAtomNumber() == 0){    // Which means we ar dealing with HJ or H2
 			double ri3;
 			ri3 = 8.867 / 4.1887902;                            // 8.867 Ang^3 is the volume of a single Hydrogen Atom. 4.1887902 is 4pi/3
-            if (getHydrogenNumber() == 1){                        // i.e. we are dealing with the Hydrogen radical
+            if (getParticularElementNumber("H") == 1){                        // i.e. we are dealing with the Hydrogen radical
                 ri = Math.pow(ri3,0.333333) * 1.0e-10;
                 return ri;
             }
-            if (getHydrogenNumber() == 2){                        // i.e. we are dealing with the Hydrogen molecule
+            if (getParticularElementNumber("H") == 2){                        // i.e. we are dealing with the Hydrogen molecule
                 ri3 = 2*ri3;                                      // Assumption: volume of H2 molecule ~ 2 * Volume of H atom
                 ri = Math.pow(ri3,0.333333) * 1.0e-10;
                 return ri;                
