@@ -55,29 +55,8 @@ public interface ChemNodeElement {
     //## operation getName() 
     String getName();
     
-    //## operation isAny() 
-//    boolean isAny();
-    
-    //## operation isCarbon() 
-    boolean isCarbon();
-    
-    //## operation isHydrogen() 
-    boolean isHydrogen();
-    
-    //## operation isNonH() 
-    boolean isNonH();
-    
-    //## operation isOxygen() 
-    boolean isOxygen();
-    
     //## operation isRadical() 
     boolean isRadical();
-    
-    // Added by MRH on 18-Jun-2009
-    //	Hardcoding Si and S into RMG-java
-    boolean isSilicon();
-    
-    boolean isSulfur();
     
 }
 /*********************************************************************

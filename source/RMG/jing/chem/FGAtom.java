@@ -116,41 +116,6 @@ public class FGAtom implements ChemNodeElement {
         //#]
     }
     
-    //## operation isAny() 
-//    public boolean isAny() {
-//        //#[ operation isAny()
-//        return (getFgElement().isAny());
-//        //#]
-//    }
-    
-    //## operation isCarbon() 
-    public boolean isCarbon() {
-        //#[ operation isCarbon() 
-        return (getFgElement().isCarbon());
-        //#]
-    }
-    
-    //## operation isHydrogen() 
-    public boolean isHydrogen() {
-        //#[ operation isHydrogen() 
-        return (getFgElement().isHydrogen());
-        //#]
-    }
-    
-    //## operation isNonH() 
-    public boolean isNonH() {
-        //#[ operation isNonH() 
-        return (getFgElement().isNonH());
-        //#]
-    }
-    
-    //## operation isOxygen() 
-    public boolean isOxygen() {
-        //#[ operation isOxygen() 
-        return (getFgElement().isOxygen());
-        //#]
-    }
-    
     //## operation isRadical() 
     public boolean isRadical() {
         //#[ operation isRadical() 
@@ -160,14 +125,6 @@ public class FGAtom implements ChemNodeElement {
         
         
         //#]
-    }
-    
-    public boolean isSilicon() {
-        return (getFgElement().isSilicon());
-    }
-    
-    public boolean isSulfur() {
-        return (getFgElement().isSulfur());
     }
     
     //## operation make(FGElement,FreeElectron) 
