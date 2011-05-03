@@ -191,9 +191,6 @@ public class FGElement {
   }
 
   public static void initializeHardCodedFunctionalGroupElements() {
-      fGElementDictionary.putFGElement(new FGElement("R_aromatic"));
-      fGElementDictionary.putFGElement(new FGElement("R_nonaromatic"));
-      fGElementDictionary.putFGElement(new FGElement("R_delocalized"));
       fGElementDictionary.putFGElement(new FGElement("R_nondelocalized"));
   }
 
