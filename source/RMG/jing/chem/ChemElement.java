@@ -30,6 +30,11 @@
 package jing.chem;
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+import jing.chemParser.ChemParser;
 import java.util.*;
 
 //## package jing::chem
@@ -49,18 +54,21 @@ public class ChemElement {
   /**
   Name of the atom
   */
-  protected String name;		//## attribute name
+  protected String symbol;		//## attribute name
 
   /**
   Valency of the atom
   */
-  protected double valency;		//## attribute valency
+  protected int valency;		//## attribute valency
 
   /**
   Atomic weight of the atom
   */
   protected double weight;		//## attribute weight
 
+  protected int maxNeighbors;
+  protected int maxHNeighbors;
+  protected String elementName;
 
   // Constructors
 
@@ -74,16 +82,13 @@ public class ChemElement {
   Effects: private constructor called by create() to create new object
   Modifies:
   */
-  //## operation ChemElement(String,int,double,double)
-  private  ChemElement(String p_name, double p_valency, double p_weight) {
-      //#[ operation ChemElement(String,int,double,double)
-        name = p_name;
+  public ChemElement(String p_symbol, int p_neighbors, int p_Hneighbors, int p_valency, double p_weight, String p_name) {
+        symbol = p_symbol;
+        maxNeighbors = p_neighbors;
+        maxHNeighbors = p_Hneighbors;
         valency = p_valency;
         weight = p_weight;
-
-
-
-      //#]
+        elementName = p_name;
   }
 
   /**
@@ -207,6 +212,36 @@ public class ChemElement {
 
   protected static ChemElementDictionary getChemElementDictionary() {
       return chemElementDictionary;
+  }
+
+    public static void readListOfElements() throws IOException {
+      try {
+          String elementsFile = System.getProperty("jing.chem.ChemElement.elementsFile");
+          if (elementsFile == null) {
+              System.out.println("Undefined system property: jing.chem.ChemElement.elementsFile!");
+              System.out.println("No elements file defined!");
+              throw new IOException("Undefined system property: jing.chem.ChemElement.elementsFile");
+          }
+          FileReader in = new FileReader(elementsFile);
+          BufferedReader data = new BufferedReader(in);
+          String line = ChemParser.readMeaningfulLine(data, true);
+          read: while (line != null) {
+              StringTokenizer st = new StringTokenizer(line);
+              chemElementDictionary.putChemElement(
+                      new ChemElement(st.nextToken(),
+                      Integer.parseInt(st.nextToken()),
+                      Integer.parseInt(st.nextToken()),
+                      Integer.parseInt(st.nextToken()),
+                      Double.parseDouble(st.nextToken()),
+                      st.nextToken()));
+              line = ChemParser.readMeaningfulLine(data, true);
+          }
+          in.close();
+          return;
+      }
+      catch (Exception e) {
+          throw new IOException(e.getMessage());
+      }
   }
 
 }

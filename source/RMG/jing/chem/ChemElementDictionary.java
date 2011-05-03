@@ -77,7 +77,7 @@ public class ChemElementDictionary {
     //## operation putChemElement(ChemElement) 
     public void putChemElement(ChemElement p_chemElement) {
         //#[ operation putChemElement(ChemElement) 
-        dictionary.put(p_chemElement.name, p_chemElement);
+        dictionary.put(p_chemElement.symbol, p_chemElement);
         
         
         
