@@ -292,7 +292,6 @@ public class ReactionAdjList {
         	while (iter.hasNext()) {
         		Node node = (Node)iter.next();
         		node.updateFeElement();
-        		node.updateFgElement();
         	}
         	return;
         }

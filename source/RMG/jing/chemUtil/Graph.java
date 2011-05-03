@@ -183,7 +183,6 @@ public class Graph {
                         Node newNode = addNode(H);
                         addArcBetween(node, S, newNode);
                 }
-                node.updateFgElement();
         }
 
         return;

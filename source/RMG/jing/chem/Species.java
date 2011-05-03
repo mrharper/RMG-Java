@@ -276,11 +276,8 @@ public class Species {
         Atom newAtom3 = (Atom)atom3.changeRadical(-1,null);
         node3.setElement(newAtom3);
 
-        node1.updateFgElement();
         node1.updateFeElement();
-        node2.updateFgElement();
         node2.updateFeElement();
-        node3.updateFgElement();
         node3.updateFeElement();
 
         p_path = null;

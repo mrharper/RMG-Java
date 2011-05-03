@@ -161,7 +161,6 @@ public class GATP implements GeneralGAPP {
            		newnode[i][j] = g.addNode(H);
            		g.addArcBetween(node,S,newnode[i][j]);
            	}
-           	node.updateFgElement();
         }
 
         // find all the thermo groups
@@ -216,7 +215,6 @@ public class GATP implements GeneralGAPP {
            	for (int j=0;j<HNum;j++) {
            		g.removeNode(newnode[i][j]);
            	}
-           	node.updateFgElement();
 
            	p_chemGraph.resetThermoSite(node);
            	ThermoGAValue thisGAValue = thermoLibrary.findRadicalGroup(p_chemGraph);
@@ -235,7 +233,6 @@ public class GATP implements GeneralGAPP {
            		newnode[i][j] = g.addNode(H);
            		g.addArcBetween(node,S,newnode[i][j]);
            	}
-           	node.updateFgElement();
 
          }
 
@@ -251,7 +248,6 @@ public class GATP implements GeneralGAPP {
            	for (int j=0;j<HNum;j++) {
           	g.removeNode(newnode[i][j]);
            	}
-           	node.updateFgElement();
          }
 
          // subtract the enthalphy of H from the result
