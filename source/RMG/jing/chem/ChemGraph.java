@@ -1677,22 +1677,8 @@ return sn;
         //#]
     }
 
-    /**
-    Requires:
-    Effects: calculate the total radical number in this chem graph.
-    Modifies:
-    */
-    //## operation getRadicalNumber()
     public int getRadicalNumber() {
-        //#[ operation getRadicalNumber()
-        int radicalNumber = 0;
-        Iterator iter = getNodeList();
-        while (iter.hasNext()) {
-        	Object element = ((Node)(iter.next())).getElement();
-        	radicalNumber += ((Atom)element).getRadicalNumber();
-        }
         return radicalNumber;
-        //#]
     }
 
     //gmagoon 4/30/10: modified version of getRadicalNumber; same as getRadicalNumber, except it will not count 2S as radical
