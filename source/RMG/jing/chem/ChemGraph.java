@@ -1418,23 +1418,6 @@ return sn;
         //#]
     }
 
-    //## operation getCarbonNumber()
-    public int getCarbonNumber() {
-        //#[ operation getCarbonNumber()
-        int cNum = 0;
-        Iterator iter = getNodeList();
-        while (iter.hasNext()) {
-        	Node node = (Node)iter.next();
-        	Atom atom = (Atom)node.getElement();
-
-        	if (atom.isCarbon()) {
-        		cNum++;
-        	}
-        }
-        return cNum;
-        //#]
-    }
-
     /**
     Requires:
     Effects: return the hashMap of centralNode in this ChemGraph
@@ -1496,22 +1479,6 @@ return sn;
 	public int getCycleNumber(){
 		return getGraph().getCycleNumber();
 	}
-    //## operation getHydrogenNumber()
-    public int getHydrogenNumber() {
-        //#[ operation getHydrogenNumber()
-        int hNum = 0;
-        Iterator iter = getNodeList();
-        while (iter.hasNext()) {
-        	Node node = (Node)iter.next();
-        	Atom atom = (Atom)node.getElement();
-
-        	if (atom.isHydrogen()) {
-        		hNum++;
-        	}
-        }
-        return hNum;
-        //#]
-    }
     
     public String getInChI() {
     	if (InChI == null || InChI.length() == 0) generateInChI();
@@ -1678,22 +1645,6 @@ return sn;
 		}
 		return tBond;
 	}
-	
-    //## operation getOxygenNumber()
-    public int getOxygenNumber() {
-        //#[ operation getOxygenNumber()
-        int oNum = 0;
-        Iterator iter = getNodeList();
-        while (iter.hasNext()) {
-        	Node node = (Node)iter.next();
-        	Atom atom = (Atom)node.getElement();
-                if (atom.isOxygen()) {
-        		oNum++;
-        	}
-        }
-                return oNum;
-        //#]
-    }
 
     public int getParticularElementNumber(String element) {
         int int2return = -1;
@@ -1753,32 +1704,6 @@ return sn;
         	radicalNumber += ((Atom)element).getUnpairedRadicalNumber();
         }
         return radicalNumber;
-    }
-    
-    public int getSiliconNumber() {
-        int siNum = 0;
-        Iterator iter = getNodeList();
-        while (iter.hasNext()) {
-        	Node node = (Node)iter.next();
-        	Atom atom = (Atom)node.getElement();
-        	if (atom.isSilicon()) {
-        		siNum++;
-        	}
-        }
-        return siNum;
-    }
-    
-    public int getSulfurNumber() {
-        int sNum = 0;
-        Iterator iter = getNodeList();
-        while (iter.hasNext()) {
-        	Node node = (Node)iter.next();
-        	Atom atom = (Atom)node.getElement();
-        	if (atom.isSulfur()) {
-        		sNum++;
-        	}
-        }
-        return sNum;
     }
 
     //## operation getSymmetryNumber()
