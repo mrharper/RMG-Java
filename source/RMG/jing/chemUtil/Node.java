@@ -133,39 +133,6 @@ public class Node extends GraphComponent {
       //#]
   }
 
-  //## operation changeChemNodeElement(int,Node)
-  public Object changeChemNodeElement(int p_changedOrder, Node p_otherNode) {
-      //#[ operation changeChemNodeElement(int,Node)
-      Object element = getElement();
-      if (element instanceof Collection) {
-      	HashSet result = new HashSet();
-      	Iterator iter = ((Collection)element).iterator();
-      	while (iter.hasNext()) {
-      		Object nodeElement = iter.next();
-      		setElement(nodeElement);
-      		Object newElement = changeChemNodeElement(p_changedOrder,p_otherNode);
-      		if (newElement != null) {
-      			if (newElement instanceof Collection) result.addAll((Collection)newElement);
-      			else result.add(newElement);
-      		}
-      	}
-      	setElement(result);
-      	return result;
-      }
-      else if (element instanceof Atom) {
-      	return element;
-      }
-      else if (element instanceof FGAtom) {
-      	FGAtom fgAtom = (FGAtom)element;
-         	Object newFgAtom = changeFgAtom(fgAtom,p_changedOrder,p_otherNode);
-         	setElement(newFgAtom);
-         	return newFgAtom;
-      }
-      else {
-      	throw new InvalidChemNodeElementException();
-      }
-      //#]
-  }
 
   //## operation changeFgAtom(FGAtom,int,Node)
   public Object changeFgAtom(FGAtom p_fgAtom, int p_changedOrder, Node p_otherNode) throws InvalidChangedOrderException {
@@ -1206,33 +1173,6 @@ public class Node extends GraphComponent {
       ID = new Integer(p_ID);
       //#]
   }
-
-  //## operation includeFgElementInChemNodeElement(FGElement)
-  public boolean includeFgElementInChemNodeElement(FGElement p_fgElement) {
-      //#[ operation includeFgElementInChemNodeElement(FGElement)
-      Object element = getElement();
-      if (element instanceof Collection) {
-      	Iterator iter = ((Collection)element).iterator();
-      	while (iter.hasNext()) {
-      		ChemNodeElement cne = (ChemNodeElement)iter.next();
-      		if (cne instanceof FGAtom) {
-      			FGElement fge = ((FGAtom)cne).getFgElement();
-      			if (fge.equals(p_fgElement)) return true;
-      		}
-      	}
-      }
-      else if (element instanceof FGAtom) {
-      	FGElement fge = ((FGAtom)element).getFgElement();
-      	if (fge.equals(p_fgElement)) return true;
-      }
-
-      return false;
-
-
-      //#]
-  }
-
- 
 
   /**
   Requires:

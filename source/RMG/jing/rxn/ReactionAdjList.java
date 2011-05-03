@@ -144,25 +144,6 @@ public class ReactionAdjList {
         		        	throw new InvalidBondException("change bond");
         		        }
         		        
-        		        Node leftNode = null;
-        		        if (n1.includeFgElementInChemNodeElement(FGElement.make("Cdd"))) {
-        		        	Iterator a_iter = n1.getNeighbor();
-        		        	while (a_iter.hasNext()) {
-        		        		Arc a = (Arc)a_iter.next();
-        		        		if (a != arc) leftNode = n1.getOtherNode(a);
-        		        	}
-        		        }
-        		        n1.changeChemNodeElement(changedOrder.intValue(), leftNode);
-        		        
-        		        if (n2.includeFgElementInChemNodeElement(FGElement.make("Cdd"))) {
-        		        	Iterator a_iter = n2.getNeighbor();
-        		        	while (a_iter.hasNext()) {
-        		        		Arc a = (Arc)a_iter.next();
-        		        		if (a != arc) leftNode = n2.getOtherNode(a);
-        		        	}
-        		        }
-        		        n2.changeChemNodeElement(changedOrder.intValue(),leftNode);
-        		        
         		        changedAtom.add(n1);
         		        changedAtom.add(n2);
         		        
