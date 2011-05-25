@@ -2459,6 +2459,9 @@ return sn;
         	setRepOkString("The following chemgraph exceeds the maximum heavy atoms allowed (" + MAX_HEAVYATOM_NUM + ") in a species:\n" + this.toString());
         	return false;
         }
+
+        // Check that all "valencies" are satisfied
+        if (!valenciesOK()) return false;
 		
         return true;
 
@@ -2653,6 +2656,48 @@ return sn;
 
 
         //#]
+    }
+
+    public boolean valenciesOK() throws InvalidNodeElementException {
+        Iterator node_iter = graph.getNodeList();
+        while (node_iter.hasNext()) {
+            Node node = (Node)node_iter.next();
+            ChemElement ce = (ChemElement)((Atom)node.getElement()).getChemElement();
+            double valency = ce.getValency();
+            int maxHconnection = ce.getMaxHNeighbors();
+            int maxconnection = ce.getMaxNeighbors();
+
+            // Check the maximum # of connections
+            if (node.getNeighborNumber() > maxconnection) {
+                repOkString = "The following graph has too many neighbors for the node: " +
+                        node.toString() + "\n" + toString();
+                return false;
+            }
+            // Check the valency
+            Iterator arc_iter = node.getNeighbor();
+            while (arc_iter.hasNext()) {
+                Bond bond = (Bond)((Arc)(arc_iter.next())).getElement();
+                valency -= bond.getOrder();
+            }
+            if (valency < 0) {
+                repOkString = "The following graph exceeds the valency for the node: " +
+                        node.toString() + "\n" + toString();
+                return false;
+            }
+            // Check the maximum # of hydrogens
+            HashSet neighbors = node.getNeighboringNodes();
+            for (Iterator iter_neighbor = neighbors.iterator(); iter_neighbor.hasNext();) {
+                Node currentNode = (Node)iter_neighbor.next();
+                if ("H".equals(((Atom)currentNode.getElement()).getName()))
+                        --maxHconnection;
+            }
+            if (maxHconnection < 0) {
+                repOkString = "The following graph has too many H neighbors for the node: " +
+                        node.toString() + "\n" + toString();
+                return false;
+            }
+        }
+        return true;
     }
 
     public static int getMAX_RADICAL_NUM() {
