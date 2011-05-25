@@ -1923,11 +1923,7 @@ return sn;
         p_axis.add(nextArc);
 
         Node nextNode = nextArc.getOtherNode(p_beginNode);
-        FGElement fge = (FGElement)nextNode.getFgElement();
-        FGElement Cdd = FGElement.make("Cdd");
-        FGElement Sidd = FGElement.make("Sidd");
-
-        if (!fge.equals(Cdd) & !fge.equals(Sidd)) return nextNode;
+        if (!determineIfNodeMatchesOldFGTemplate(nextNode,2,"D")) return nextNode;
         else {
         	return getToEndOfAxis(nextArc,nextNode,p_axis);
         }
