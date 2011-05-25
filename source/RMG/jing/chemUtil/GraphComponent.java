@@ -723,58 +723,53 @@ abstract public class GraphComponent {
         int foundNum = 0;
         Iterator iter2 = c2.iterator();
         while (iter2.hasNext()) {
-        	foundNum = 0;
-        	GraphComponent co2 = (GraphComponent)iter2.next();
-        	// if a neighbor in c2 has not been visited, compare it with the neighbors not visited in c1
-        	
-        	GraphComponent matched = co2.getMatchedGC();
-        	if (matched == null) {
-        		Iterator iter1 = c1.iterator();
-        		GraphComponent co1 = null;
-        		while (iter1.hasNext()) {
-        			co1 = (GraphComponent)iter1.next();
-        			// if a non-visited neighbor in c1 has been found to be the sub of this neighbor in c2
-        			// set found to true and set visited for both two GC as true, break
-        			if (co2.getMatchedGC() == null && co1.getMatchedGC() == null) {
-                    	if (co1.isSubCentralMatched(co2,p_stack1,p_stack2)) {
-           					
-           					boolean matchedRest = false;
-           					matchedRest = isSubCentralMatched(p_graphComponent, p_stack1, p_stack2);
-           					if (matchedRest) {
-           						foundNum++;
-           						co1.setMatchedGC(null); co2.setMatchedGC(null);
-           						return true;
-           					}
-           					else {
-           						p_graphComponent.setMatchedGC(this); this.setMatchedGC(p_graphComponent);
-           						co1.setMatchedGC(null); co2.setMatchedGC(null);
-           						continue;
-           					}
-        				}
-                		
+            foundNum = 0;
+            GraphComponent co2 = (GraphComponent)iter2.next();
+            // if a neighbor in c2 has not been visited, compare it with the neighbors not visited in c1
+
+            GraphComponent matched = co2.getMatchedGC();
+            if (matched == null) {
+                Iterator iter1 = c1.iterator();
+                GraphComponent co1 = null;
+                while (iter1.hasNext()) {
+                    co1 = (GraphComponent)iter1.next();
+                    // if a non-visited neighbor in c1 has been found to be the sub of this neighbor in c2
+                    // set found to true and set visited for both two GC as true, break
+                    if (co2.getMatchedGC() == null && co1.getMatchedGC() == null) {
+                        if (co1.isSubCentralMatched(co2,p_stack1,p_stack2)) {
+                            boolean matchedRest = false;
+                            matchedRest = isSubCentralMatched(p_graphComponent, p_stack1, p_stack2);
+                            if (matchedRest) {
+                                foundNum++;
+                                co1.setMatchedGC(null); co2.setMatchedGC(null);
+                                return true;
+                            }
+                            else {
+                                p_graphComponent.setMatchedGC(this); this.setMatchedGC(p_graphComponent);
+                                co1.setMatchedGC(null); co2.setMatchedGC(null);
+                                continue;
+                            }
+                        }
                     }
-        		}
-        		
-        		p_graphComponent.setMatchedGC(null); this.setMatchedGC(null);
-        		return false;
-        		
-        		//else if (foundNum == 1) {
-        		//}
-        
-        	}
-        	// if a neighbor of has been visited, check if p_graphComponent has a corresponding match neighbor
-        	// if there is no match in p_chemGraph's neighbor, this and p_graphComponent are not matched, return false
-        	else {
-        		if (!c1.contains(matched) || matched.getMatchedGC()!=co2) {
-        			p_graphComponent.setMatchedGC(null); this.setMatchedGC(null);
-         			return false;
-        		}
-        	}
+                }
+                p_graphComponent.setMatchedGC(null); this.setMatchedGC(null);
+                return false;
+
+                //else if (foundNum == 1) {
+                //}
+
+            }
+            // if a neighbor of has been visited, check if p_graphComponent has a corresponding match neighbor
+            // if there is no match in p_chemGraph's neighbor, this and p_graphComponent are not matched, return false
+            else {
+                if (!c1.contains(matched) || matched.getMatchedGC()!=co2) {
+                    p_graphComponent.setMatchedGC(null); this.setMatchedGC(null);
+                    return false;
+                }
+            }
         }
         
         return true;
-    	
-    
     }
     
     /**
