@@ -692,18 +692,14 @@ public class ChemGraph implements Matchable {
         		Node n1 = (Node)neighbor_iter.next();
         		Node n2 = (Node)neighbor_iter.next();
 
-//        		FGElement Cd = FGElement.make("Cd");
-        		FGElement Cdd = FGElement.make("Cdd");
-//        		FGElement Sid = FGElement.make("Sid");
-        		FGElement Sidd = FGElement.make("Sidd");
-
-        		FGElement fge1 = (FGElement)n1.getFgElement();
-        		FGElement fge2 = (FGElement)n2.getFgElement();
-
                 LinkedHashSet axis = new LinkedHashSet();
                 axis.add(arc);
-                if (fge1.equals(Cdd) || fge1.equals(Sidd)) n1 = getToEndOfAxis(arc,n1,axis);
-                if (fge2.equals(Cdd) || fge2.equals(Sidd)) n2 = getToEndOfAxis(arc,n2,axis);
+
+                // Replace the "look for Cdd or Sidd" code
+                boolean endOfAxis1 = determineIfNodeMatchesOldFGTemplate(n1,2,"D");
+                boolean endOfAxis2 = determineIfNodeMatchesOldFGTemplate(n2,2,"D");
+                if (endOfAxis1) n1 = getToEndOfAxis(arc,n1,axis);
+                if (endOfAxis2) n2 = getToEndOfAxis(arc,n2,axis);
 
                	Atom atom1 = (Atom)n1.getElement();
                	Atom atom2 = (Atom)n2.getElement();
