@@ -1249,70 +1249,84 @@ public class ChemParser {
         //#[ operation readChemNodeElement(String,String)
         if (p_name == null || p_radical == null) throw new NullSymbolException();
 
-        // read in radical
-        FreeElectron fe = null;
+        // Code added by MRH on 2-APR-2011:
+        //  Allow multiple freeElectrons to be given in database file
+        HashSet atomList = new HashSet();
+        // Read in the list of radicals
         p_radical = removeBrace(p_radical);
-        try {
-        	fe = FreeElectron.make(p_radical);
+        // Read in the list of atoms
+        p_name = removeBrace(p_name);
+        StringTokenizer elementList = new StringTokenizer(p_name,",");
+        if (elementList.countTokens() < 1) {
+            throw new InvalidGraphFormatException("atom: " + elementList);
         }
-        catch (UnknownSymbolException e) {
-        	throw new InvalidGraphFormatException("free electron: " + p_radical);
+        else if (elementList.countTokens() == 1) {
+            String nextToken = elementList.nextToken();
+            ChemNodeElement atom = null;
+            StringTokenizer feList = new StringTokenizer(p_radical,",");
+            if (feList.countTokens() < 1)
+                throw new InvalidGraphFormatException("freeElectron: " + feList);
+            else if(feList.countTokens() == 1) {
+                FreeElectron fe = FreeElectron.make(feList.nextToken());
+                try {
+                    ChemElement ce = ChemElement.make(nextToken);
+                    atom = Atom.make(ce,fe);
+                }
+                catch (UnknownSymbolException e) {
+                    FGElementDictionary fged = FGElementDictionary.getInstance();
+                    FGElement fge = fged.getFGElement(nextToken);
+                    if (fge == null)
+                        System.out.println("\n\nRMG does not recognize the Element : " + nextToken);
+                    atom = FGAtom.make(fge,fe);
+                }
+                return atom;
+            }
+            else {
+                while (feList.hasMoreTokens()) {
+                    FreeElectron fe = FreeElectron.make(feList.nextToken());
+                    try {
+                        ChemElement ce = ChemElement.make(nextToken);
+                        atom = Atom.make(ce,fe);
+                    }
+                    catch (UnknownSymbolException e) {
+                        FGElementDictionary fged = FGElementDictionary.getInstance();
+                        FGElement fge = fged.getFGElement(nextToken);
+                        if (fge == null)
+                            System.out.println("\n\nRMG does not recognize the Element : " + nextToken);
+                        atom = FGAtom.make(fge,fe);
+                    }
+                    atomList.add(atom);
+                }
+            }
+            return atomList;
         }
-
-        // read in atom
-        String aList = removeBrace(p_name);
-
-        StringTokenizer aListToken = new StringTokenizer(aList,",");
-        int atomNum = aListToken.countTokens();
-        try {
-        	if (atomNum <= 0) {
-        		throw new InvalidGraphFormatException("atom: " + aList);
-        	}
-        	else if (atomNum == 1) {
-        		String nextToken = aListToken.nextToken();
-        		ChemNodeElement atom = null;
-        		try {
-        			ChemElement ce = ChemElement.make(nextToken);
-        			atom = Atom.make(ce,fe);
-        		}
-        		catch (UnknownSymbolException e) {
+        else {
+            while (elementList.hasMoreTokens()) {
+                ChemNodeElement atom = null;
+                String nextToken = elementList.nextToken();
+                StringTokenizer feList = new StringTokenizer(p_radical,",");
+                if (feList.countTokens() < 1)
+                    throw new InvalidGraphFormatException("freeElectron: " + feList);
+                else {
+                    while(feList.hasMoreTokens()) {
+                        FreeElectron fe = FreeElectron.make(feList.nextToken());
+                        try {
+                            ChemElement ce = ChemElement.make(nextToken);
+                            atom = Atom.make(ce,fe);
+                        }
+                        catch (UnknownSymbolException e) {
                             FGElementDictionary fged = FGElementDictionary.getInstance();
                             FGElement fge = fged.getFGElement(nextToken);
                             if (fge == null)
-                                System.out.println("\n\nRMG does not recognize the Element : "
-                                        + nextToken);
-//					String Internalname = FGElement.translateName(nextToken);
-//        			FGElement fge = FGElement.make(Internalname);
-        			atom = FGAtom.make(fge,fe);
-        		}
-        		return atom;
-        	}
-        	else {
-        		HashSet atomList = new HashSet();
-        		ChemNodeElement atom = null;
-        		while (aListToken.hasMoreTokens()) {
-        			String nextToken = aListToken.nextToken();
-        			try {
-        				ChemElement ce = ChemElement.make(nextToken);
-        				atom = Atom.make(ce,fe);
-        			}
-        			catch (UnknownSymbolException e) {
-						String Internalname = FGElement.translateName(nextToken);
-        				FGElement fge = FGElement.make(Internalname);
-        				atom = FGAtom.make(fge,fe);
-        			}
-        			atomList.add(atom);
-        		}
-        		return atomList;
-        	}
+                                System.out.println("\n\nRMG does not recognize the Element : " + nextToken);
+                            atom = FGAtom.make(fge,fe);
+                        }
+                        atomList.add(atom);
+                    }
+                }
+            }
+            return atomList;
         }
-        catch (UnknownSymbolException e) {
-        	throw new InvalidGraphFormatException("ChemNodeElement: " + aList);
-        }
-
-
-
-        //#]
     }
 
     /**
