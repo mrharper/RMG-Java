@@ -763,6 +763,22 @@ public class ChemGraph implements Matchable {
         //#]
     }
 
+    public static boolean determineIfNodeMatchesOldFGTemplate(Node n, int connections, String bondType) {
+        boolean nodeMatchesOldHardcodedFG = false;
+        // Only interested if the node has exactly "connections" number of neighbors ...
+        if (n.getNeighborNumber() == connections) {
+            // ... and all neighbors have bond strength "bondType"
+            for (Iterator iter1 = n.getNeighbor(); iter1.hasNext();) {
+                Bond b = (Bond)((Arc)iter1.next()).getElement();
+                if (!b.getName().equals(bondType)) {
+                    return false;
+                }
+            }
+            nodeMatchesOldHardcodedFG = true;
+        }
+        return nodeMatchesOldHardcodedFG;
+    }
+
     /**
     Requires: acyclic ChemGraph
     Effects: calculate and return the symmetry number centered at p_arc bond
