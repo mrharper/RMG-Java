@@ -976,8 +976,7 @@ public int calculateCyclicSymmetryNumber(){
      sn *= node_sn;
      sn *= 2;
      Node first_node = (Node)node_list.getFirst();
-     FGElement fge = (FGElement)first_node.getFgElement();
-     if (fge.equals(FGElement.make("Cs"))){
+     if (determineIfNodeMatchesOldFGTemplate(first_node,4,"S")) {
        LinkedList acyclic_neighbor = new LinkedList();
        Iterator neighbor_iter = first_node.getNeighbor();
        while (neighbor_iter.hasNext()){
