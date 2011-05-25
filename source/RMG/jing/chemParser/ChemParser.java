@@ -1736,7 +1736,7 @@ public class ChemParser {
         Object o = p_chemNodeElement;
 
         if (o instanceof Atom) {
-        	return ((Atom)o).getChemElement().getName();
+        	return ((Atom)o).getChemElement().getSymbol();
         }
         else if (o instanceof FGAtom) {
         	return ((FGAtom)o).getFgElement().getName();
@@ -1747,7 +1747,7 @@ public class ChemParser {
         	while (iter.hasNext()) {
         		Object thisObject = iter.next();
         		if (thisObject instanceof Atom) {
-        			s = s + ((Atom)thisObject).getChemElement().getName() + ",";
+        			s = s + ((Atom)thisObject).getChemElement().getSymbol() + ",";
         		}
         		else if (thisObject instanceof FGAtom) {
         			s = s + ((FGAtom)thisObject).getFgElement().getName() + ",";
