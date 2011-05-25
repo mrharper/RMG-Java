@@ -1229,14 +1229,9 @@ return sn;
         	Node n2 = (Node)neighbor_iter.next();
         	Atom a1 = (Atom)n1.getElement();
         	Atom a2 = (Atom)n2.getElement();
-        	FGElement fge1 = (FGElement)n1.getFgElement();
-        	FGElement fge2 = (FGElement)n2.getFgElement();
-        	if (!a1.isRadical() && fge1.equals(FGElement.make("Os")) && !a2.isRadical() && fge2.equals(FGElement.make("Os"))) {
-        		return true;
-        	} 
-//        	else if (!a1.isRadical() && fge1.equals(FGElement.make("Sis")) && !a2.isRadical() && fge2.equals(FGElement.make("Sis"))) {
-//        		return true;
-//        	}
+
+                if (!a1.isRadical() && determineIfNodeMatchesOldFGTemplate(n1,2,"S") && !a2.isRadical() && determineIfNodeMatchesOldFGTemplate(n2,2,"S"))
+                    return true;
         }
 
         return false;
