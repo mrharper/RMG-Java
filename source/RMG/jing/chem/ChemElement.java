@@ -29,15 +29,12 @@
 
 package jing.chem;
 
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 import jing.chemParser.ChemParser;
-import java.util.*;
 
-//## package jing::chem
 
 //----------------------------------------------------------------------------
 //jing\chem\ChemElement.java
@@ -70,10 +67,11 @@ public class ChemElement {
   protected int maxHNeighbors;
   protected String elementName;
 
-  // Constructors
 
+  // Constructors
   private  ChemElement() {
   }
+
   /**
   Requires:
   Effects: private constructor called by create() to create new object
