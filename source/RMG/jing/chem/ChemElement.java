@@ -138,35 +138,8 @@ public class ChemElement {
   public String getSymbol() {
       return symbol;
   }
-  //## operation translateName(String)
-  public static String translateName(String p_name) throws NullSymbolException, UnknownSymbolException {
-      //#[ operation translateName(String)
-      if (p_name == null) throw new NullSymbolException("ChemElement");
 
-      if ((p_name.compareToIgnoreCase("C")==0) || (p_name.compareToIgnoreCase("Carbon")==0)) {
-      	return "C";
       }
-      else if ((p_name.compareToIgnoreCase("Cl")==0) || (p_name.compareToIgnoreCase("Chlorine")==0)){//svp
-        return "Cl";
-      }
-      else if ((p_name.compareToIgnoreCase("H")==0) || (p_name.compareToIgnoreCase("Hydrogen")==0)) {
-      	return "H";
-      }
-      else if ((p_name.compareToIgnoreCase("O")==0) || (p_name.compareToIgnoreCase("Oxygen")==0)) {
-      	return "O";
-      }
-      // Added by MRH on 18-Jun-2009
-      //	Hardcoding Si and S into RMG-java
-      else if ((p_name.compareToIgnoreCase("Si")==0) || (p_name.compareToIgnoreCase("Silicon")==0)) {
-    	  return "Si";
-      }
-      else if ((p_name.compareToIgnoreCase("S")==0) || (p_name.compareToIgnoreCase("Sulfur")==0) || (p_name.compareToIgnoreCase("Sulphur")==0)) {
-    	  return "S";
-      }
-      else {
-      	throw new UnknownSymbolException("ChemElement");
-      }
-      //#]
   }
 
   protected static ChemElementDictionary getChemElementDictionary() {
