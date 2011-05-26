@@ -88,6 +88,8 @@ public class ChemElement {
         elementName = p_name;
   }
 
+  public String getElementName() {
+      return elementName;
   /**
   Requires:
   Effects: call privite constructor to construct new ChemElement according to p_name.  Now, here we consider to create C(or carbon), H(or hydrogen), O(or oxygen), if pass in other names, throw UnknownSymbolException.  Notice: user can specify an chemElement list file to read in by ChemElementDictionary.  But this create method guarantees our system able to at least include C,H,O.
@@ -125,11 +127,6 @@ public class ChemElement {
       //#]
   }
 
-  //## operation getName()
-  public String getName() {
-      //#[ operation getName()
-      return name;
-      //#]
   }
 
   public int getValency() {
