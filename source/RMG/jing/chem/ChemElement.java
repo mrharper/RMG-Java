@@ -72,10 +72,7 @@ public class ChemElement {
 
   // Constructors
 
-  //## operation ChemElement()
   private  ChemElement() {
-      //#[ operation ChemElement()
-      //#]
   }
   /**
   Requires:
