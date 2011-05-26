@@ -137,6 +137,9 @@ public class ChemElement {
       return weight;
   }
 
+  public int getMaxNeighbors() {
+      return maxNeighbors;
+  }
   /**
   Requires: pass in valid string name for elements
   Effects: search chemElementDictionary by p_name to see if this chemElement is already in the system.  if it is, return the instance of existing chemElement;  if it is not, call create(p_name) to create a new chemElement.
@@ -163,10 +166,15 @@ public class ChemElement {
       }
 
 
+  public int getMaxHNeighbors() {
+      return maxHNeighbors;
 
       //#]
   }
 
+  public String getSymbol() {
+      return symbol;
+  }
   //## operation translateName(String)
   public static String translateName(String p_name) throws NullSymbolException, UnknownSymbolException {
       //#[ operation translateName(String)
