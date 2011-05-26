@@ -135,11 +135,8 @@ public class ChemElement {
       //#]
   }
 
-  //## operation getValency()
-  public double getValency() {
-      //#[ operation getValency()
+  public int getValency() {
       return valency;
-      //#]
   }
 
   //## operation getWeight()
