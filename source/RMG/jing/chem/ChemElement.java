@@ -90,43 +90,6 @@ public class ChemElement {
 
   public String getElementName() {
       return elementName;
-  /**
-  Requires:
-  Effects: call privite constructor to construct new ChemElement according to p_name.  Now, here we consider to create C(or carbon), H(or hydrogen), O(or oxygen), if pass in other names, throw UnknownSymbolException.  Notice: user can specify an chemElement list file to read in by ChemElementDictionary.  But this create method guarantees our system able to at least include C,H,O.
-  Modifies: ChemElementDictionary
-  */
-  //## operation create(String)
-  private static ChemElement create(String p_name) throws UnknownSymbolException {
-      //#[ operation create(String)
-      ChemElement ChemElement = null;
-
-      if (p_name.equals("C")) {
-      	ChemElement = new ChemElement("C",4,12);
-      }
-      else if (p_name.equals("Cl")){//svp
-        ChemElement = new ChemElement("Cl",1,35.5);
-      }
-      else if (p_name.equals("H")) {
-      	ChemElement = new ChemElement("H",1,1);
-      }
-      else if (p_name.equals("O")) {
-      	ChemElement = new ChemElement("O",2,16);
-      }
-      // Added by MRH on 18-Jun-2009
-      //	Hardcoding Si and S into RMG-java
-      else if (p_name.equals("Si")) {
-    	  ChemElement = new ChemElement("Si",4,28.086);
-      }
-      else if (p_name.equals("S")) {
-    	  ChemElement = new ChemElement("S",2,32.064);
-      }
-      else {
-      	throw new UnknownSymbolException("ChemElement");
-      }
-      return ChemElement;
-      //#]
-  }
-
   }
 
   public int getValency() {
