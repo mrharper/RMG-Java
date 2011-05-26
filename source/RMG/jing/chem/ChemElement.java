@@ -103,43 +103,21 @@ public class ChemElement {
   public int getMaxNeighbors() {
       return maxNeighbors;
   }
-  /**
-  Requires: pass in valid string name for elements
-  Effects: search chemElementDictionary by p_name to see if this chemElement is already in the system.  if it is, return the instance of existing chemElement;  if it is not, call create(p_name) to create a new chemElement.
-  Modifies:
-  */
-  // Argument String p_name :
-  /**
-  the name of chemical element you want to create.
-  */
-  //## operation make(String)
-  public static ChemElement make(String p_name) throws UnknownSymbolException {
-      //#[ operation make(String)
-      try {
-      	String internalName = translateName(p_name);
-      	ChemElement ce = chemElementDictionary.getChemElement(internalName);
-      	if (ce == null) {
-      		ce = create(internalName);
-      		chemElementDictionary.putChemElement(ce);
-      	}
-      	return ce;
-      }
-      catch (UnknownSymbolException e) {
-      	throw new UnknownSymbolException("Chemical Element: " + p_name);
-      }
-
 
   public int getMaxHNeighbors() {
       return maxHNeighbors;
-
-      //#]
   }
 
   public String getSymbol() {
       return symbol;
   }
 
+  public static ChemElement make(String p_name) throws UnknownSymbolException {
+      ChemElement ce = chemElementDictionary.getChemElement(p_name);
+      if (ce == null) {
+          throw new UnknownSymbolException("Chemical Element: " + p_name);
       }
+      return ce;
   }
 
   protected static ChemElementDictionary getChemElementDictionary() {
