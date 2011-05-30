@@ -158,6 +158,10 @@ public class FGElement {
       type = p_type;
   }
 
+  public LinkedList getAtomList() {
+      return atoms;
+  }
+
   public static void readFunctionalGroupElements() throws IOException {
       try {
           String fgElementsFile = System.getProperty("jing.chem.FGElement.fgElementsFile");

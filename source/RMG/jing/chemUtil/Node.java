@@ -143,9 +143,275 @@ public class Node extends GraphComponent {
       //#]
   }
 
+  public FreeElectron[] getVectorOfFreeElectrons(Object o) {
+      Collection oc = (Collection)o;
+      Iterator iter = oc.iterator();
+      int numFE = oc.size();
+      FreeElectron[] fe = new FreeElectron[numFE];
+      for (int counter=0; counter<numFE; ++counter) {
+          ChemNodeElement cne = (ChemNodeElement)iter.next();
+          fe[counter] = cne.getFreeElectron();
+      }
+      return fe;
+  }
+
   //## operation contentSub(GraphComponent)
   public boolean contentSub(GraphComponent p_graphComponent) throws InvalidChemNodeElementException {
-      return false;
+      // "this" is the child
+      // p_graphComponent is the parent
+
+      if (this == p_graphComponent) return false;
+      if (!(p_graphComponent instanceof Node)) return false;
+
+      Node node = (Node)p_graphComponent;
+
+      // compare radical number
+      FreeElectron[] fe1 = null;
+      if (getElement() instanceof Collection) {
+          fe1 = new FreeElectron[((Collection)getElement()).size()];
+          fe1 = getVectorOfFreeElectrons(getElement());
+      }
+      else {
+          fe1 = new FreeElectron[1];
+          fe1[0] = getFeElement();
+      }
+
+      FreeElectron[] fe2 = null;
+      if (node.getElement() instanceof Collection) {
+          fe2 = new FreeElectron[((Collection)node.getElement()).size()];
+          fe2 = node.getVectorOfFreeElectrons(node.getElement());
+      }
+      else {
+          fe2 = new FreeElectron[1];
+          fe2[0] = node.getFeElement();
+      }
+
+      for (int i=0; i<fe1.length; i++) {
+          boolean foundInParent = false;
+          for (int j=0; j<fe2.length; j++) {
+              if (fe1[i].getOrder() == fe2[j].getOrder()) {
+                  foundInParent = true;
+                  if (fe1[i].getOrder() == 2){// && fe1.length == 1 && fe2.length == 1) {
+                      String spin1 = fe1[i].getSpin();
+                      String spin2 = fe2[j].getSpin();
+                      // If the "child" has no spin specified
+                      if (spin1 == null) {
+                          // If the parent has spin specified, then the "child" is not a child
+                          if (spin2 != null) foundInParent = false;
+                      }
+                      // Else, the "child" has spin specified
+                      else {
+                          // If the parent also has spin specified, check to see if they are the same
+                          if (spin2 != null) {
+                              if (!spin1.equals(spin2)) foundInParent = false;
+                          }
+                      }
+                  }
+                  if (foundInParent) break;
+              }
+          }
+          if (!foundInParent) return false;
+      }
+
+      /*
+       * The question: Is node a child of this.node?
+       */
+
+      // Initialize the node objects
+      Object fge_parent = node.getFgElement();
+      Object fge_child = getFgElement();
+      Atom atom_parent = null;
+      FGAtom fgatom_parent = null;
+      Atom atom_child = null;
+      FGAtom fgatom_child = null;
+
+      // Determine if the object is an Atom ("C", "H", "O", etc.)
+      //    or FGAtom ("R_minXvalency", "R!H", "R_nondelocalized", etc.)
+      if (fge_parent == null) {
+          Object object_parent = node.element;
+          if (object_parent instanceof Atom) atom_parent = (Atom)object_parent;
+          else if (object_parent instanceof FGAtom) fgatom_parent = (FGAtom)object_parent;
+          else if (object_parent instanceof Collection) {
+              // If we have reached this point, we have already concluded the free electrons & spin are the same
+              //    All we need to check at this point is the Atom(FGAtom) child/parent dependency
+              //    Thus, MRH only grabs the first instance in the Collection to proceed
+              Iterator iter = ((Collection)object_parent).iterator();
+              Object firstInstance = (Object)iter.next();
+              if (firstInstance instanceof Atom) atom_parent = (Atom)firstInstance;
+              else if (firstInstance instanceof FGAtom) fgatom_parent = (FGAtom)firstInstance;
+          }
+      }
+      if (fge_child == null) {
+          Object object_child = this.getElement();
+          if (object_child instanceof Atom) atom_child = (Atom)object_child;
+          else if (object_child instanceof FGAtom) fgatom_child = (FGAtom)object_child;
+          else if (object_child instanceof Collection) {
+              // If we have reached this point, we have already concluded the free electrons & spin are the same
+              //    All we need to check at this point is the Atom(FGAtom) child/parent dependency
+              //    Thus, MRH only grabs the first instance in the Collection to proceed
+              Iterator iter = ((Collection)object_child).iterator();
+              Object firstInstance = (Object)iter.next();
+              if (firstInstance instanceof Atom) atom_child = (Atom)firstInstance;
+              else if (firstInstance instanceof FGAtom) fgatom_child = (FGAtom)firstInstance;
+          }
+      }
+
+      // If either child or parent is the hard-coded "R_nondelocalized",
+      //    check the neighbors for non "S" bonds
+//      FGElement nondelocalized = FGElement.make("R_nondelocalized");
+//      if (fgatom_child != null && fgatom_child.getFgElement().getName().equals("R_nondelocalized")) {
+//          System.out.println("");
+//      }
+//      if (fgatom_parent != null && fgatom_parent.getFgElement().getName().equals("R_nondelocalized")) {
+//          System.out.println("");
+//      }
+
+      // Else, check if the atom names are the same
+      if (atom_child != null && atom_parent != null) {
+          return atom_child.getChemElement().getSymbol().equals(atom_parent.getChemElement().getSymbol());
+      }
+      else if (atom_child != null && fgatom_parent != null) {
+          if (fgatom_parent.getName().equals("R_nondelocalized")) {
+              LinkedHashSet allNeighborsToCurrentChildNode = this.neighbor;
+              // If all bonds to neighbors are "S", ...
+              //    AND the neighbor is not Hydrogen, then return true (is a child)
+              for (Iterator iter = allNeighborsToCurrentChildNode.iterator(); iter.hasNext();) {
+                  Object currentBond = ((Arc)iter.next()).element;
+                  if (currentBond instanceof Bond) {
+                    if (!((Bond)currentBond).isSingle()) return false;
+                  } else { // Object is a HashSet
+                      HashSet currentBonds = (HashSet)currentBond;
+                      boolean foundASingleBond = false;
+                      for (Iterator iter2 = currentBonds.iterator(); iter2.hasNext();) {
+                          if (((Bond)iter2.next()).isSingle()) {
+                              foundASingleBond = true;
+                              break;
+                          }
+                      }
+                      if (!foundASingleBond) return false;
+                  }
+              }
+              // Need to check if current child node is Hydrogen
+              if (atom_child.getChemElement().getSymbol().equals("H")) return false;
+              return true;
+          }
+          else {
+              LinkedList atomsAssociatedWithParent = fgatom_parent.getFgElement().getAtomList();
+              boolean foundAMatch = false;
+              ChemElement ce_child = atom_child.getChemElement();
+              if (atomsAssociatedWithParent == null)
+                  System.out.println("stop");
+              for (int j=0; j<atomsAssociatedWithParent.size(); j++) {
+                  foundAMatch = (((ChemElement)atomsAssociatedWithParent.get(j)).getSymbol().equals(ce_child.getSymbol()));
+                  if (foundAMatch) break;
+              }
+              return foundAMatch;
+          }
+      }
+      else if (fgatom_child != null && atom_parent != null) {
+          if (fgatom_child.getName().equals("R_nondelocalized")) {
+              // A "R_nondelocalized" group is a general FGAtom
+              //    Therefore, it cannot be a child of an Atom
+              return false;
+          }
+          else {
+              LinkedList atomsAssociatedWithChild = fgatom_child.getFgElement().getAtomList();
+              for (int i=0; i<atomsAssociatedWithChild.size(); i++) {
+                  boolean foundAMatch = false;
+                  ChemElement ce_child = (ChemElement)atomsAssociatedWithChild.get(i);
+                  foundAMatch = atom_parent.getChemElement().getSymbol().equals(ce_child.getSymbol());
+                  if (foundAMatch) break;
+                  if (!foundAMatch) return false;
+              }
+              return true;
+          }
+      }
+      else if (fgatom_child != null && fgatom_parent != null) {
+          // First check the names of the FGAtoms
+          if (fgatom_child.getName().equals(fgatom_parent.getName())) return true;
+          // Next, check if the parent is "R_nondelocalized"
+          if (fgatom_parent.getName().equals("R_nondelocalized")) {
+              LinkedHashSet allNeighborsToCurrentChildNode = this.neighbor;
+              // If all bonds to neighbors are "S", ...
+              //    AND the neighbor is not Hydrogen, then return true (is a child)
+              for (Iterator iter = allNeighborsToCurrentChildNode.iterator(); iter.hasNext();) {
+                  Object currentBond = ((Arc)iter.next()).element;
+                  if (currentBond instanceof Bond) {
+                    if (!((Bond)currentBond).isSingle()) return false;
+                  } else { // Object is a HashSet
+                      HashSet currentBonds = (HashSet)currentBond;
+                      boolean foundASingleBond = false;
+                      for (Iterator iter2 = currentBonds.iterator(); iter2.hasNext();) {
+                          if (((Bond)iter2.next()).isSingle()) {
+                              foundASingleBond = true;
+                              break;
+                          }
+                      }
+                      if (!foundASingleBond) return false;
+                  }
+              }
+              LinkedList atomsAssociatedWithChild = fgatom_child.getFgElement().getAtomList();
+              for (int i=0; i<atomsAssociatedWithChild.size(); i++) {
+                  ChemElement ce_child = (ChemElement)atomsAssociatedWithChild.get(i);
+                  if ("H".equals(ce_child.getSymbol())) return false;
+              }
+              return true;
+          }
+          // Next, check if the child is "R_nondelocalized"
+          if (fgatom_child.getName().equals("R_nondelocalized")) {
+              LinkedHashSet allNeighborsToCurrentParentNode = node.neighbor;
+              // If all bonds to neighbors are "S", ...
+              //    AND the neighbor is not Hydrogen, then return true (is a child)
+              for (Iterator iter = allNeighborsToCurrentParentNode.iterator(); iter.hasNext();) {
+                  Object currentBond = ((Arc)iter.next()).element;
+                  if (currentBond instanceof Bond) {
+                    if (!((Bond)currentBond).isSingle()) return false;
+                  } else { // Object is a HashSet
+                      HashSet currentBonds = (HashSet)currentBond;
+                      boolean foundASingleBond = false;
+                      for (Iterator iter2 = currentBonds.iterator(); iter2.hasNext();) {
+                          if (((Bond)iter2.next()).isSingle()) {
+                              foundASingleBond = true;
+                              break;
+                          }
+                      }
+                      if (!foundASingleBond) return false;
+                  }
+              }
+              // Need to find at least one non-Hydrogen for "R_nondelocalized"
+              //    to possibly be a child of parent
+              LinkedList atomsAssociatedWithParent = fgatom_parent.getFgElement().getAtomList();
+              boolean foundAnyNonHydrogen = false;
+              for (int i=0; i<atomsAssociatedWithParent.size(); i++) {
+                  ChemElement ce_parent = (ChemElement)atomsAssociatedWithParent.get(i);
+                  if (!"H".equals(ce_parent.getSymbol())){
+                      foundAnyNonHydrogen = true;
+                      break;
+                  }
+              }
+              return foundAnyNonHydrogen;
+          }
+          // Else, each element in the list of the child must be present in
+          //    the list of the parent
+          else {
+              LinkedList atomsAssociatedWithChild = fgatom_child.getFgElement().getAtomList();
+              LinkedList atomsAssociatedWithParent = fgatom_parent.getFgElement().getAtomList();
+              for (int i=0; i<atomsAssociatedWithChild.size(); i++) {
+                  boolean foundAMatch = false;
+                  ChemElement ce_child = (ChemElement)atomsAssociatedWithChild.get(i);
+                  for (int j=0; j<atomsAssociatedWithParent.size(); j++) {
+                      foundAMatch = (((ChemElement)atomsAssociatedWithParent.get(j)).getSymbol().equals(ce_child.getSymbol()));
+                      if (foundAMatch) break;
+                  }
+                  if (!foundAMatch) return false;
+              }
+              return true;
+          }
+      }
+
+      // MRH believes we should never reach this step now ...
+      //    unless something went horribly wrong
+      return MathTool.isSub(fge_child,fge_parent);
 
   }
 
