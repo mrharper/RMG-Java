@@ -98,7 +98,6 @@ public class GATP_Unifac implements GeneralUnifacGAPP {
            		newnode[i][j] = g.addNode(H);
            		g.addArcBetween(node,S,newnode[i][j]);
            	}
-           	node.updateFgElement();
         }
 		
         // find all the thermo groups
@@ -174,7 +173,6 @@ public class GATP_Unifac implements GeneralUnifacGAPP {
            	for (int j=0;j<HNum;j++) {
 				g.removeNode(newnode[i][j]);
            	}
-           	node.updateFgElement();
 		}
 		//
 		//         // substrate the enthalphy of H from the result

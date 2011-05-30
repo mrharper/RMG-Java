@@ -1240,7 +1240,6 @@ public class ChemParser {
     	}
     	
     	if (g.isEmpty()) g = null;
-    	else g.identifyFgElement();
     	return g;
     }
 

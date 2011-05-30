@@ -156,7 +156,6 @@ public class GATP_Abraham implements GeneralAbramGAPP {
            		newnode[i][j] = g.addNode(H);
            		g.addArcBetween(node,S,newnode[i][j]);
            	}
-           	node.updateFgElement();
         }
 		
         // find all the thermo groups
@@ -198,7 +197,6 @@ public class GATP_Abraham implements GeneralAbramGAPP {
 		           	for (int j=0;j<HNum;j++) {
 		           		g.removeNode(newnode[i][j]);
 		           	}
-		           	node.updateFgElement();
 		
 		           	p_chemGraph.resetThermoSite(node);
 		           	AbrahamGAValue thisAbrahamValue = thermoLibrary.findAbrahamradGroup(p_chemGraph);
@@ -217,7 +215,6 @@ public class GATP_Abraham implements GeneralAbramGAPP {
 		           		newnode[i][j] = g.addNode(H);
 		           		g.addArcBetween(node,S,newnode[i][j]);
 		           	}
-		           	node.updateFgElement();
 		
 		         }
 		
@@ -233,7 +230,6 @@ public class GATP_Abraham implements GeneralAbramGAPP {
            	for (int j=0;j<HNum;j++) {
                 g.removeNode(newnode[i][j]);
            	}
-           	node.updateFgElement();
 		}
 	
 		p_chemGraph.setCentralNode(oldCentralNode);

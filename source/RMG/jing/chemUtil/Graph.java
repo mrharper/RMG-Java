@@ -1448,27 +1448,7 @@ public class Graph {
     }*/
 
     /**
-    Identify the type of each node in this graph as Cs, Cd, Ca, Ck, etc.
-    
-    */
-    //## operation identifyFgElement()
-    public void identifyFgElement() {
-        //#[ operation identifyFgElement()
-        Iterator iter = getNodeList();
-        while (iter.hasNext()) {
-        	Node node = (Node)iter.next();
-        	node.identifyFgElement();
-        }
-
-        return;
-
-
-        //#]
-    }
-
-    /**
-    Return true iff this graph is acyclic.
-    
+    Return true iff this graph is acyclic.   
     */
     //## operation isAcyclic()
     public boolean isAcyclic() {
