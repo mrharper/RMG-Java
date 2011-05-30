@@ -59,16 +59,16 @@ Oxane
 4    C 0 {3,S} {5,S} {11,S} {12,S}
 5    C 0 {4,S} {6,S} {13,S} {14,S}
 6    C 0 {5,S} {1,S} {15,S} {16,S}
-7 R 0 {1,S}
-8 R 0 {1,S}
-9 R 0 {3,S}
-10 R 0 {3,S}
-11 R 0 {4,S}
-12 R 0 {4,S}
-13 R 0 {5,S}
-14 R 0 {5,S}
-15 R 0 {6,S}
-16 R 0 {6,S}
+7 R {0,1,2,2S,2T,3} {1,S}
+8 R {0,1,2,2S,2T,3} {1,S}
+9 R {0,1,2,2S,2T,3} {3,S}
+10 R {0,1,2,2S,2T,3} {3,S}
+11 R {0,1,2,2S,2T,3} {4,S}
+12 R {0,1,2,2S,2T,3} {4,S}
+13 R {0,1,2,2S,2T,3} {5,S}
+14 R {0,1,2,2S,2T,3} {5,S}
+15 R {0,1,2,2S,2T,3} {6,S}
+16 R {0,1,2,2S,2T,3} {6,S}
 
 
 six-sidedoubles
@@ -78,7 +78,7 @@ six-sidedoubles
 4   {C,O} 0 {3,S} {5,S}
 5   {C,O} 0 {4,S} {6,S}
 6   {C,O} 0 {5,S} {1,S}
-7 R_min2valency 0 {2,D}
+7 R_min2valency {0,1,2,2S,2T,3} {2,D}
 
 
 six-onesidedouble
@@ -88,7 +88,7 @@ six-onesidedouble
 4   R_nondelocalized 0 {3,S} {5,S}
 5   R_nondelocalized 0 {4,S} {6,S}
 6   R_nondelocalized 0 {5,S} {1,S}
-7 R_min2valency 0 {2,D}
+7 R_min2valency {0,1,2,2S,2T,3} {2,D}
 
 
 sixmembd-allsingles-twosidedoubles-ortho
@@ -98,8 +98,8 @@ sixmembd-allsingles-twosidedoubles-ortho
 4   R_nondelocalized 0 {3,S} {5,S}
 5   R_nondelocalized 0 {4,S} {6,S}
 6   R_nondelocalized 0 {5,S} {1,S}
-7 R_min2valency 0 {2,D}
-8 R_min2valency 0 {3,D}
+7 R_min2valency {0,1,2,2S,2T,3} {2,D}
+8 R_min2valency {0,1,2,2S,2T,3} {3,D}
 
 sixmembd-allsingles-twosidedoubles-meta
 1  R_nondelocalized 0 {2,S} {6,S}
@@ -108,8 +108,8 @@ sixmembd-allsingles-twosidedoubles-meta
 4   C 0 {3,S} {5,S} {8,D}
 5   R_nondelocalized 0 {4,S} {6,S}
 6   R_nondelocalized 0 {5,S} {1,S}
-7 R_min2valency 0 {2,D}
-8 R_min2valency 0 {4,D}
+7 R_min2valency {0,1,2,2S,2T,3} {2,D}
+8 R_min2valency {0,1,2,2S,2T,3} {4,D}
 
 sixmembd-allsingles-twosidedoubles-para
 1  R_nondelocalized 0 {2,S} {6,S}
@@ -118,8 +118,8 @@ sixmembd-allsingles-twosidedoubles-para
 4   R_nondelocalized 0 {3,S} {5,S}
 5   C 0 {4,S} {6,S} {8,D}
 6   R_nondelocalized 0 {5,S} {1,S}
-7 R_min2valency 0 {2,D}
-8 R_min2valency 0 {5,D}
+7 R_min2valency {0,1,2,2S,2T,3} {2,D}
+8 R_min2valency {0,1,2,2S,2T,3} {5,D}
 
 six-inringonedouble
 1   R_nondelocalized 0 {2,S} {6,S}
@@ -128,8 +128,8 @@ six-inringonedouble
 4   R_nondelocalized 0 {3,S} {5,S}
 5   R_nondelocalized 0 {4,S} {6,S}
 6   R_nondelocalized 0 {5,S} {1,S}
-7 R 0 {2,S}
-8 R 0 {2,S}
+7 R {0,1,2,2S,2T,3} {2,S}
+8 R {0,1,2,2S,2T,3} {3,S}
 
 
 
@@ -141,12 +141,12 @@ six-inringonedouble
 4  O 0 {3,S} {5,S}
 5  C 0 {4,S} {6,S} {11,S} {12,S}
 6  O 0 {5,S} {1,S}
-7 R 0 {1,S}
-8 R 0 {2,S}
-9 R 0 {3,S}
-10 R 0 {3,S}
-11 R 0 {5,S}
-12 R 0 {5,S}
+7 R {0,1,2,2S,2T,3} {1,S}
+8 R {0,1,2,2S,2T,3} {2,S}
+9 R {0,1,2,2S,2T,3} {3,S}
+10 R {0,1,2,2S,2T,3} {3,S}
+11 R {0,1,2,2S,2T,3} {5,S}
+12 R {0,1,2,2S,2T,3} {5,S}
 
 23dihydro14dioxin
 1  C 0 {6,S} {2,D} {7,S}
@@ -155,12 +155,12 @@ six-inringonedouble
 4  C 0 {3,S} {5,S} {9,S} {10,S}
 5  C 0 {4,S} {6,S} {11,S} {12,S}
 6  O 0 {5,S} {1,S}
-7 R 0 {1,S}
-8 R 0 {2,S}
-9 R 0 {4,S}
-10 R 0 {4,S}
-11 R 0 {5,S}
-12 R 0 {5,S}
+7 R {0,1,2,2S,2T,3} {1,S}
+8 R {0,1,2,2S,2T,3} {2,S}
+9 R {0,1,2,2S,2T,3} {4,S}
+10 R {0,1,2,2S,2T,3} {4,S}
+11 R {0,1,2,2S,2T,3} {5,S}
+12 R {0,1,2,2S,2T,3} {5,S}
 
 
 six-inringtwodouble-13
@@ -170,10 +170,10 @@ six-inringtwodouble-13
 4   C 0 {3,S} {5,D} {9,S}
 5   C 0 {4,D} {6,S} {10,S}
 6   R_nondelocalized 0 {5,S} {1,S}
-7 R 0 {2,S}
-8 R 0 {3,S}
-9 R 0 {4,S}
-10 R 0 {5,S}
+7 R {0,1,2,2S,2T,3} {2,S}
+8 R {0,1,2,2S,2T,3} {3,S}
+9 R {0,1,2,2S,2T,3} {4,S}
+10 R {0,1,2,2S,2T,3} {5,S}
 
 six-inringtwodouble-14
 1  R_nondelocalized 0 {2,S} {6,S}
@@ -182,10 +182,10 @@ six-inringtwodouble-14
 4   R_nondelocalized 0 {3,S} {5,S}
 5   C 0 {4,S} {6,D} {9,S}
 6   C 0 {5,D} {1,S} {10,S}
-7 R 0 {2,S}
-8 R 0 {3,S}
-9 R 0 {5,S}
-10 R 0 {6,S}
+7 R {0,1,2,2S,2T,3} {2,S}
+8 R {0,1,2,2S,2T,3} {3,S}
+9 R {0,1,2,2S,2T,3} {5,S}
+10 R {0,1,2,2S,2T,3} {6,S}
 
 six-inringtwodouble-12
 1  R_nondelocalized 0 {2,S} {6,S}
@@ -194,8 +194,8 @@ six-inringtwodouble-12
 4   C 0 {3,D} {5,S} {8,S}
 5   R_nondelocalized 0 {4,S} {6,S}
 6   R_nondelocalized 0 {5,S} {1,S}
-7 R 0 {2,S}
-8 R 0 {4,S}
+7 R {0,1,2,2S,2T,3} {2,S}
+8 R {0,1,2,2S,2T,3} {4,S}
 
 
 six-oneside-twoindoubles-25
@@ -205,11 +205,11 @@ six-oneside-twoindoubles-25
 4 * C 0 {3,S} {5,S} {9,D}
 5 C 0 {4,S} {6,D} {10,S}
 6 C 0 {5,D} {1,S} {11,S}
-7 R 0 {2,S}
-8 R 0 {3,S}
-9 R_min2valency 0 {4,D}
-10 R 0 {5,S}
-11 R 0 {6,S}
+7 R {0,1,2,2S,2T,3} {2,S}
+8 R {0,1,2,2S,2T,3} {3,S}
+9 R_min2valency {0,1,2,2S,2T,3} {4,D}
+10 R {0,1,2,2S,2T,3} {5,S}
+11 R {0,1,2,2S,2T,3} {6,S}
 
 six-oneside-twoindoubles-24
 1 R_nondelocalized 0 {2,S} {6,S}
@@ -218,11 +218,11 @@ six-oneside-twoindoubles-24
 4 C 0 {3,S} {5,D} {9,S}
 5 C 0 {4,D} {6,S} {10,S}
 6 * C 0 {5,S} {1,S} {11,D}
-7 R 0 {2,S}
-8 R 0 {3,S}
-9 R 0 {4,S}
-10 R 0 {5,S}
-11 R_min2valency 0 {6,D}
+7 R {0,1,2,2S,2T,3} {2,S}
+8 R {0,1,2,2S,2T,3} {3,S}
+9 R {0,1,2,2S,2T,3} {4,S}
+10 R {0,1,2,2S,2T,3} {5,S}
+11 R_min2valency {0,1,2,2S,2T,3} {6,D}
 
 six-twoin13-twoout
 1 C 0 {2,S} {6,S} {7,D}
@@ -231,12 +231,12 @@ six-twoin13-twoout
 4 C 0 {3,S} {5,D} {10,S}
 5 C 0 {4,D} {6,S} {11,S}
 6 * C 0 {5,S} {1,S} {12,D}
-7 R_min2valency 0 {1,D}
-8 R 0 {2,S}
-9 R 0 {3,S}
-10 R 0 {4,S}
-11 R 0 {5,S}
-12 R_min2valency 0 {6,D}
+7 R_min2valency {0,1,2,2S,2T,3} {1,D}
+8 R {0,1,2,2S,2T,3} {2,S}
+9 R {0,1,2,2S,2T,3} {3,S}
+10 R {0,1,2,2S,2T,3} {4,S}
+11 R {0,1,2,2S,2T,3} {5,S}
+12 R_min2valency {0,1,2,2S,2T,3} {6,D}
 
 six-twoin14-twoout
 1 C 0 {2,S} {6,S} {7,D}
@@ -245,12 +245,12 @@ six-twoin14-twoout
 4 * C 0 {3,S} {5,S} {10,D}
 5 C 0 {4,S} {6,D} {11,S}
 6 C 0 {5,D} {1,S} {12,S}
-7 R_min2valency 0 {1,D}
-8 R 0 {2,S}
-9 R 0 {3,S}
-10 R_min2valency 0 {4,D}
-11 R 0 {5,S}
-12 R 0 {6,S}
+7 R_min2valency {0,1,2,2S,2T,3} {1,D}
+8 R {0,1,2,2S,2T,3} {2,S}
+9 R {0,1,2,2S,2T,3} {3,S}
+10 R_min2valency {0,1,2,2S,2T,3} {4,D}
+11 R {0,1,2,2S,2T,3} {5,S}
+12 R {0,1,2,2S,2T,3} {6,S}
 
 SevenMember
 1 * R_min2valency 0 {2,{S,D}} {7,{S,D}}
