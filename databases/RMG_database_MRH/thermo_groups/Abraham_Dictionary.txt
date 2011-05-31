@@ -22,8 +22,8 @@ Css
 
 Cb
 1 * C 0 {2,B} {3,B} {4,S}
-2 R_aromatic 0 {1,B}
-3 R_aromatic 0 {1,B}
+2 R_min2valency {0,1,2,2S,2T,3} {1,B}
+3 R_min2valency {0,1,2,2S,2T,3} {1,B}
 4 R 0 {1,S}
 
 O
@@ -36,9 +36,9 @@ Oss
 
 Cbf
 1 * C 0 {2,B} {3,B} {4,B}
-2 R_aromatic 0 {1,B}
-3 R_aromatic 0 {1,B}
-4 R_aromatic 0 {1,B}
+2 R_min2valency {0,1,2,2S,2T,3} {1,B}
+3 R_min2valency {0,1,2,2S,2T,3} {1,B}
+4 R_min2valency {0,1,2,2S,2T,3} {1,B}
 
 Ct
 1 * C 0 {2,T} {3,S}
@@ -204,10 +204,10 @@ CbCs-OsH
 2   O 0 {1,S} {3,S}
 3   H 0 {2,S}
 4   C 0 {1,S} {7,B} {8,B}
+7 R_min2valency {0,1,2,2S,2T,3} {4,B}
+8 R_min2valency {0,1,2,2S,2T,3} {4,B}
 5 R 0 {1,S}
 6 R 0 {1,S}
-7 R_aromatic 0 {4,B}
-8 R_aromatic 0 {4,B}
 
 CdsH2
 1 * C 0 {2,S} {3,S} {4,D}

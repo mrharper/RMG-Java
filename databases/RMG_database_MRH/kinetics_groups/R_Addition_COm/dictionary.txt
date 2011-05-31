@@ -59,8 +59,8 @@ C_rad/H2/Cb
 2 H 0 {1,S}
 3 H 0 {1,S}
 4 C 0 {1,S} {5,B} {6,B}
-5 R_aromatic 0 {4,B}
-6 R_aromatic 0 {4,B}
+5 R_min2valency {0,1,2,2S,2T,3} {4,B}
+6 R_min2valency {0,1,2,2S,2T,3} {4,B}
 
 C_rad/H2/CO
 1 *2 C 1 {2,S}, {3,S}, {4,S}
@@ -277,8 +277,8 @@ Cb_rad
 1 *2 C 1 {2,B}, {3,B}
 2 C 0 {1,B} {4,B}
 3 C 0 {1,B} {5,B}
-4 R_aromatic 0 {2,B}
-5 R_aromatic 0 {3,B}
+4 R_min2valency {0,1,2,2S,2T,3} {2,B}
+5 R_min2valency {0,1,2,2S,2T,3} {3,B}
 
 CO_rad
 1 *2 C 1 {2,D}

@@ -103,8 +103,8 @@ R4_B
 2 *4 C 0 {1,B} {3,S} {6,B}
 3 *2 R_min3valency 0 {2,S} {4,{D,T}}
 4 *3 R_min2valency 0 {3,{D,T}}
-5 R_aromatic 0 {1,B}
-6 R_aromatic 0 {2,B}
+5 R_min2valency {0,1,2,2S,2T,3} {1,B}
+6 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R4_B_D
 1 *1 C 1 {2,B} {6,B}
@@ -112,8 +112,8 @@ R4_B_D
 3 *2 C 0 {2,S} {4,D} {5,S}
 4 *3 C 0 {3,D}
 5 R {0,1,2,2S,2T,3} {3,S}
-6 R_aromatic 0 {1,B}
-7 R_aromatic 0 {2,B}
+6 R_min2valency {0,1,2,2S,2T,3} {1,B}
+7 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R4_B_T
 1 *1 C 1 {2,B} {6,B}
@@ -121,8 +121,8 @@ R4_B_T
 3 *2 C 0 {2,S} {4,T}
 4 *3 C 0 {3,T} {5,S}
 5 R {0,1,2,2S,2T,3} {4,S}
-6 R_aromatic 0 {1,B}
-7 R_aromatic 0 {2,B}
+6 R_min2valency {0,1,2,2S,2T,3} {1,B}
+7 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R4_B_CO
 1 *1 C 1 {2,B} {6,B}
@@ -130,8 +130,8 @@ R4_B_CO
 3 *2 C 0 {2,S} {4,D} {5,S}
 4 *3 O 0 {3,D}
 5 R {0,1,2,2S,2T,3} {3,S}
-6 R_aromatic 0 {1,B}
-7 R_aromatic 0 {2,B}
+6 R_min2valency {0,1,2,2S,2T,3} {1,B}
+7 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R5
 Union {R5_SS,R5_SD,R5_DS,R5_ST, R5_TS,R5_SB,R5_BS}
@@ -313,8 +313,8 @@ R5_SB
 3 *5 C 0 {2,B} {4,S} {7,B}
 4 *2 R_min3valency 0 {3,S} {5,{D,T}}
 5 *3 R_min2valency 0 {4,{D,T}}
-6 R_aromatic 0 {2,B}
-7 R_aromatic 0 {3,B}
+6 R_min2valency {0,1,2,2S,2T,3} {2,B}
+7 R_min2valency {0,1,2,2S,2T,3} {3,B}
 
 R5_SB_D
 1 *1 R!H 1 {2,S}
@@ -323,8 +323,8 @@ R5_SB_D
 4 *2 C 0 {3,S} {5,D} {6,S}
 5 *3 C 0 {4,D}
 6 R {0,1,2,2S,2T,3} {4,S}
-7 R_aromatic 0 {2,B}
-8 R_aromatic 0 {3,B}
+7 R_min2valency {0,1,2,2S,2T,3} {2,B}
+8 R_min2valency {0,1,2,2S,2T,3} {3,B}
 
 R5_SB_T
 1 *1 R!H 1 {2,S}
@@ -333,8 +333,8 @@ R5_SB_T
 4 *2 C 0 {3,S} {5,T}
 5 *3 C 0 {4,T} {6,S}
 6 R {0,1,2,2S,2T,3} {5,S}
-7 R_aromatic 0 {2,B}
-8 R_aromatic 0 {3,B}
+7 R_min2valency {0,1,2,2S,2T,3} {2,B}
+8 R_min2valency {0,1,2,2S,2T,3} {3,B}
 
 R5_SB_CO
 1 *1 R!H 1 {2,S}
@@ -343,8 +343,8 @@ R5_SB_CO
 4 *2 C 0 {3,S} {5,D} {6,S}
 5 *3 O 0 {4,D}
 6 R {0,1,2,2S,2T,3} {4,S}
-7 R_aromatic 0 {2,B}
-8 R_aromatic 0 {3,B}
+7 R_min2valency {0,1,2,2S,2T,3} {2,B}
+8 R_min2valency {0,1,2,2S,2T,3} {3,B}
 
 R5_BS
 1 *1 C 1 {2,B} {6,B}
@@ -352,8 +352,8 @@ R5_BS
 3 *5 R!H 0 {2,S} {4,S}
 4 *2 R_min3valency 0 {3,S} {5,{D,T}}
 5 *3 R_min2valency 0 {4,{D,T}}
-6 R_aromatic 0 {1,B}
-7 R_aromatic 0 {2,B}
+6 R_min2valency {0,1,2,2S,2T,3} {1,B}
+7 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R5_BS_D
 1 *1 C 1 {2,B} {7,B}
@@ -362,8 +362,8 @@ R5_BS_D
 4 *2 C 0 {3,S} {5,D} {6,S}
 5 *3 C 0 {4,D}
 6 R {0,1,2,2S,2T,3} {4,S}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R5_BS_T
 1 *1 C 1 {2,B} {7,B}
@@ -372,8 +372,8 @@ R5_BS_T
 4 *2 C 0 {3,S} {5,T}
 5 *3 C 0 {4,T} {6,S}
 6 R {0,1,2,2S,2T,3} {5,S}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R5_BS_CO
 1 *1 C 1 {2,B} {7,B}
@@ -382,8 +382,8 @@ R5_BS_CO
 4 *2 C 0 {3,S} {5,D} {6,S}
 5 *3 O 0 {4,D}
 6 R {0,1,2,2S,2T,3} {4,S}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6
 Union {R6_RSR, R6_SMS, R6_SBB, R6_BBS}
@@ -666,8 +666,8 @@ R6_BSR
 4 *5 R!H 0 {3,{S,D,T,B}} {5,S}
 5 *2 R_min3valency 0 {4,S} {6,{D,T}}
 6 *3 R_min2valency 0 {5,{D,T}}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6_BSS
 1 *1 C 1 {2,B} {7,B}
@@ -676,8 +676,8 @@ R6_BSS
 4 *5 R!H 0 {3,S} {5,S}
 5 *2 R_min3valency 0 {4,S} {6,{D,T}}
 6 *3 R_min2valency 0 {5,{D,T}}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6_BSS_D
 1 *1 C 1 {2,B} {7,B}
@@ -686,11 +686,11 @@ R6_BSS_D
 4 *5 R!H 0 {3,S} {5,S}
 5 *2 C 0 {4,S} {6,D} {9,S}
 6 *3 C 0 {5,D} {10,S} {11,S}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 9 R {0,1,2,2S,2T,3} {5,S}
 10 R {0,1,2,2S,2T,3} {6,S}
 11 R {0,1,2,2S,2T,3} {6,S}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
 
 R6_BSS_T
 1 *1 C 1 {2,B} {7,B}
@@ -699,9 +699,9 @@ R6_BSS_T
 4 *5 R!H 0 {3,S} {5,S}
 5 *2 C 0 {4,S} {6,T}
 6 *3 C 0 {5,T} {9,S}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
 9 R 0 {6,S}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6_BSS_CO
 1 *1 C 1 {2,B} {7,B}
@@ -710,9 +710,9 @@ R6_BSS_CO
 4 *5 R!H 0 {3,S} {5,S}
 5 *2 C 0 {4,S} {6,D} {9,S}
 6 *3 O 0 {5,D}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
 9 R 0 {5,S}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6_BSM
 1 *1 C 1 {2,B} {7,B}
@@ -721,8 +721,8 @@ R6_BSM
 4 *5 C 0 {3,{D,T,B}} {5,S}
 5 *2 R_min3valency 0 {4,S} {6,{D,T}}
 6 *3 R_min2valency 0 {5,{D,T}}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6_BSM_D
 1 *1 C 1 {2,B} {7,B}
@@ -731,11 +731,11 @@ R6_BSM_D
 4 *5 C 0 {3,{D,T,B}} {5,S}
 5 *2 C 0 {4,S} {6,D} {9,S}
 6 *3 C 0 {5,D} {10,S} {11,S}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
 9 R 0 {5,S}
 10 R 0 {6,S}
 11 R 0 {6,S}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6_BSM_T
 1 *1 C 1 {2,B} {7,B}
@@ -744,9 +744,9 @@ R6_BSM_T
 4 *5 C 0 {3,{D,T,B}} {5,S}
 5 *2 C 0 {4,S} {6,T}
 6 *3 C 0 {5,T} {9,S}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
 9 R 0 {6,S}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6_BSM_CO
 1 *1 C 1 {2,B} {7,B}
@@ -755,9 +755,9 @@ R6_BSM_CO
 4 *5 C 0 {3,{D,T,B}} {5,S}
 5 *2 C 0 {4,S} {6,D} {9,S}
 6 *3 O 0 {5,D}
-7 R_aromatic 0 {1,B}
-8 R_aromatic 0 {2,B}
 9 R 0 {5,S}
+7 R_min2valency {0,1,2,2S,2T,3} {1,B}
+8 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 R6_SMS
 1 *1 R!H 1 {2,S}

@@ -291,11 +291,11 @@ Cd/H/OneDe
 
 Cb_H
 1 *2 C 0 {2,B}, {3,B}, {4,S}
-2 R_aromatic 0 {1,B} {5,B}
-3 R_aromatic 0 {1,B} {6,B}
+2 R_min2valency 0 {1,B} {5,B}
+3 R_min2valency 0 {1,B} {6,B}
 4 *3 H 0 {1,S} 
-5 R_aromatic 0 {2,B}
-6 R_aromatic 0 {3,B}
+5 R_min2valency 0 {2,B}
+6 R_min2valency 0 {3,B}
 
 R_R'
 1 *2 R_min4valency 0 {2,S}, {3,S}, {4,S}, {5,S}
@@ -384,8 +384,8 @@ Cs_Cb
 3 H 0 {1,S}
 4 H 0 {1,S}
 5 H 0 {1,S}
-6 R_aromatic 0 {2,B}
-7 R_aromatic 0 {2,B}
+6 R_min2valency 0 {2,B}
+7 R_min2valency 0 {2,B}
 
 RO_H
 1 *2 O 0 {2,S}, {3,S}
