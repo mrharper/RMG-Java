@@ -302,41 +302,41 @@ diene_in
 1 *4 C 0 {2,S} {3,S} {4,D}
 2 *5 C 0 {1,S} {5,S} {6,D}
 3 R {0,1,2,2S,2T,3} {1,S}
-4 C 0 {1,D}
+4 *3 C 0 {1,D}
 5 R {0,1,2,2S,2T,3} {2,S}
-6 C 0 {2,D}
+6 *6 C 0 {2,D}
 
 diene_in_2H
 1 *4 C 0 {2,S} {3,S} {5,D}
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 H 0 {1,S}
 4 H 0 {2,S}
-5 C 0 {1,D}
-6 C 0 {2,D}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 
 diene_in_HNd
 1 *4 C 0 {2,S} {3,S} {5,D}
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 H 0 {1,S}
 4 R_nondelocalized 0 {2,S}
-5 C 0 {1,D}
-6 C 0 {2,D}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 
 diene_in_NdH
 1 *4 C 0 {2,S} {3,S} {5,D}
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 R_nondelocalized 0 {1,S}
 4 H 0 {2,S}
-5 C 0 {1,D}
-6 C 0 {2,D}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 
 diene_in_HDe
 1 *4 C 0 {2,S} {3,S} {5,D}
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 H 0 {1,S}
 4 R_min3valency 0 {2,S} {7,{D,T,B}}
-5 C 0 {1,D}
-6 C 0 {2,D}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 7 R_min2valency 0 {4,{D,T,B}}
 
 diene_in_DeH
@@ -344,8 +344,8 @@ diene_in_DeH
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 H 0 {2,S}
-5 C 0 {1,D}
-6 C 0 {2,S}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 7 R_min2valency 0 {3,{D,T,B}}
 
 diene_in_Nd2
@@ -353,16 +353,16 @@ diene_in_Nd2
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 R_nondelocalized 0 {1,S}
 4 R_nondelocalized 0 {2,S}
-5 C 0 {1,D}
-6 C 0 {2,D}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 
 diene_in_NdDe
 1 *4 C 0 {2,S} {3,S} {5,D}
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 R_nondelocalized 0 {1,S}
 4 R_min3valency 0 {2,S} {7,{D,T,B}}
-5 C 0 {1,D}
-6 C 0 {2,D}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 7 R_min2valency 0 {4,{D,T,B}}
 
 diene_in_DeNd
@@ -370,8 +370,8 @@ diene_in_DeNd
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 R_nondelocalized 0 {2,S}
-5 C 0 {1,D}
-6 C 0 {2,D}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 7 R_min2valency 0 {3,{D,T,B}}
 
 diene_in_De2
@@ -379,8 +379,8 @@ diene_in_De2
 2 *5 C 0 {1,S} {4,S} {6,D}
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 R_min3valency 0 {2,S} {8,{D,T,B}}
-5 C 0 {1,D}
-6 C 0 {2,D}
+5 *3 C 0 {1,D}
+6 *6 C 0 {2,D}
 7 R_min2valency 0 {3,{D,T,B}}
 8 R_min2valency 0 {4,{D,T,B}}
 
