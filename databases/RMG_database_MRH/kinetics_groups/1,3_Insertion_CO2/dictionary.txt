@@ -243,9 +243,11 @@ C/H/Cs
 C/H/TDMustO
 1 *3 C 0 {2,S}, {3,S}, {4,S}, {5,S}
 2 *4 H 0 {1,S}
-3 {Cd,Ct,Cb,CO} 0 {1,S}
-4 {Cd,Ct,Cb,CO} 0 {1,S}
+3 C 0 {1,S} {6,{D,T,B}}
+4 C 0 {1,S} {7,{D,T,B}}
 5 O 0 {1,S}
+6 R_min2valency 0 {3,{D,T,B}}
+7 R_min2valency 0 {4,{D,T,B}}
 
 C/H/ThreeDe
 1 *3 C 0 {2,S}, {3,S}, {4,S}, {5,S}
