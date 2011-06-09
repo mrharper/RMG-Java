@@ -1465,11 +1465,11 @@ R7_BSMS_D
 5 *5 R!H 0 {4,S} {6,S}
 6 *2 C 0 {5,S} {7,D} {10,S}
 7 *3 C 0 {6,D} {11,S} {12,S}
-10 R 0 {6,S}
-11 R 0 {7,S}
-12 R 0 {7,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
+10 R {0,1,2,2S,2T,3} {6,S}
+11 R {0,1,2,2S,2T,3} {7,S}
+12 R {0,1,2,2S,2T,3} {7,S}
 
 R7_BSMS_T
 1 *1 C 1 {2,B} {8,B}
@@ -1479,9 +1479,9 @@ R7_BSMS_T
 5 *5 R!H 0 {4,S} {6,S}
 6 *2 C 0 {5,S} {7,T}
 7 *3 C 0 {6,T} {10,S}
-10 R 0 {7,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
+10 R {0,1,2,2S,2T,3} {7,S}
 
 R7_BSMS_CO
 1 *1 C 1 {2,B} {8,B}
@@ -1491,9 +1491,9 @@ R7_BSMS_CO
 5 *5 R!H 0 {4,S} {6,S}
 6 *2 C 0 {5,S} {7,D} {10,S}
 7 *3 O 0 {6,D}
-10 R 0 {6,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
+10 R {0,1,2,2S,2T,3} {6,S}
 
 R7_SMSR
 1 *1 R!H 1 {2,S}
@@ -1618,12 +1618,12 @@ R7_BBSS_D
 5 *5 R!H 0 {4,S} {6,S}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 C 0 {6,D} {12,S} {13,S}
-11 R 0 {6,S}
-12 R 0 {7,S}
-13 R 0 {7,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
+11 R {0,1,2,2S,2T,3} {6,S}
+12 R {0,1,2,2S,2T,3} {7,S}
+13 R {0,1,2,2S,2T,3} {7,S}
 
 R7_BBSS_T
 1 *1 C 1 {2,B} {8,B}
@@ -1633,10 +1633,10 @@ R7_BBSS_T
 5 *5 R!H 0 {4,S} {6,S}
 6 *2 C 0 {5,S} {7,T}
 7 *3 C 0 {6,T} {11,S}
-11 R 0 {7,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
+11 R {0,1,2,2S,2T,3} {7,S}
 
 R7_BBSS_CO
 1 *1 C 1 {2,B} {8,B}
@@ -1646,10 +1646,10 @@ R7_BBSS_CO
 5 *5 R!H 0 {4,S} {6,S}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 O 0 {6,D}
-11 R 0 {6,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
+11 R {0,1,2,2S,2T,3} {6,S}
 
 R7_BBSM
 1 *1 C 1 {2,B} {8,B}
@@ -1671,12 +1671,12 @@ R7_BBSM_D
 5 *5 C 0 {4,{D,T,B}} {6,S}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 C 0 {6,D} {12,S} {13,S}
-11 R 0 {6,S}
-12 R 0 {7,S}
-13 R 0 {7,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
+11 R {0,1,2,2S,2T,3} {6,S}
+12 R {0,1,2,2S,2T,3} {7,S}
+13 R {0,1,2,2S,2T,3} {7,S}
 
 R7_BBSM_T
 1 *1 C 1 {2,B} {8,B}
@@ -1686,10 +1686,10 @@ R7_BBSM_T
 5 *5 C 0 {4,{D,T,B}} {6,S}
 6 *2 C 0 {5,S} {7,T}
 7 *3 C 0 {6,T} {11,S}
-11 R 0 {7,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
+11 R {0,1,2,2S,2T,3} {7,S}
 
 R7_BBSM_CO
 1 *1 C 1 {2,B} {8,B}
@@ -1699,10 +1699,10 @@ R7_BBSM_CO
 5 *5 C 0 {4,{D,T,B}} {6,S}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 O 0 {6,D}
-11 R 0 {6,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
+11 R {0,1,2,2S,2T,3} {6,S}
 
 R7_RSBB
 1 *1 R!H 1 {2,{S,D,T,B}}
@@ -1736,12 +1736,12 @@ R7_SSBB_D
 5 *5 C 0 {4,B} {6,S} {10,B}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 C 0 {6,D} {12,S} {13,S}
-11 R 0 {6,S}
-12 R 0 {7,S}
-13 R 0 {7,S}
 8 R_min2valency 0 {3,B}
 9 R_min2valency 0 {4,B}
 10 R_min2valency 0 {5,B}
+11 R {0,1,2,2S,2T,3} {6,S}
+12 R {0,1,2,2S,2T,3} {7,S}
+13 R {0,1,2,2S,2T,3} {7,S}
 
 R7_SSBB_T
 1 *1 R!H 1 {2,S}
@@ -1751,10 +1751,10 @@ R7_SSBB_T
 5 *5 C 0 {4,B} {6,S} {10,B}
 6 *2 C 0 {5,S} {7,T}
 7 *3 C 0 {6,T} {11,S}
-11 R 0 {7,S}
 8 R_min2valency 0 {3,B}
 9 R_min2valency 0 {4,B}
 10 R_min2valency 0 {5,B}
+11 R {0,1,2,2S,2T,3} {7,S}
 
 R7_SSBB_CO
 1 *1 R!H 1 {2,S}
@@ -1764,10 +1764,10 @@ R7_SSBB_CO
 5 *5 C 0 {4,B} {6,S} {10,B}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 O 0 {6,D}
-11 R 0 {6,S}
 8 R_min2valency 0 {3,B}
 9 R_min2valency 0 {4,B}
 10 R_min2valency 0 {5,B}
+11 R {0,1,2,2S,2T,3} {6,S}
 
 R7_DSBB
 1 *1 C 1 {2,D} {8,S}
@@ -1777,8 +1777,8 @@ R7_DSBB
 5 *5 C 0 {4,B} {6,S} {11,B}
 6 *2 R_min3valency 0 {5,S} {7,{D,T}}
 7 *3 R_min2valency 0 {6,{D,T}}
-8 R 0 {1,S}
-9 R 0 {2,S}
+8 R {0,1,2,2S,2T,3} {1,S}
+9 R {0,1,2,2S,2T,3} {2,S}
 10 R_min2valency 0 {3,B}
 11 R_min2valency 0 {4,B}
 12 R_min2valency 0 {5,B}
@@ -1791,14 +1791,14 @@ R7_DSBB_D
 5 *5 C 0 {4,B} {6,S} {12,B}
 6 *2 C 0 {5,S} {7,D} {13,S}
 7 *3 C 0 {6,D} {14,S} {15,S}
-8 R 0 {1,S}
-9 R 0 {2,S}
-13 R 0 {6,S}
-14 R 0 {7,S}
-15 R 0 {7,S}
+8 R {0,1,2,2S,2T,3} {1,S}
+9 R {0,1,2,2S,2T,3} {2,S}
 10 R_min2valency 0 {3,B}
 11 R_min2valency 0 {4,B}
 12 R_min2valency 0 {5,B}
+13 R {0,1,2,2S,2T,3} {6,S}
+14 R {0,1,2,2S,2T,3} {7,S}
+15 R {0,1,2,2S,2T,3} {7,S}
 
 R7_DSBB_T
 1 *1 C 1 {2,D} {8,S}
@@ -1808,12 +1808,12 @@ R7_DSBB_T
 5 *5 C 0 {4,B} {6,S} {12,B}
 6 *2 C 0 {5,S} {7,T}
 7 *3 C 0 {6,T} {13,S}
-8 R 0 {1,S}
-9 R 0 {2,S}
-13 R 0 {7,S}
+8 R {0,1,2,2S,2T,3} {1,S}
+9 R {0,1,2,2S,2T,3} {2,S}
 10 R_min2valency 0 {3,B}
 11 R_min2valency 0 {4,B}
 12 R_min2valency 0 {5,B}
+13 R {0,1,2,2S,2T,3} {7,S}
 
 R7_DSBB_CO
 1 *1 C 1 {2,D} {8,S}
@@ -1823,12 +1823,12 @@ R7_DSBB_CO
 5 *5 C 0 {4,B} {6,S} {12,B}
 6 *2 C 0 {5,S} {7,D} {13,S}
 7 *3 O 0 {6,D}
-8 R 0 {1,S}
-9 R 0 {2,S}
-13 R 0 {6,S}
+8 R {0,1,2,2S,2T,3} {1,S}
+9 R {0,1,2,2S,2T,3} {2,S}
 10 R_min2valency 0 {3,B}
 11 R_min2valency 0 {4,B}
 12 R_min2valency 0 {5,B}
+13 R {0,1,2,2S,2T,3} {6,S}
 
 R7_TSBB
 1 *1 C 1 {2,T}
@@ -1850,12 +1850,12 @@ R7_TSBB_D
 5 *5 C 0 {4,B} {6,S} {10,B}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 C 0 {6,D} {12,S} {13,S}
-11 R 0 {6,S}
-12 R 0 {7,S}
-13 R 0 {7,S}
 8 R_min2valency 0 {3,B}
 9 R_min2valency 0 {4,B}
 10 R_min2valency 0 {5,B}
+11 R {0,1,2,2S,2T,3} {6,S}
+12 R {0,1,2,2S,2T,3} {7,S}
+13 R {0,1,2,2S,2T,3} {7,S}
 
 R7_TSBB_T
 1 *1 C 1 {2,T}
@@ -1865,10 +1865,10 @@ R7_TSBB_T
 5 *5 C 0 {4,B} {6,S} {10,B}
 6 *2 C 0 {5,S} {7,T}
 7 *3 C 0 {6,T} {11,S}
-11 R 0 {7,S}
 8 R_min2valency 0 {3,B}
 9 R_min2valency 0 {4,B}
 10 R_min2valency 0 {5,B}
+11 R {0,1,2,2S,2T,3} {7,S}
 
 R7_TSBB_CO
 1 *1 C 1 {2,T}
@@ -1878,10 +1878,10 @@ R7_TSBB_CO
 5 *5 C 0 {4,B} {6,S} {10,B}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 O 0 {6,D}
-11 R 0 {6,S}
 8 R_min2valency 0 {3,B}
 9 R_min2valency 0 {4,B}
 10 R_min2valency 0 {5,B}
+11 R {0,1,2,2S,2T,3} {6,S}
 
 R7_BSBB
 1 *1 C 1 {2,B} {8,B}
@@ -1905,14 +1905,14 @@ R7_BSBB_D
 5 *5 C 0 {4,B} {6,S} {12,B}
 6 *2 C 0 {5,S} {7,D} {13,S}
 7 *3 C 0 {6,D} {14,S} {15,S}
-13 R 0 {6,S}
-14 R 0 {7,S}
-15 R 0 {7,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
 11 R_min2valency 0 {4,B}
 12 R_min2valency 0 {5,B}
+13 R {0,1,2,2S,2T,3} {6,S}
+14 R {0,1,2,2S,2T,3} {7,S}
+15 R {0,1,2,2S,2T,3} {7,S}
 
 R7_BSBB_T
 1 *1 C 1 {2,B} {8,B}
@@ -1922,12 +1922,12 @@ R7_BSBB_T
 5 *5 C 0 {4,B} {6,S} {12,B}
 6 *2 C 0 {5,S} {7,T}
 7 *3 C 0 {6,T} {13,S}
-13 R 0 {7,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
 11 R_min2valency 0 {4,B}
 12 R_min2valency 0 {5,B}
+13 R {0,1,2,2S,2T,3} {7,S}
 
 R7_BSBB_CO
 1 *1 C 1 {2,B} {8,B}
@@ -1937,12 +1937,12 @@ R7_BSBB_CO
 5 *5 C 0 {4,B} {6,S} {12,B}
 6 *2 CO 0 {5,S} {7,D} {13,S}
 7 *3 O 0 {6,D}
-13 R 0 {6,S}
 8 R_min2valency 0 {1,B}
 9 R_min2valency 0 {2,B}
 10 R_min2valency 0 {3,B}
 11 R_min2valency 0 {4,B}
 12 R_min2valency 0 {5,B}
+13 R {0,1,2,2S,2T,3} {6,S}
 
 R7_SBBS
 1 *1 R!H 1 {2,S}
@@ -1964,12 +1964,12 @@ R7_SBBS_D
 5 *5 R!H 0 {4,S} {6,S}
 6 *2 C 0 {5,S} {7,D} {11,S}
 7 *3 C 0 {6,D} {12,S} {13,S}
-11 R 0 {6,S}
-12 R 0 {7,S}
-13 R 0 {7,S}
 8 R_min2valency 0 {2,B}
 9 R_min2valency 0 {3,B}
 10 R_min2valency 0 {4,B}
+11 R {0,1,2,2S,2T,3} {6,S}
+12 R {0,1,2,2S,2T,3} {7,S}
+13 R {0,1,2,2S,2T,3} {7,S}
 
 R7_SBBS_T
 1 *1 R!H 1 {2,S}
@@ -1979,10 +1979,10 @@ R7_SBBS_T
 5 *5 R!H 0 {4,S} {6,S}
 6 *2 C 0 {5,S} {7,T}
 7 *3 C 0 {6,T} {11,S}
-11 R 0 {7,S}
 8 R_min2valency 0 {2,B}
 9 R_min2valency 0 {3,B}
 10 R_min2valency 0 {4,B}
+11 R {0,1,2,2S,2T,3} {7,S}
 
 R7_SBBS_CO
 1 *1 R!H 1 {2,S}
@@ -1995,7 +1995,7 @@ R7_SBBS_CO
 8 R_min2valency 0 {2,B}
 9 R_min2valency 0 {3,B}
 10 R_min2valency 0 {4,B}
-11 R 0 {6,S}
+11 R {0,1,2,2S,2T,3} {6,S}
 
 multiplebond_intra
 1 *2 R_min2valency 0 {2,{D,T}}
@@ -2031,7 +2031,7 @@ doublebond_intra_2H_secNd
 3 R_nondelocalized 0 {1,S}
 4 H 0 {2,S}
 5 H 0 {2,S}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 
 doublebond_intra_2H_secDe
 1 *2 C 0 {2,D} {3,S} {6,S}
@@ -2039,7 +2039,7 @@ doublebond_intra_2H_secDe
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 H 0 {2,S}
 5 H 0 {2,S}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {3,{D,T,B}}
 
 doublebond_intra_HNd
@@ -2047,8 +2047,8 @@ doublebond_intra_HNd
 2 *3 C 0 {1,D} {4,S} {3,S}
 3 H 0 {2,S}
 4 R_nondelocalized 0 {2,S}
-5 R 0 {1,S}
-6 R 0 {1,S}
+5 R {0,1,2,2S,2T,3} {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 
 doublebond_intra_HNd_pri
 1 *2 C 0 {2,D} {3,S} {6,S}
@@ -2056,7 +2056,7 @@ doublebond_intra_HNd_pri
 3 H 0 {1,S}
 4 H 0 {2,S}
 5 R_nondelocalized 0 {2,S}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 
 doublebond_intra_HNd_secNd
 1 *2 C 0 {2,D} {3,S} {6,S}
@@ -2064,7 +2064,7 @@ doublebond_intra_HNd_secNd
 3 R_nondelocalized 0 {1,S}
 4 H 0 {2,S}
 5 R_nondelocalized 0 {2,S}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 
 doublebond_intra_HNd_secDe
 1 *2 C 0 {2,D} {3,S} {6,S}
@@ -2072,7 +2072,7 @@ doublebond_intra_HNd_secDe
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 H 0 {2,S}
 5 R_nondelocalized 0 {2,S}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {3,{D,T,B}}
 
 doublebond_intra_HDe
@@ -2080,8 +2080,8 @@ doublebond_intra_HDe
 2 *3 C 0 {1,D} {4,S} {3,S}
 3 H 0 {2,S}
 4 R_min3valency 0 {2,S} {7,{D,T,B}}
-5 R 0 {1,S}
-6 R 0 {1,S}
+5 R {0,1,2,2S,2T,3} {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {4,{D,T,B}}
 
 doublebond_intra_HDe_pri
@@ -2090,7 +2090,7 @@ doublebond_intra_HDe_pri
 3 H 0 {1,S}
 4 H 0 {2,S}
 5 R_min3valency 0 {2,S} {7,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {5,{D,T,B}}
 
 doublebond_intra_HDe_secNd
@@ -2099,7 +2099,7 @@ doublebond_intra_HDe_secNd
 3 R_nondelocalized 0 {1,S}
 4 H 0 {2,S}
 5 R_min3valency 0 {2,S} {7,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {5,{D,T,B}}
 
 doublebond_intra_HDe_secDe
@@ -2108,7 +2108,7 @@ doublebond_intra_HDe_secDe
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 H 0 {2,S}
 5 R_min3valency 0 {2,S} {8,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {3,{D,T,B}}
 8 R_min2valency 0 {5,{D,T,B}}
 
@@ -2117,7 +2117,7 @@ doublebond_intra_NdNd
 2 *3 C 0 {1,D} {3,S} {4,S}
 3 R_nondelocalized 0 {2,S}
 4 R_nondelocalized 0 {2,S}
-5 R 0 {1,S}
+5 R {0,1,2,2S,2T,3} {1,S}
 6 R 0 [1,S}
 
 doublebond_intra_NdNd_pri
@@ -2126,7 +2126,7 @@ doublebond_intra_NdNd_pri
 3 H 0 {1,S}
 4 R_nondelocalized 0 {2,S}
 5 R_nondelocalized 0 {2,S}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 
 doublebond_intra_NdNd_secNd
 1 *2 C 0 {2,D} {3,S} {6,S}
@@ -2134,7 +2134,7 @@ doublebond_intra_NdNd_secNd
 3 R_nondelocalized 0 {1,S}
 4 R_nondelocalized 0 {2,S}
 5 R_nondelocalized 0 {2,S}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 
 doublebond_intra_NdNd_secDe
 1 *2 C 0 {2,D} {3,S} {6,S}
@@ -2142,7 +2142,7 @@ doublebond_intra_NdNd_secDe
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 R_nondelocalized 0 {2,S}
 5 R_nondelocalized 0 {2,S}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {3,{D,T,B}}
 
 doublebond_intra_NdDe
@@ -2150,8 +2150,8 @@ doublebond_intra_NdDe
 2 *3 C 0 {1,D} {4,S} {3,S}
 3 R_nondelocalized 0 {2,S}
 4 R_min3valency 0 {2,S} {7,{D,T,B}}
-5 R 0 {1,S}
-6 R 0 {1,S}
+5 R {0,1,2,2S,2T,3} {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {4,{D,T,B}}
 
 doublebond_intra_NdDe_pri
@@ -2160,7 +2160,7 @@ doublebond_intra_NdDe_pri
 3 H 0 {1,S}
 4 R_nondelocalized 0 {2,S}
 5 R_min3valency 0 {2,S} {7,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {5,{D,T,B}}
 
 doublebond_intra_NdDe_secNd
@@ -2169,7 +2169,7 @@ doublebond_intra_NdDe_secNd
 3 R_nondelocalized 0 {1,S}
 4 R_nondelocalized 0 {2,S}
 5 R_min3valency 0 {2,S} {7,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {5,{D,T,B}}
 
 doublebond_intra_NdDe_secDe
@@ -2178,7 +2178,7 @@ doublebond_intra_NdDe_secDe
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 R_nondelocalized 0 {2,S}
 5 R_min3valency 0 {2,S} {8,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {3,{D,T,B}}
 8 R_min2valency 0 {5,{D,T,B}}
 
@@ -2187,8 +2187,8 @@ doublebond_intra_DeDe
 2 *3 C 0 {1,D} {3,S} {4,S}
 3 R_min3valency 0 {2,S} {7,{D,T,B}}
 4 R_min3valency 0 {2,S} {8,{D,T,B}}
-5 R 0 {1,S}
-6 R 0 {1,S}
+5 R {0,1,2,2S,2T,3} {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 
 doublebond_intra_DeDe_pri
 1 *2 C 0 {2,D} {3,S} {6,S}
@@ -2196,7 +2196,7 @@ doublebond_intra_DeDe_pri
 3 H 0 {1,S}
 4 R_min3valency 0 {2,S} {7,{D,T,B}}
 5 R_min3valency 0 {2,S} {8,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {4,{D,T,B}}
 8 R_min2valency 0 {5,{D,T,B}}
 
@@ -2206,7 +2206,7 @@ doublebond_intra_DeDe_secNd
 3 R_nondelocalized 0 {1,S}
 4 R_min3valency 0 {2,S} {7,{D,T,B}}
 5 R_min3valency 0 {2,S} {8,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {4,{D,T,B}}
 8 R_min2valency 0 {5,{D,T,B}}
 
@@ -2216,7 +2216,7 @@ doublebond_intra_DeDe_secDe
 3 R_min3valency 0 {1,S} {7,{D,T,B}}
 4 R_min3valency 0 {2,S} {8,{D,T,B}}
 5 R_min3valency 0 {2,S} {9,{D,T,B}}
-6 R 0 {1,S}
+6 R {0,1,2,2S,2T,3} {1,S}
 7 R_min2valency 0 {3,{D,T,B}}
 8 R_min2valency 0 {4,{D,T,B}}
 9 R_min2valency 0 {5,{D,T,B}}
@@ -2224,51 +2224,51 @@ doublebond_intra_DeDe_secDe
 triplebond_intra
 1 *2 C 0 {2,T} {3,S}
 2 *3 C 0 {1,T} {4,S}
-3 R 0 {1,S}
-4 R 0 {2,S}
+3 R {0,1,2,2S,2T,3} {1,S}
+4 R {0,1,2,2S,2T,3} {2,S}
 
 triplebond_intra_H
 1 *2 C 0 {2,T} {4,S}
 2 *3 C 0 {1,T} {3,S}
 3 H 0 {2,S}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 
 triplebond_intra_Nd
 1 *2 C 0 {2,T} {4,S}
 2 *3 C 0 {1,T} {3,S}
 3 R_nondelocalized 0 {2,S}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 
 triplebond_intra_De
 1 *2 C 0 {2,T} {4,S}
 2 *3 C 0 {1,T} {3,S}
 3 R_min3valency 0 {2,S} {5,{D,T,B}}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 5 R_min2valency 0 {3,{D,T,B}}
 
 carbonylbond_intra
 1 *2 C 0 {2,D} {3,S} {4,S}
 2 *3 O 0 {1,D}
-3 R 0 {1,S}
-4 R 0 {1,S}
+3 R {0,1,2,2S,2T,3} {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 
 carbonylbond_intra_H
 1 *2 C 0 {2,D} {3,S} {4,S}
 2 *3 O 0 {1,D}
 3 H 0 {1,S}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 
 carbonylbond_intra_Nd
 1 *2 C 0 {2,D} {3,S} {4,S}
 2 *3 O 0 {1,D}
 3 R_nondelocalized 0 {1,S}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 
 carbonylbond_intra_De
 1 *2 C 0 {2,D} {3,S} {4,S}
 2 *3 O 0 {1,D}
 3 R_min3valency 0 {1,S} {5,{D,T,B}}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 5 R_min2valency 0 {3,{D,T,B}}
 
 radadd_intra
@@ -2290,39 +2290,39 @@ radadd_intra_csHNd
 1 *1 C 1 {2,S} {3,S} {4,S}
 2 H 0 {1,S}
 3 R_nondelocalized 0 {1,S}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 
 radadd_intra_csHDe
 1 *1 C 1 {2,S} {3,S} {4,S}
 2 H 0 {1,S}
 3 R_min3valency 0 {1,S} {5,{D,T,B}}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 5 R_min2valency 0 {3,{D,T,B}}
 
 radadd_intra_csNdNd
 1 *1 C 1 {2,S} {3,S} {4,S}
 2 R_nondelocalized 0 {1,S}
 3 R_nondelocalized 0 {1,S}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 
 radadd_intra_csNdDe
 1 *1 C 1 {2,S} {3,S} {4,S}
 2 R_nondelocalized 0 {1,S}
 3 R_min3valency 0 {1,S} {5,{D,T,B}}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 5 R_min2valency 0 {3,{D,T,B}}
 
 radadd_intra_csDeDe
 1 *1 C 1 {2,S} {3,S} {4,S}
 2 R_min3valency 0 {1,S} {5,{D,T,B}}
 3 R_min3valency 0 {1,S} {6,{D,T,B}}
-4 R 0 {1,S}
+4 R {0,1,2,2S,2T,3} {1,S}
 5 R_min2valency 0 {2,{D,T,B}}
 6 R_min2valency 0 {3,{D,T,B}}
 
 radadd_intra_cdsingle
 1 *1 C 1 {2,S} {3,D}
-2 R 0 {1,S}
+2 R {0,1,2,2S,2T,3} {1,S}
 3 C 0 {1,D}
 
 radadd_intra_cdsingleH
@@ -2344,14 +2344,14 @@ radadd_intra_cdsingleDe
 radadd_intra_cddouble
 1 *1 C 1 {2,D} {3,S}
 2 C 0 {1,D} {4,S} {5,S}
-3 R 0 {1,S}
-4 R 0 {2,S}
-5 R 0 {2,S}
+3 R {0,1,2,2S,2T,3} {1,S}
+4 R {0,1,2,2S,2T,3} {2,S}
+5 R {0,1,2,2S,2T,3} {2,S}
 
 radadd_intra_CO
 1 *1 C 1 {2,D} {3,S}
 2 O 0 {1,D}
-3 R 0 {1,S}
+3 R {0,1,2,2S,2T,3} {1,S}
 
 radadd_intra_O
 1 *1 O 1
@@ -2364,4 +2364,4 @@ radadd_intra_Cb
 radadd_intra_Ct
 1 *1 C 1 {2,T}
 2 C 0 {1,T} {3,S}
-3 R 0 {2,S}
+3 R {0,1,2,2S,2T,3} {2,S}
