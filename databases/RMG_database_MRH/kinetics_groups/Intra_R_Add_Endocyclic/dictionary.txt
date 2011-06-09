@@ -1212,7 +1212,7 @@ radadd_intra_cdsingle
 radadd_intra_cdsingleH
 1 *1 C 1 {2,S} {3,D}
 2 H 0 {1,S}
-3 C 0 {2,D}
+3 C 0 {1,D}
 
 radadd_intra_cdsingleNd
 1 *1 C 1 {2,S} {3,D}
