@@ -100,8 +100,8 @@ Benzyl_P
 2    C 0 {1,S} {5,B} {6,B}
 3    H 0 {1,S}
 4    H 0 {1,S}
-5 R_aromatic 0 {2,B}
-6 R_aromatic 0 {2,B}
+5 R_min2valency {0,1,2,2S,2T,3} {2,B}
+6 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 Allyl_P			
 1  * C 1 {2,S} {3,S} {4,S} 
@@ -219,8 +219,8 @@ Benzyl_S
 2    C 0 {1,S} {5,B} {6,B}
 3    C 0 {1,S}
 4    H 0 {1,S}
-5 R_aromatic 0 {2,B}
-6 R_aromatic 0 {2,B}
+5 R_min2valency {0,1,2,2S,2T,3} {2,B}
+6 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 Allyl_S			
 1  * C 1 {2,S} {3,S} {4,S}
@@ -306,8 +306,8 @@ Benzyl_T
 2    C 0 {1,S} {5,B} {6,B}
 3    C 0 {1,S}
 4    C 0 {1,S}
-5 R_aromatic 0 {2,B}
-6 R_aromatic 0 {2,B}
+5 R_min2valency {0,1,2,2S,2T,3} {2,B}
+6 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 Allyl_T			
 1  * C 1 {2,S} {3,S} {4,S}
@@ -939,22 +939,22 @@ PhCH
 1  * C 2 {2,S} {3,S}
 2    C 0 {1,S} {4,B} {5,B}
 3    H 0 {1,S}
-4 R_aromatic 0 {2,B}
-5 R_aromatic 0 {2,B}
+4 R_min2valency {0,1,2,2S,2T,3} {2,B}
+5 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 PhCH_t
 1  * C 2t {2,S} {3,S}
 2    C 0 {1,S} {4,B} {5,B}
 3    H 0 {1,S}
-4 R_aromatic 0 {2,B}
-5 R_aromatic 0 {2,B}
+4 R_min2valency {0,1,2,2S,2T,3} {2,B}
+5 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 PhCH_s
 1  * C 2s {2,S} {3,S}
 2    C 0 {1,S} {4,B} {5,B}
 3    H 0 {1,S}
-4 R_aromatic 0 {2,B}
-5 R_aromatic 0 {2,B}
+4 R_min2valency {0,1,2,2S,2T,3} {2,B}
+5 R_min2valency {0,1,2,2S,2T,3} {2,B}
 
 AllylJ2
 1  * C 2 {2,S} {3,S} 
